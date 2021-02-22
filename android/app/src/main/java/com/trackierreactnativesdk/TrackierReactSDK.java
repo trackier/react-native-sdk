@@ -37,17 +37,18 @@ public class TrackierReactSDK extends ReactContextBaseJavaModule {
         com.trackier.sdk.TrackierEvent trackierEvent = new com.trackier.sdk.TrackierEvent(trackierEventMap.getString("id"));
         trackierEvent.orderId = trackierEventMap.getString("orderId");
         trackierEvent.currency = trackierEventMap.getString("currency");
-        trackierEvent.orderId = trackierEventMap.getString("param1");
-        trackierEvent.orderId = trackierEventMap.getString("param2");
-        trackierEvent.orderId = trackierEventMap.getString("param3");
-        trackierEvent.orderId = trackierEventMap.getString("param4");
-        trackierEvent.orderId = trackierEventMap.getString("param5");
-        trackierEvent.orderId = trackierEventMap.getString("param6");
-        trackierEvent.orderId = trackierEventMap.getString("param7");
-        trackierEvent.orderId = trackierEventMap.getString("param8");
-        trackierEvent.orderId = trackierEventMap.getString("param9");
-        trackierEvent.orderId = trackierEventMap.getString("param10");
-        trackierEvent.orderId = trackierEventMap.getString("revenue");
+        trackierEvent.param1 = trackierEventMap.getString("param1");
+        trackierEvent.param2 = trackierEventMap.getString("param2");
+        trackierEvent.param3 = trackierEventMap.getString("param3");
+        trackierEvent.param4 = trackierEventMap.getString("param4");
+        trackierEvent.param5 = trackierEventMap.getString("param5");
+        trackierEvent.param6 = trackierEventMap.getString("param6");
+        trackierEvent.param7 = trackierEventMap.getString("param7");
+        trackierEvent.param8 = trackierEventMap.getString("param8");
+        trackierEvent.param9 = trackierEventMap.getString("param9");
+        trackierEvent.param10 = trackierEventMap.getString("param10");
+        trackierEvent.revenue = trackierEventMap.getString("revenue");
+
 
         Map<String, Object> ev = TrackierUtil.toMap(trackierEventMap.getMap("ev"));
             if (null != ev) {
