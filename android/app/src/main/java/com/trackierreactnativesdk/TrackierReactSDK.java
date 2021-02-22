@@ -4,14 +4,15 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
-import com.trackier.sdk.TrackierEvent;
-
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class TrackierReactSDK extends ReactContextBaseJavaModule {
     TrackierReactSDK(ReactApplicationContext context) {
-       super(context);
-   }
+        super(context);
+    }
+
+    Map<String, String> ev;
 
     @Override
     public String getName() {
@@ -20,19 +21,12 @@ public class TrackierReactSDK extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void initializeSDK(ReadableMap initializeMap) {
-        com.trackier.sdk.TrackierSDKConfig sdkConfig = new  com.trackier.sdk.TrackierSDKConfig(getReactApplicationContext(), initializeMap.appToken, initializeMap.environment);
+        com.trackier.sdk.TrackierSDKConfig sdkConfig = new  com.trackier.sdk.TrackierSDKConfig(getReactApplicationContext(), initializeMap.getString("appToken"), initializeMap.getString("environment"));
         com.trackier.sdk.TrackierSDK.initialize(sdkConfig);
     }
 
-
-
     @ReactMethod
     public void TrackEvent(ReadableMap trackierEventMap) {
-
-        final TrackEvent event = new TrackEvent(eventToken);
-        if (!event.isValid()) {
-            return;
-        }
 
         com.trackier.sdk.TrackierEvent trackierEvent = new com.trackier.sdk.TrackierEvent(trackierEventMap.getString("id"));
         trackierEvent.orderId = trackierEventMap.getString("orderId");
@@ -47,18 +41,24 @@ public class TrackierReactSDK extends ReactContextBaseJavaModule {
         trackierEvent.param8 = trackierEventMap.getString("param8");
         trackierEvent.param9 = trackierEventMap.getString("param9");
         trackierEvent.param10 = trackierEventMap.getString("param10");
-        trackierEvent.revenue = trackierEventMap.getString("revenue");
-
+        trackierEvent.revenue = Double.parseDouble(trackierEventMap.getString("revenue"));
 
         Map<String, Object> ev = TrackierUtil.toMap(trackierEventMap.getMap("ev"));
-            if (null != ev) {
-                for (Map.Entry<String, Object> entry : ev.entrySet()) {
-                    trackierEvent.set(entry.getKey(), entry.getValue().toString());
-                }
+        if (null != ev) {
+            for (Map.Entry<String, Object> entry : ev.entrySet()) {
+                addEventValues(entry.getKey(), entry.getValue().toString());
             }
-
+        }
         com.trackier.sdk.TrackierSDK.trackEvent(trackierEvent);
     }
 
+    public void addEventValues(String key, String value) {
+        if (ev == null) {
+            ev = new LinkedHashMap<String, String>();
+        }
+        String previousValue = ev.put(key, value);
+        if (previousValue != null) {
+        }
+    }
 
 }

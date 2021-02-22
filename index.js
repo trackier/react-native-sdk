@@ -16,11 +16,18 @@ if (Platform.OS === "android") {
     
 }
 
+var initializeSDKParams = function(appToken,environment){
+
+    this.appToken = appToken ;
+    this.environment = environment ;
+
+}
+
 var TrackierSDK = {};
 
-TrackierSDK.initialize = function(appToken,environment){
+TrackierSDK.initialize = function(initializeSDKParams){
 
-    module_trackier.initializeSDK(appToken,environment)
+    module_trackier.initializeSDK(initializeSDKParams)
 };
 
 TrackierSDK.TrackEvent = function (trackEvent){
