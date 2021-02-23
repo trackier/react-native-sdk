@@ -1,9 +1,11 @@
-package com.trackierreactnativesdk;
+package com.trackier.reactnsdk;
 
 import java.util.Map;
 import java.util.HashMap;
 import javax.annotation.Nullable;
 import com.facebook.react.bridge.*;
+
+import static com.facebook.react.bridge.Arguments.toList;
 
 public class TrackierUtil {
 

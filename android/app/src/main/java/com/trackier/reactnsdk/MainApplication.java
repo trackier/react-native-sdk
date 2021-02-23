@@ -1,4 +1,4 @@
-package com.trackierreactnativesdk;
+package com.trackier.reactnsdk;
 
 import android.app.Application;
 import android.content.Context;
@@ -8,6 +8,8 @@ import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
+import com.trackier.BuildConfig;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
@@ -25,7 +27,7 @@ public class MainApplication extends Application implements ReactApplication {
           @SuppressWarnings("UnnecessaryLocalVariable")
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for example:
-           packages.add(new MyAppPackage());
+           packages.add(new TrackierPackage());
           return packages;
         }
 
@@ -62,7 +64,7 @@ public class MainApplication extends Application implements ReactApplication {
          We use reflection here to pick up the class that initializes Flipper,
         since Flipper library is not available in release mode
         */
-        Class<?> aClass = Class.forName("com.trackierreactnativesdk.ReactNativeFlipper");
+        Class<?> aClass = Class.forName("com.trackier.ReactNativeFlipper");
         aClass
             .getMethod("initializeFlipper", Context.class, ReactInstanceManager.class)
             .invoke(null, context, reactInstanceManager);

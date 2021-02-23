@@ -1,4 +1,4 @@
-package com.trackierreactnativesdk;
+package com.trackier.reactnsdk;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
@@ -7,8 +7,8 @@ import com.facebook.react.bridge.ReadableMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class TrackierReactSDK extends ReactContextBaseJavaModule {
-    TrackierReactSDK(ReactApplicationContext context) {
+public class TrackierSDK extends ReactContextBaseJavaModule {
+    TrackierSDK(ReactApplicationContext context) {
         super(context);
     }
 
