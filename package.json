@@ -1,0 +1,21 @@
+{
+  "name": "react-native-trackier-sdk",
+  "description": "Trackier React Native SDK",
+  "version": "1.0.0",
+  "author": "Dev <dev@trackier.com>",
+  "dependencies": {
+    "react": "16.13.1",
+    "react-native": "0.63.4"
+  },
+  "homepage": "https://github.com/trackier/react-native-sdk",
+  "bugs": {
+    "url": "https://github.com/trackier/react-native-sdk/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/trackier/react-native-sdk.git"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
