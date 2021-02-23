@@ -1,27 +1,19 @@
 {
   "name": "react-native-trackier-sdk",
+  "description": "Trackier React Native SDK",
   "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
-    "start": "react-native start",
-    "test": "jest",
-    "lint": "eslint ."
-  },
+  "author": "Dev <dev@trackier.com>",
   "dependencies": {
     "react": "16.13.1",
     "react-native": "0.63.4"
   },
-  "devDependencies": {
-    "@babel/core": "7.12.17",
-    "@babel/runtime": "7.12.18",
-    "@react-native-community/eslint-config": "1.1.0",
-    "babel-jest": "25.5.1",
-    "eslint": "6.8.0",
-    "jest": "25.5.4",
-    "metro-react-native-babel-preset": "0.59.0",
-    "react-test-renderer": "16.13.1"
+  "homepage": "https://github.com/trackier/react-native-sdk",
+  "bugs": {
+    "url": "https://github.com/trackier/react-native-sdk/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/trackier/react-native-sdk.git"
   },
   "jest": {
     "preset": "react-native"
