@@ -4,9 +4,9 @@
   "version": "1.0.0",
   "author": "Dev <dev@trackier.com>",
   "dependencies": {
-    "react": "16.13.1",
-    "react-native": "0.63.4"
-  },
+    "react": "16.9.0",
+    "react-native": "0.61.4"
+     },
   "homepage": "https://github.com/trackier/react-native-sdk",
   "bugs": {
     "url": "https://github.com/trackier/react-native-sdk/issues"
