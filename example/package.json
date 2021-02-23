@@ -12,7 +12,7 @@
   "dependencies": {
     "react": "16.13.1",
     "react-native": "0.63.4",
-    "react-native-trackier-sdk": "git+https://github.com/trackier/react-native-sdk.git"
+    "react-native-trackier-sdk": "github:trackier/react-native-sdk#dev-temp"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
