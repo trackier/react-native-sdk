@@ -8,9 +8,9 @@ import {
 
 const module_trackier = NativeModules.TrackierSDK;
 
-let module_adjust_emitter = null;
+let module_trackier_emitter = null;
 if (Platform.OS === "android") {
-    module_adjust_emitter = new NativeEventEmitter(NativeModules.TrackierSDK);
+    module_trackier_emitter = new NativeEventEmitter(NativeModules.TrackierSDK);
 } else if (Platform.OS === "ios") {
     
 }

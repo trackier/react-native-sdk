@@ -44,7 +44,7 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
         trackierEvent.revenue = Double.parseDouble(trackierEventMap.getString("revenue"));
 
         Map<String, Object> ev = TrackierUtil.toMap(trackierEventMap.getMap("ev"));
-        if (null != ev) {
+        if (ev != null) {
             for (Map.Entry<String, Object> entry : ev.entrySet()) {
                 addEventValues(entry.getKey(), entry.getValue().toString());
             }
