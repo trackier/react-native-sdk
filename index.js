@@ -15,18 +15,16 @@ if (Platform.OS === "android") {
     
 }
 
-var TrackierSDK = {};
-
-var TrackierSDK = function(appToken,environment){
+var TrackierConfig = function(appToken,environment){
     this.appToken = appToken ;
     this.environment = environment ;
 }
 
-TrackierSDK.prototype.initialize = function(initializeSDKParams){
-    module_trackier.initializeSDK(initializeSDKParams)
+TrackierSDK.initialize = function(TrackierConfig){
+    module_trackier.initializeSDK(TrackierConfig)
 };
 
-TrackierSDK.prototype.TrackEvent = function(trackEvent){
+TrackierSDK.TrackEvent = function(trackEvent){
     module_trackier.TrackEvent(trackEvent)
 };
 
@@ -73,6 +71,7 @@ trackEvent.prototype.setEventValue = function(key, value) {
 };
 
 module.exports = {
+    TrackierConfig,
     TrackierSDK,
     trackEvent,
 }
