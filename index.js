@@ -22,15 +22,15 @@ var TrackierConfig = function(appToken,environment){
 
 var TrackierSDK = {};
 
-TrackierSDK.initialize = function(TrackierConfig){
-    module_trackier.initializeSDK(TrackierConfig)
+TrackierSDK.initialize = function(trackierConfig){
+    module_trackier.initializeSDK(trackierConfig)
 };
 
 TrackierSDK.TrackEvent = function(trackEvent){
     module_trackier.TrackEvent(trackEvent)
 };
 
-var trackEvent = function(eventId) {
+var TrackEvent = function(eventId) {
     this.eventId = eventId;
     this.orderId = null ;
     this.currency = null ;
@@ -65,7 +65,7 @@ var trackEvent = function(eventId) {
     this.UPDATE = "sEQWVHGThl"
 }
 
-trackEvent.prototype.setEventValue = function(key, value) {
+TrackEvent.prototype.setEventValue = function(key, value) {
     if (typeof key !== 'string' || typeof value !== 'string') {
         return;
     }
@@ -75,5 +75,5 @@ trackEvent.prototype.setEventValue = function(key, value) {
 module.exports = {
     TrackierConfig,
     TrackierSDK,
-    trackEvent,
+    TrackEvent,
 }
