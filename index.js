@@ -47,23 +47,23 @@ var TrackEvent = function(eventId) {
     this.revenue = null ;
 
     this.ev = {};
-
-    this.LEVEL_ACHIEVED = "1CFfUn3xEY"
-    this.ADD_TO_CART = "Fy4uC1_FlN"
-    this.ADD_TO_WISHLIST = "AOisVC76YG"
-    this.COMPLETE_REGISTRATION = "mEqP4aD8dU"
-    this.TUTORIAL_COMPLETION = "99VEGvXjN7"
-    this.PURCHASE = "Q4YsqBKnzZ"
-    this.SUBSCRIBE = "B4N_In4cIP"
-    this.START_TRIAL = "jYHcuyxWUW"
-    this.ACHIEVEMENT_UNLOCKED = "xTPvxWuNqm"
-    this.CONTENT_VIEW = "Jwzois1ays"
-    this.TRAVEL_BOOKING = "yP1-ipVtHV"
-    this.SHARE = "dxZXGG1qqL"
-    this.INVITE = "7lnE3OclNT"
-    this.LOGIN = "o91gt1Q0PK"
-    this.UPDATE = "sEQWVHGThl"
 }
+
+    TrackEvent.LEVEL_ACHIEVED = "1CFfUn3xEY"
+    TrackEvent.ADD_TO_CART = "Fy4uC1_FlN"
+    TrackEvent.ADD_TO_WISHLIST = "AOisVC76YG"
+    TrackEvent.COMPLETE_REGISTRATION = "mEqP4aD8dU"
+    TrackEvent.TUTORIAL_COMPLETION = "99VEGvXjN7"
+    TrackEvent.PURCHASE = "Q4YsqBKnzZ"
+    TrackEvent.SUBSCRIBE = "B4N_In4cIP"
+    TrackEvent.START_TRIAL = "jYHcuyxWUW"
+    TrackEvent.ACHIEVEMENT_UNLOCKED = "xTPvxWuNqm"
+    TrackEvent.CONTENT_VIEW = "Jwzois1ays"
+    TrackEvent.TRAVEL_BOOKING = "yP1-ipVtHV"
+    TrackEvent.SHARE = "dxZXGG1qqL"
+    TrackEvent.INVITE = "7lnE3OclNT"
+    TrackEvent.LOGIN = "o91gt1Q0PK"
+    TrackEvent.UPDATE = "sEQWVHGThl"
 
 TrackEvent.prototype.setEventValue = function(key, value) {
     if (typeof key !== 'string' || typeof value !== 'string') {
