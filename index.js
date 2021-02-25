@@ -26,8 +26,8 @@ TrackierSDK.initialize = function(trackierConfig){
     module_trackier.initializeSDK(trackierConfig)
 };
 
-TrackierSDK.TrackEvent = function(trackEvent){
-    module_trackier.TrackEvent(trackEvent)
+TrackierSDK.trackEvent = function(trackEvent){
+    module_trackier.trackEvent(trackEvent)
 };
 
 var TrackEvent = function(eventId) {
