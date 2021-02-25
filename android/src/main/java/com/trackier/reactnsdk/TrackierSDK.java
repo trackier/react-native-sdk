@@ -8,11 +8,12 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class TrackierSDK extends ReactContextBaseJavaModule {
-    TrackierSDK(ReactApplicationContext context) {
+
+    private Map<String, String> ev;
+
+    public TrackierSDK(ReactApplicationContext context) {
         super(context);
     }
-
-    Map<String, String> ev;
 
     @Override
     public String getName() {
@@ -21,13 +22,12 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void initializeSDK(ReadableMap initializeMap) {
-        com.trackier.sdk.TrackierSDKConfig sdkConfig = new  com.trackier.sdk.TrackierSDKConfig(getReactApplicationContext(), initializeMap.getString("appToken"), initializeMap.getString("environment"));
+        com.trackier.sdk.TrackierSDKConfig sdkConfig = new com.trackier.sdk.TrackierSDKConfig(getReactApplicationContext(), initializeMap.getString("appToken"), initializeMap.getString("environment"));
         com.trackier.sdk.TrackierSDK.initialize(sdkConfig);
     }
 
     @ReactMethod
-    public void TrackEvent(ReadableMap trackierEventMap) {
-
+    public void trackEvent(ReadableMap trackierEventMap) {
         com.trackier.sdk.TrackierEvent trackierEvent = new com.trackier.sdk.TrackierEvent(trackierEventMap.getString("id"));
         trackierEvent.orderId = trackierEventMap.getString("orderId");
         trackierEvent.currency = trackierEventMap.getString("currency");
