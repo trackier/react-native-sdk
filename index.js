@@ -20,6 +20,8 @@ var TrackierConfig = function(appToken,environment){
     this.environment = environment ;
 }
 
+var TrackierSDK = {};
+
 TrackierSDK.initialize = function(TrackierConfig){
     module_trackier.initializeSDK(TrackierConfig)
 };
