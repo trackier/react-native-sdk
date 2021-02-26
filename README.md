@@ -10,7 +10,7 @@ Integrate the SDK into your app
 
 You should use the following import statement on top of your .js file
 
-     import { TrackierConfig, TrackierSDK, TrackEvent} from 'react-native-trackier-sdk';
+     import { TrackierConfig, TrackierSDK, TrackierEvent} from 'react-native-trackier-sdk';
 
 In your App.js file, add the following code to initialize the Trackier SDK:
 
@@ -21,16 +21,16 @@ Event Tracking :-
 
 1)Event track with Trackier React Native SDK:-
    
-      var trackEvent = new TrackEvent(TrackEvent.UPDATE);
-      trackEvent.param1 = "XXXXXX";
-      trackEvent.param2 = "kkkkkkk";
-      TrackierSDK.trackierEvent(trackEvent);
+      var trackierEvent = new TrackierEvent(TrackierEvent.UPDATE);
+      trackierEvent.param1 = "XXXXXX";
+      trackierEvent.param2 = "kkkkkkk";
+      TrackierSDK.trackEvent(trackierEvent);
 
 2)Event track with currency and revenue with Trackier React Native SDK:- 
 
-       var trackEvent = new TrackEvent(TrackEvent.UPDATE);
-       trackEvent.param1 = "XXXXXX";
-       trackEvent.param2 = "kkkkkkk";
-       trackEvent.revenue = 2.5;
-       trackEvent.currency = "USD";
-       trackEvent.trackierEvent(trackEvent);
+       var trackierEvent = new TrackierEvent(TrackEvent.UPDATE);
+       trackierEvent.param1 = "XXXXXX";
+       trackierEvent.param2 = "kkkkkkk";
+       trackierEvent.revenue = 2.5;
+       trackierEvent.currency = "USD";
+       TrackierSDK.trackEvent(trackierEvent);
