@@ -28,20 +28,74 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void trackEvent(ReadableMap trackierEventMap) {
-        com.trackier.sdk.TrackierEvent trackierEvent = new com.trackier.sdk.TrackierEvent(trackierEventMap.getString("id"));
-        trackierEvent.orderId = trackierEventMap.getString("orderId");
-        trackierEvent.currency = trackierEventMap.getString("currency");
+        com.trackier.sdk.TrackierEvent trackierEvent = new com.trackier.sdk.TrackierEvent(trackierEventMap.getString("eventID"));
+        
+        trackierEvent.orderId = null ;
+        trackierEvent.currency = null ;
+        trackierEvent.param1 = null ;
+        trackierEvent.param2 = null ;
+        trackierEvent.param3 = null ;
+        trackierEvent.param4 = null ;
+        trackierEvent.param5 = null ;
+        trackierEvent.param6 = null ;
+        trackierEvent.param7 = null ;
+        trackierEvent.param8 = null ;
+        trackierEvent.param9 = null ;
+        trackierEvent.param10 = null ;
+        trackierEvent.revenue = null ;
+
+        if(trackierEventMap.getString("orderId")!= null){
+
+            trackierEvent.orderId = trackierEventMap.getString("orderId");
+        }
+        if(trackierEventMap.getString("currency")!= null){
+            
+           trackierEvent.currency = trackierEventMap.getString("currency");
+        }
+        if(trackierEventMap.getString("param1")!= null){
+            
         trackierEvent.param1 = trackierEventMap.getString("param1");
+        }
+        if(trackierEventMap.getString("param2")!= null){
+            
         trackierEvent.param2 = trackierEventMap.getString("param2");
+        }
+        if(trackierEventMap.getString("param3")!= null){
+            
         trackierEvent.param3 = trackierEventMap.getString("param3");
+        }
+        if(trackierEventMap.getString("param4")!= null){
+            
         trackierEvent.param4 = trackierEventMap.getString("param4");
+        }
+        if(trackierEventMap.getString("param5")!= null){
+            
         trackierEvent.param5 = trackierEventMap.getString("param5");
+        }
+        if(trackierEventMap.getString("param6")!= null){
+            
         trackierEvent.param6 = trackierEventMap.getString("param6");
+        }
+        if(trackierEventMap.getString("param7")!= null){
+            
         trackierEvent.param7 = trackierEventMap.getString("param7");
+        }
+        if(trackierEventMap.getString("param8")!= null){
+            
         trackierEvent.param8 = trackierEventMap.getString("param8");
+        }
+        if(trackierEventMap.getString("param9")!= null){
+            
         trackierEvent.param9 = trackierEventMap.getString("param9");
+        }
+        if(trackierEventMap.getString("param10")!= null){
+            
         trackierEvent.param10 = trackierEventMap.getString("param10");
-        trackierEvent.revenue = Double.parseDouble(trackierEventMap.getString("revenue"));
+        }
+        if(trackierEventMap.getDouble("revenue")!= null){
+            
+        trackierEvent.revenue = trackierEventMap.getDouble("revenue");
+        }
 
         Map<String, Object> ev = TrackierUtil.toMap(trackierEventMap.getMap("ev"));
         if (ev != null) {
