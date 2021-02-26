@@ -8,29 +8,22 @@ import {
 
 const module_trackier = NativeModules.TrackierSDK;
 
-let module_trackier_emitter = null;
-if (Platform.OS === "android") {
-    module_trackier_emitter = new NativeEventEmitter(NativeModules.TrackierSDK);
-} else if (Platform.OS === "ios") {
-    
-}
-
-var TrackierSDK = {};
-
-var TrackierSDK = function(appToken,environment){
+var TrackierConfig = function(appToken,environment){
     this.appToken = appToken ;
     this.environment = environment ;
 }
 
-TrackierSDK.prototype.initialize = function(initializeSDKParams){
-    module_trackier.initializeSDK(initializeSDKParams)
+var TrackierSDK = {};
+
+TrackierSDK.initialize = function(trackierConfig){
+    module_trackier.initializeSDK(trackierConfig)
 };
 
-TrackierSDK.prototype.TrackEvent = function(trackEvent){
-    module_trackier.TrackEvent(trackEvent)
+TrackierSDK.trackEvent = function(trackierEvent){
+    module_trackier.trackEvent(trackierEvent)
 };
 
-var trackEvent = function(eventId) {
+var TrackierEvent = function(eventId) {
     this.eventId = eventId;
     this.orderId = null ;
     this.currency = null ;
@@ -47,25 +40,25 @@ var trackEvent = function(eventId) {
     this.revenue = null ;
 
     this.ev = {};
-
-    this.LEVEL_ACHIEVED = "1CFfUn3xEY"
-    this.ADD_TO_CART = "Fy4uC1_FlN"
-    this.ADD_TO_WISHLIST = "AOisVC76YG"
-    this.COMPLETE_REGISTRATION = "mEqP4aD8dU"
-    this.TUTORIAL_COMPLETION = "99VEGvXjN7"
-    this.PURCHASE = "Q4YsqBKnzZ"
-    this.SUBSCRIBE = "B4N_In4cIP"
-    this.START_TRIAL = "jYHcuyxWUW"
-    this.ACHIEVEMENT_UNLOCKED = "xTPvxWuNqm"
-    this.CONTENT_VIEW = "Jwzois1ays"
-    this.TRAVEL_BOOKING = "yP1-ipVtHV"
-    this.SHARE = "dxZXGG1qqL"
-    this.INVITE = "7lnE3OclNT"
-    this.LOGIN = "o91gt1Q0PK"
-    this.UPDATE = "sEQWVHGThl"
 }
 
-trackEvent.prototype.setEventValue = function(key, value) {
+    TrackierEvent.LEVEL_ACHIEVED = "1CFfUn3xEY"
+    TrackierEvent.ADD_TO_CART = "Fy4uC1_FlN"
+    TrackierEvent.ADD_TO_WISHLIST = "AOisVC76YG"
+    TrackierEvent.COMPLETE_REGISTRATION = "mEqP4aD8dU"
+    TrackierEvent.TUTORIAL_COMPLETION = "99VEGvXjN7"
+    TrackierEvent.PURCHASE = "Q4YsqBKnzZ"
+    TrackierEvent.SUBSCRIBE = "B4N_In4cIP"
+    TrackierEvent.START_TRIAL = "jYHcuyxWUW"
+    TrackierEvent.ACHIEVEMENT_UNLOCKED = "xTPvxWuNqm"
+    TrackierEvent.CONTENT_VIEW = "Jwzois1ays"
+    TrackierEvent.TRAVEL_BOOKING = "yP1-ipVtHV"
+    TrackierEvent.SHARE = "dxZXGG1qqL"
+    TrackierEvent.INVITE = "7lnE3OclNT"
+    TrackierEvent.LOGIN = "o91gt1Q0PK"
+    TrackierEvent.UPDATE = "sEQWVHGThl"
+
+TrackierEvent.prototype.setEventValue = function(key, value) {
     if (typeof key !== 'string' || typeof value !== 'string') {
         return;
     }
@@ -73,6 +66,7 @@ trackEvent.prototype.setEventValue = function(key, value) {
 };
 
 module.exports = {
+    TrackierConfig,
     TrackierSDK,
-    trackEvent,
+    TrackierEvent,
 }
