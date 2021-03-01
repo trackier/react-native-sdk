@@ -1,4 +1,4 @@
-package com.trackier.sdk;
+package com.trackier.reactsdk;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
