@@ -1,7 +1,7 @@
 {
   "name": "react-native-trackier-sdk",
   "description": "Trackier React Native SDK",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Dev <dev@trackier.com>",
   "dependencies": {
     "react": "16.9.0",
