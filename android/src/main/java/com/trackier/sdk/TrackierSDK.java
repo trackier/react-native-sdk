@@ -26,7 +26,7 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 
 	@ReactMethod
 	public void trackEvent(ReadableMap trackierEventMap) {
-		com.trackier.sdk.TrackierEvent trackierEvent = new com.trackier.sdk.TrackierEvent(trackierEventMap.getString("eventID"));
+		com.trackier.sdk.TrackierEvent trackierEvent = new com.trackier.sdk.TrackierEvent(trackierEventMap.getString("eventId"));
 		
 		trackierEvent.orderId = null;
 		trackierEvent.currency = null;
