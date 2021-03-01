@@ -4,7 +4,7 @@ module.exports = {
   dependency: {
     platforms: {
       android: {
-        packageImportPath: 'import com.trackier.sdk.TrackierPackage;',
+        packageImportPath: 'import com.trackier.reactsdk.TrackierPackage;',
         packageInstance: 'new TrackierPackage()',
       },
     },
