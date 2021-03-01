@@ -23,6 +23,9 @@ TrackierSDK.trackEvent = function(trackierEvent){
     module_trackier.trackEvent(trackierEvent)
 };
 
+TrackierConfig.EnvironmentDevelopment = "development";
+TrackierConfig.EnvironmentProduction = "production";
+
 var TrackierEvent = function(eventId) {
     this.eventId = eventId;
     this.orderId = null ;

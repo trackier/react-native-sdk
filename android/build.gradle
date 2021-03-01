@@ -28,6 +28,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.facebook.react:react-native:+'
-     implementation 'com.trackier:android-sdk:1.0.1'
+     implementation 'com.trackier:android-sdk:1.0.2'
     implementation 'com.android.installreferrer:installreferrer:2.2'
 }

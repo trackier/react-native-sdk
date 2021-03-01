@@ -1,4 +1,4 @@
-package com.trackier.reactnsdk;
+package com.trackier.reactsdk;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;
@@ -19,7 +19,7 @@ public class TrackierPackage implements ReactPackage {
    @Override
    public List<NativeModule> createNativeModules(
            ReactApplicationContext reactContext) {
-       List<NativeModule> modules = new ArrayList<>();
+           List<NativeModule> modules = new ArrayList<>();
 
        modules.add(new TrackierSDK(reactContext));
 
