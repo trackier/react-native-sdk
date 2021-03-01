@@ -44,55 +44,55 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
         trackierEvent.param10 = null ;
         trackierEvent.revenue = null ;
 
-        if(trackierEventMap.getString("orderId")!= null){
+        if (checkKey(trackierEventMap, "orderId")){
 
             trackierEvent.orderId = trackierEventMap.getString("orderId");
         }
-        if(trackierEventMap.getString("currency")!= null){
+        if (checkKey(trackierEventMap, "currency")){
             
            trackierEvent.currency = trackierEventMap.getString("currency");
         }
-        if(trackierEventMap.getString("param1")!= null){
+        if (checkKey(trackierEventMap, "param1")){
             
         trackierEvent.param1 = trackierEventMap.getString("param1");
         }
-        if(trackierEventMap.getString("param2")!= null){
+        if (checkKey(trackierEventMap, "param2")){
             
         trackierEvent.param2 = trackierEventMap.getString("param2");
         }
-        if(trackierEventMap.getString("param3")!= null){
+        if (checkKey(trackierEventMap, "param3")){
             
         trackierEvent.param3 = trackierEventMap.getString("param3");
         }
-        if(trackierEventMap.getString("param4")!= null){
+        if (checkKey(trackierEventMap, "param4")){
             
         trackierEvent.param4 = trackierEventMap.getString("param4");
         }
-        if(trackierEventMap.getString("param5")!= null){
+        if (checkKey(trackierEventMap, "param5")){
             
         trackierEvent.param5 = trackierEventMap.getString("param5");
         }
-        if(trackierEventMap.getString("param6")!= null){
+        if (checkKey(trackierEventMap, "param6")){
             
         trackierEvent.param6 = trackierEventMap.getString("param6");
         }
-        if(trackierEventMap.getString("param7")!= null){
+        if (checkKey(trackierEventMap, "param7")){
             
         trackierEvent.param7 = trackierEventMap.getString("param7");
         }
-        if(trackierEventMap.getString("param8")!= null){
+        if (checkKey(trackierEventMap, "param8")){
             
         trackierEvent.param8 = trackierEventMap.getString("param8");
         }
-        if(trackierEventMap.getString("param9")!= null){
+        if (checkKey(trackierEventMap, "appToken")){
             
         trackierEvent.param9 = trackierEventMap.getString("param9");
         }
-        if(trackierEventMap.getString("param10")!= null){
+        if (checkKey(trackierEventMap, "param10")){
             
         trackierEvent.param10 = trackierEventMap.getString("param10");
         }
-        if(trackierEventMap.getDouble("revenue")!= null){
+        if (checkKey(trackierEventMap, "revenue")){
             
         trackierEvent.revenue = trackierEventMap.getDouble("revenue");
         }
@@ -113,6 +113,10 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
         String previousValue = ev.put(key, value);
         if (previousValue != null) {
         }
+    }
+
+    private boolean checkKey(ReadableMap map, String key) {
+        return map.hasKey(key) && !map.isNull(key);
     }
 
 }
