@@ -23,8 +23,6 @@ TrackierSDK.trackEvent = function(trackierEvent){
     module_trackier.trackEvent(trackierEvent)
 };
 
-var TrackierConfig = {};
-
 TrackierConfig.EnvironmentDevelopment = "development";
 TrackierConfig.EnvironmentProduction = "production";
 
@@ -74,5 +72,4 @@ module.exports = {
     TrackierConfig,
     TrackierSDK,
     TrackierEvent,
-    TrackierConfig,
 }
