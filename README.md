@@ -14,7 +14,12 @@ You should use the following import statement on top of your .js file
 
 In your App.js file, add the following code to initialize the Trackier SDK:
 
-    var trackierConfig = new TrackierConfig("app_token","environment");
+Depending on whether you build your app for testing or for production, you must set the environment with one of these values:
+      
+    TrackierConfig.EnvironmentDevelopment
+    TrackierConfig.EnvironmentProduction
+
+    var trackierConfig = new TrackierConfig("app_token", TrackierConfig.EnvironmentProduction);
     TrackierSDK.initialize(trackierConfig);
 
 Event Tracking :-
