@@ -1,4 +1,4 @@
-package com.trackier.nativemodule;
+package com.trackier.sdk;
 
 import java.util.Map;
 import java.util.HashMap;
