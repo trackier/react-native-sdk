@@ -83,7 +83,7 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 		}
 
 		Map<String, Object> eventValues = TrackierUtil.toMap(trackierEventMap.getMap("ev"));
-		Map<String, String> ev = new LinkedHashMap<String, String>();
+		Map<String, Object> ev = new LinkedHashMap<String, Object>();
 		if (eventValues != null) {
 			for (Map.Entry<String, Object> entry : eventValues.entrySet()) {
 				ev.put(entry.getKey(), entry.getValue().toString());
