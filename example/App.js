@@ -23,8 +23,6 @@ const App: () => React$Node = () => {
   var trackierConfig = new TrackierConfig("abcf2270-d94a-4364-a2ae-34903c6e1d53",TrackierConfig.EnvironmentDevelopment);
   TrackierSDK.initialize(trackierConfig);
 
-  console.log("hey................");
-
   function _onPress_trackSimpleEvent(){
     var trackierEvent = new TrackierEvent(TrackierEvent.UPDATE);
     trackierEvent.param1 = "XXXXXX";
