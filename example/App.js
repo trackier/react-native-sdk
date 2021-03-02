@@ -18,21 +18,18 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 import { TrackierConfig, TrackierSDK, TrackierEvent} from 'react-native-trackier-sdk';
-import { Adjust, AdjustEvent, AdjustConfig } from 'react-native-adjust';
 
 const App: () => React$Node = () => {
-  // var trackierConfig = new TrackierConfig("abcf2270-d94a-4364-a2ae-34903c6e1d53",TrackierConfig.EnvironmentDevelopment);
-  // TrackierSDK.initialize(trackierConfig);
-    const adjustConfig = new AdjustConfig("{YourAppToken}", AdjustConfig.EnvironmentSandbox);
-    Adjust.create(adjustConfig);
+  var trackierConfig = new TrackierConfig("abcf2270-d94a-4364-a2ae-34903c6e1d53",TrackierConfig.EnvironmentDevelopment);
+  TrackierSDK.initialize(trackierConfig);
 
   console.log("hey................");
 
   function _onPress_trackSimpleEvent(){
-    // var trackierEvent = new TrackierEvent(TrackierEvent.UPDATE);
-    // trackierEvent.param1 = "XXXXXX";
-    // trackierEvent.param2 = "kkkkkkk";
-    // TrackierSDK.trackEvent(trackierEvent);
+    var trackierEvent = new TrackierEvent(TrackierEvent.UPDATE);
+    trackierEvent.param1 = "XXXXXX";
+    trackierEvent.param2 = "kkkkkkk";
+    TrackierSDK.trackEvent(trackierEvent);
   }
   return (
     <>
