@@ -1,5 +1,5 @@
 # react-native-sdk
-Example app :- There is an example app inside the [example directory] (https://github.com/trackier/react-native-sdk/tree/main/example).
+Example app :- There is an example app inside the [example directory](https://github.com/trackier/react-native-sdk/tree/main/example).
 
 Basic integration
 First, download the library from npm:
