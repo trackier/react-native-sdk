@@ -1,4 +1,4 @@
-package com.trackier.reactsdk;
+package com.reactlibrary;
 
 import java.util.Map;
 import java.util.HashMap;

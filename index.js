@@ -1,9 +1,7 @@
 'use strict';
 
 import { 
-    NativeEventEmitter,
-    NativeModules,
-    Platform,
+    NativeModules
 } from 'react-native';
 
 const module_trackier = NativeModules.TrackierSDK;
@@ -73,3 +71,4 @@ module.exports = {
     TrackierSDK,
     TrackierEvent,
 }
+
