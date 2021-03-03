@@ -1,18 +1,42 @@
-# react-native-trackier
+# react-native-sdk
+Example app :- There is an example app inside the example directory.
 
-## Getting started
+Basic integration
+First, download the library from npm:
 
-`$ npm install react-native-trackier --save`
+     $ npm install trackier/react-native-sdk
 
-### Mostly automatic installation
+Integrate the SDK into your app 
 
-`$ react-native link react-native-trackier`
+You should use the following import statement on top of your .js file
 
-## Usage
+     import { TrackierConfig, TrackierSDK, TrackierEvent} from 'react-native-trackier-sdk';
 
-```javascript
-import ReactNativeSdk from "react-native-trackier";
+In your App.js file, add the following code to initialize the Trackier SDK:
 
-// TODO: What to do with the module?
-ReactNativeSdk;
+Depending on whether you build your app for testing or for production, you must set the environment with one of these values:
 ```
+TrackierConfig.EnvironmentDevelopment
+TrackierConfig.EnvironmentProduction
+```
+
+    var trackierConfig = new TrackierConfig("app_token", TrackierConfig.EnvironmentProduction);
+    TrackierSDK.initialize(trackierConfig);
+
+Event Tracking :-
+
+1)Event track with Trackier React Native SDK:-
+   
+      var trackierEvent = new TrackierEvent(TrackierEvent.UPDATE);
+      trackierEvent.param1 = "XXXXXX";
+      trackierEvent.param2 = "kkkkkkk";
+      TrackierSDK.trackEvent(trackierEvent);
+
+2)Event track with currency and revenue with Trackier React Native SDK:- 
+
+       var trackierEvent = new TrackierEvent(TrackEvent.UPDATE);
+       trackierEvent.param1 = "XXXXXX";
+       trackierEvent.param2 = "kkkkkkk";
+       trackierEvent.revenue = 2.5;
+       trackierEvent.currency = "USD";
+       TrackierSDK.trackEvent(trackierEvent);
