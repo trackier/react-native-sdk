@@ -10,7 +10,7 @@ Integrate the SDK into your app
 
 You should use the following import statement on top of your .js file
 
-     import { TrackierConfig, TrackierSDK, TrackierEvent} from 'react-native-trackier-sdk';
+     import { TrackierConfig, TrackierSDK, TrackierEvent} from 'react-native-trackier';
 
 In your App.js file, add the following code to initialize the Trackier SDK:
 
