@@ -17,7 +17,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import { TrackierConfig, TrackierSDK, TrackierEvent} from 'react-native-react-native-sdk';
+import { TrackierConfig, TrackierSDK, TrackierEvent} from 'react-native-trackier';
 
 const App: () => React$Node = () => {
   var trackierConfig = new TrackierConfig("abcf2270-d94a-4364-a2ae-34903c6e1d53",TrackierConfig.EnvironmentDevelopment);

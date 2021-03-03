@@ -1,6 +1,5 @@
 declare module 'react-native-trackier' {
     type Environment = 'development' | 'production'
-    type LogLevel = string
 
     export class TrackierConfig{
         constructor(appToken: string, environment: Environment)
