@@ -20,7 +20,7 @@ import {
 import { TrackierConfig, TrackierSDK, TrackierEvent} from 'react-native-trackier';
 
 const App: () => React$Node = () => {
-  var trackierConfig = new TrackierConfig("abcf2270-d94a-4364-a2ae-34903c6e1d53",TrackierConfig.EnvironmentDevelopment);
+  var trackierConfig = new TrackierConfig("xxxx-xx-4505-bc8b-xx",TrackierConfig.EnvironmentDevelopment);
   TrackierSDK.initialize(trackierConfig);
 
   function _onPress_trackSimpleEvent(){
