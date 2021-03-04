@@ -34,7 +34,7 @@ Event Tracking :-
 
 2)Event track with currency and revenue with Trackier React Native SDK:- 
 
-       var trackierEvent = new TrackierEvent(TrackEvent.UPDATE);
+       var trackierEvent = new TrackierEvent(TrackierEvent.UPDATE);
        trackierEvent.param1 = "XXXXXX";
        trackierEvent.param2 = "kkkkkkk";
        trackierEvent.revenue = 2.5;
