@@ -30,7 +30,7 @@ const App: () => React$Node = () => {
     TrackierSDK.trackEvent(trackierEvent);
   }
   function _onPress_trackRevenueEvent(){
-    var trackierEvent1 = new TrackierEvent(TrackierEvent.UPDATE);
+    var trackierEvent1 = new TrackierEvent(TrackierEvent.PURCHASE);
     trackierEvent1.param1 = "XXXXXX";
     trackierEvent1.param2 = "kkkkkkk";
     trackierEvent1.revenue = 2.5;
