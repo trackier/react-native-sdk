@@ -5,12 +5,12 @@
 //
 //
 #import "TrackierSDK.h"
-#import <React/Base/RCTLog.h>
+#import <React/RCTLog.h>
 
 @implementation TrackierSDK
 
 // To export a module named TrackierSDK
-RCT_EXPORT_MODULE()
+RCT_EXPORT_MODULE(TrackierSDK);
 
 RCT_EXPORT_METHOD(initializeSDK:(NSDictionary *)dict)
 {

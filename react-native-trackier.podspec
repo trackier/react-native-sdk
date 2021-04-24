@@ -3,26 +3,22 @@ require "json"
 package = JSON.parse(File.read(File.join(__dir__, "package.json")))
 
 Pod::Spec.new do |s|
-  s.name         = "react-native-trackier"
-  s.version      = package["version"]
-  s.summary      = package["description"]
-  s.description  = <<-DESC
-                  react-native-trackier
-                   DESC
-  s.homepage     = "https://github.com/github_account/react-native-trackier"
-  # brief license entry:
-  s.license      = "MIT"
-  # optional - use expanded license entry instead:
-  # s.license    = { :type => "MIT", :file => "LICENSE" }
+  s.name           = package['name']
+  s.version        = '1.0.0'
+  s.summary        = package['title']
+  s.description    = package['description']
+  s.license        = package['license']
+  s.author         = package['author']
+  s.homepage     = "https://github.com/trackier/react-native-sdk"
   s.authors      = { "Dev" => "dev@trackier.com" }
-  s.platforms    = { :ios => "9.0" }
+  s.platforms    = { :ios => "12.0" }
+  s.swift_version = '5.0'
   s.source       = { :git => "https://github.com/trackier/react-native-sdk.git", :tag => "#{s.version}" }
 
-  s.source_files = "ios/**/*.{h,c,m,swift}"
+  s.source_files = "ios/*.{h,c,m,swift}"
   s.requires_arc = true
 
   s.dependency "React"
-  # ...
-  # s.dependency "..."
+  s.dependency 'trackier-ios-sdk', '1.3.4'
 end
 
