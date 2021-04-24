@@ -1,28 +1,33 @@
-# Uncomment the next line to define a global platform for your project
- platform :ios, '12.0'
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-target 'Awesome' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
+platform :ios, '12.0'
 
-  # Pods for Awesome
+target 'example' do
+  config = use_native_modules!
 
-  target 'Awesome-tvOSTests' do
-    inherit! :search_paths
+  use_react_native!(:path => config["reactNativePath"])
+
+  target 'exampleTests' do
+    inherit! :complete
     # Pods for testing
   end
 
-  target 'AwesomeTests' do
-    inherit! :search_paths
-    # Pods for testing
+  # Enables Flipper.
+  #
+  # Note that if you have use_frameworks! enabled, Flipper will not work and
+  # you should disable these next few lines.
+  use_flipper!({ 'Flipper' => '0.74.0' })
+  post_install do |installer|
+    flipper_post_install(installer)
   end
-
 end
 
-target 'Awesome-tvOS' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
+target 'example-tvOS' do
+  # Pods for example-tvOS
 
-  # Pods for Awesome-tvOS
-
+  target 'example-tvOSTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
 end
