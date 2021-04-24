@@ -1,0 +1,6 @@
+framework module trackier_ios_sdk {
+  umbrella header "trackier-ios-sdk-umbrella.h"
+
+  export *
+  module * { export * }
+}

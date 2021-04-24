@@ -1,0 +1,6 @@
+framework module Willow {
+  umbrella header "Willow-umbrella.h"
+
+  export *
+  module * { export * }
+}
