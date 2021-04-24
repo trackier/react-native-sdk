@@ -5,7 +5,7 @@
 //
 //
 #import "TrackierSDK.h"
-#import <React/RCTLog.h>
+#import <React/Base/RCTLog.h>
 
 @implementation TrackierSDK
 
