@@ -3,5 +3,5 @@
 //
 #import "React/Base/RCTBridgeModule.h"
 
-@interface TrackierIosSdk : NSObject <RCTBridgeModule>
+@interface TrackierSDK : NSObject <RCTBridgeModule>
 @end

@@ -10,12 +10,12 @@ import Foundation
 import trackier_ios_sdk
 
 @objc(TrackierSDK)
-class TrackierIosSdk: NSObject {
+class TrackierIosSDK: NSObject {
   
   @objc func initializeSDK(dict: NSDictionary) -> Void {
     
-    var RNappToken = dict["appToken"] as! String;
-    var RNenvironment = dict["environment"] as! String;
+    let RNappToken = dict["appToken"] as! String;
+    let RNenvironment = dict["environment"] as! String;
     
     let config = TrackierSDKConfig(appToken: RNappToken , env: RNenvironment)
     TrackierSDK.initialize(config: config)

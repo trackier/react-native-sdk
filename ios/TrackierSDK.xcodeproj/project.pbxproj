@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3C294B589E2F904531C837A3 /* Pods_TrackierSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 581BD538F8AA103420247CD4 /* Pods_TrackierSDK.framework */; };
-		671126942637E25200D79006 /* TrackierIosSdk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671126932637E25200D79006 /* TrackierIosSdk.swift */; };
-		671126972637E40C00D79006 /* TrackierIosSdk.m in Sources */ = {isa = PBXBuildFile; fileRef = 671126962637E40C00D79006 /* TrackierIosSdk.m */; };
+		671126CE2638174000D79006 /* TrackierIosSdk.m in Sources */ = {isa = PBXBuildFile; fileRef = 671126962637E40C00D79006 /* TrackierIosSdk.m */; };
+		671126D02638174700D79006 /* TrackierIosSdk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671126932637E25200D79006 /* TrackierIosSdk.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -167,8 +167,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				671126942637E25200D79006 /* TrackierIosSdk.swift in Sources */,
-				671126972637E40C00D79006 /* TrackierIosSdk.m in Sources */,
+				671126CE2638174000D79006 /* TrackierIosSdk.m in Sources */,
+				671126D02638174700D79006 /* TrackierIosSdk.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
