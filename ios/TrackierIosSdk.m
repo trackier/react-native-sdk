@@ -1,16 +1,18 @@
-
 //
-//  TrackierSDK.m
+//  TrackierIosSdk.m
 //  TrackierSDK
 //
+//  Created by Prakhar Srivastava on 27/04/21.
+//  Copyright © 2021 Trackier. All rights reserved.
 //
-#import "TrackierSDK.h"
+
+#import "TrackierSDK-Bridging-Header.h"
 #import <React/Base/RCTLog.h>
 
-@implementation TrackierSDK
+@implementation TrackierIosSdk
 
 // To export a module named TrackierSDK
-RCT_EXPORT_MODULE(TrackierSDK);
+RCT_EXPORT_MODULE();
 
 RCT_EXPORT_METHOD(initializeSDK:(NSDictionary *)dict)
 {
@@ -27,3 +29,4 @@ RCT_EXPORT_METHOD(trackEvent:(NSDictionary *)dict) {
 }
 
 @end
+
