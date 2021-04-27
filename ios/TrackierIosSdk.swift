@@ -21,6 +21,16 @@ class TrackierIosSDK: NSObject {
     TrackierSDK.initialize(config: config)
 
   }
+    
+    @objc func trackEvent(dict: NSDictionary) -> Void {
+      
+//      let RNappToken = dict["appToken"] as! String;
+//      let RNenvironment = dict["environment"] as! String;
+//
+//      let config = TrackierSDKConfig(appToken: RNappToken , env: RNenvironment)
+//      TrackierSDK.initialize(config: config)
+
+    }
   
 }
 
