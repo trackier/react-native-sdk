@@ -32,7 +32,7 @@
 //@end
 
 
-#import "React/Base/RCTBridgeModule.h"
+#import "React/RCTBridgeModule.h"
 @interface RCT_EXTERN_MODULE(TrackierSDK, NSObject)
 @end
 
