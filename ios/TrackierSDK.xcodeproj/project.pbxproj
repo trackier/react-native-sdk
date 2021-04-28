@@ -10,7 +10,74 @@
 		3C294B589E2F904531C837A3 /* Pods_TrackierSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 581BD538F8AA103420247CD4 /* Pods_TrackierSDK.framework */; };
 		671126CE2638174000D79006 /* TrackierIosSdk.m in Sources */ = {isa = PBXBuildFile; fileRef = 671126962637E40C00D79006 /* TrackierIosSdk.m */; };
 		671126D02638174700D79006 /* TrackierIosSdk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671126932637E25200D79006 /* TrackierIosSdk.swift */; };
+		6798103E2639F34700C40BA5 /* libcxxreact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6798102E2639F32800C40BA5 /* libcxxreact.a */; };
+		6798103F2639F34700C40BA5 /* libcxxreact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 679810302639F32800C40BA5 /* libcxxreact.a */; };
+		679810402639F34700C40BA5 /* libjschelpers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 679810322639F32800C40BA5 /* libjschelpers.a */; };
+		679810412639F34700C40BA5 /* libjschelpers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 679810342639F32800C40BA5 /* libjschelpers.a */; };
+		679810422639F34700C40BA5 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 679810262639F32800C40BA5 /* libReact.a */; };
+		679810432639F34700C40BA5 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 679810282639F32800C40BA5 /* libReact.a */; };
+		679810442639F34700C40BA5 /* libyoga.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6798102A2639F32800C40BA5 /* libyoga.a */; };
+		679810452639F34700C40BA5 /* libyoga.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6798102C2639F32800C40BA5 /* libyoga.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		679810252639F32800C40BA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6798101A2639F32800C40BA5 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 83CBBA2E1A601D0E00E9B192;
+			remoteInfo = React;
+		};
+		679810272639F32800C40BA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6798101A2639F32800C40BA5 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A28131D9B038B00D4039D;
+			remoteInfo = "React-tvOS";
+		};
+		679810292639F32800C40BA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6798101A2639F32800C40BA5 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D3C059A1DE3340900C268FA;
+			remoteInfo = yoga;
+		};
+		6798102B2639F32800C40BA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6798101A2639F32800C40BA5 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D3C06751DE3340C00C268FA;
+			remoteInfo = "yoga-tvOS";
+		};
+		6798102D2639F32800C40BA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6798101A2639F32800C40BA5 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D3CD9251DE5FBEC00167DC4;
+			remoteInfo = cxxreact;
+		};
+		6798102F2639F32800C40BA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6798101A2639F32800C40BA5 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D3CD9321DE5FBEE00167DC4;
+			remoteInfo = "cxxreact-tvOS";
+		};
+		679810312639F32800C40BA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6798101A2639F32800C40BA5 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D3CD90B1DE5FBD600167DC4;
+			remoteInfo = jschelpers;
+		};
+		679810332639F32800C40BA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6798101A2639F32800C40BA5 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D3CD9181DE5FBD800167DC4;
+			remoteInfo = "jschelpers-tvOS";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		58B511D91A9E6C8500147676 /* CopyFiles */ = {
@@ -32,6 +99,8 @@
 		671126922637E25200D79006 /* TrackierSDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TrackierSDK-Bridging-Header.h"; sourceTree = "<group>"; };
 		671126932637E25200D79006 /* TrackierIosSdk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackierIosSdk.swift; sourceTree = "<group>"; };
 		671126962637E40C00D79006 /* TrackierIosSdk.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrackierIosSdk.m; sourceTree = "<group>"; };
+		6798101A2639F32800C40BA5 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../../swift-modules-for-react-native/node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		679810612639F66900C40BA5 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/iOSSupport/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +108,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6798103E2639F34700C40BA5 /* libcxxreact.a in Frameworks */,
+				6798103F2639F34700C40BA5 /* libcxxreact.a in Frameworks */,
+				679810402639F34700C40BA5 /* libjschelpers.a in Frameworks */,
+				679810412639F34700C40BA5 /* libjschelpers.a in Frameworks */,
+				679810422639F34700C40BA5 /* libReact.a in Frameworks */,
+				679810432639F34700C40BA5 /* libReact.a in Frameworks */,
+				679810442639F34700C40BA5 /* libyoga.a in Frameworks */,
+				679810452639F34700C40BA5 /* libyoga.a in Frameworks */,
 				3C294B589E2F904531C837A3 /* Pods_TrackierSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,9 +143,26 @@
 			);
 			sourceTree = "<group>";
 		};
+		6798101B2639F32800C40BA5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				679810262639F32800C40BA5 /* libReact.a */,
+				679810282639F32800C40BA5 /* libReact.a */,
+				6798102A2639F32800C40BA5 /* libyoga.a */,
+				6798102C2639F32800C40BA5 /* libyoga.a */,
+				6798102E2639F32800C40BA5 /* libcxxreact.a */,
+				679810302639F32800C40BA5 /* libcxxreact.a */,
+				679810322639F32800C40BA5 /* libjschelpers.a */,
+				679810342639F32800C40BA5 /* libjschelpers.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		A03833429AE9F1F81D315E47 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				679810612639F66900C40BA5 /* JavaScriptCore.framework */,
+				6798101A2639F32800C40BA5 /* React.xcodeproj */,
 				581BD538F8AA103420247CD4 /* Pods_TrackierSDK.framework */,
 			);
 			name = Frameworks;
@@ -130,12 +224,77 @@
 			mainGroup = 58B511D21A9E6C8500147676;
 			productRefGroup = 58B511D21A9E6C8500147676;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 6798101B2639F32800C40BA5 /* Products */;
+					ProjectRef = 6798101A2639F32800C40BA5 /* React.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				58B511DA1A9E6C8500147676 /* TrackierSDK */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		679810262639F32800C40BA5 /* libReact.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libReact.a;
+			remoteRef = 679810252639F32800C40BA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		679810282639F32800C40BA5 /* libReact.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libReact.a;
+			remoteRef = 679810272639F32800C40BA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6798102A2639F32800C40BA5 /* libyoga.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libyoga.a;
+			remoteRef = 679810292639F32800C40BA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6798102C2639F32800C40BA5 /* libyoga.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libyoga.a;
+			remoteRef = 6798102B2639F32800C40BA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6798102E2639F32800C40BA5 /* libcxxreact.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libcxxreact.a;
+			remoteRef = 6798102D2639F32800C40BA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		679810302639F32800C40BA5 /* libcxxreact.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libcxxreact.a;
+			remoteRef = 6798102F2639F32800C40BA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		679810322639F32800C40BA5 /* libjschelpers.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libjschelpers.a;
+			remoteRef = 679810312639F32800C40BA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		679810342639F32800C40BA5 /* libjschelpers.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libjschelpers.a;
+			remoteRef = 679810332639F32800C40BA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		6F2DCDD54EC7EEFFF893A3CD /* [CP] Check Pods Manifest.lock */ = {
@@ -236,7 +395,7 @@
 					"-lc++",
 				);
 				SDKROOT = iphoneos;
-				"USER_HEADER_SEARCH_PATHS[arch=*]" = "$(SRCROOT)/../node_modules/react-native/React/Base";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "$(inherited) $(SRCROOT)/../node_modules/react-native/React/** $(SRCROOT)/../node_modules/react-native/ReactCommon/**";
 			};
 			name = Debug;
 		};
@@ -288,12 +447,14 @@
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
 				"OTHER_LDFLAGS[arch=*]" = (
 					"-ObjC",
 					"-lc++",
 				);
 				SDKROOT = iphoneos;
-				"USER_HEADER_SEARCH_PATHS[arch=*]" = "$(SRCROOT)/../node_modules/react-native/React/Base";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "$(inherited) $(SRCROOT)/../node_modules/react-native/React/** $(SRCROOT)/../node_modules/react-native/ReactCommon/**";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
