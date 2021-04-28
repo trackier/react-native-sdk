@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3C294B589E2F904531C837A3 /* Pods_TrackierSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 581BD538F8AA103420247CD4 /* Pods_TrackierSDK.framework */; };
-		671126CE2638174000D79006 /* TrackierIosSdk.m in Sources */ = {isa = PBXBuildFile; fileRef = 671126962637E40C00D79006 /* TrackierIosSdk.m */; };
-		671126D02638174700D79006 /* TrackierIosSdk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671126932637E25200D79006 /* TrackierIosSdk.swift */; };
+		677E5D38263A0527000CDA02 /* RNTrackierSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677E5D37263A0527000CDA02 /* RNTrackierSDK.swift */; };
+		677E5D45263A0631000CDA02 /* RNTrackierSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 677E5D44263A0631000CDA02 /* RNTrackierSDK.m */; };
 		6798103E2639F34700C40BA5 /* libcxxreact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6798102E2639F32800C40BA5 /* libcxxreact.a */; };
 		6798103F2639F34700C40BA5 /* libcxxreact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 679810302639F32800C40BA5 /* libcxxreact.a */; };
 		679810402639F34700C40BA5 /* libjschelpers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 679810322639F32800C40BA5 /* libjschelpers.a */; };
@@ -96,9 +96,9 @@
 		134814201AA4EA6300B7C361 /* libTrackierSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTrackierSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AC6B7F42BBEEE91E44DE886 /* Pods-TrackierSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackierSDK.debug.xcconfig"; path = "Target Support Files/Pods-TrackierSDK/Pods-TrackierSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		581BD538F8AA103420247CD4 /* Pods_TrackierSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrackierSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		671126922637E25200D79006 /* TrackierSDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TrackierSDK-Bridging-Header.h"; sourceTree = "<group>"; };
-		671126932637E25200D79006 /* TrackierIosSdk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackierIosSdk.swift; sourceTree = "<group>"; };
-		671126962637E40C00D79006 /* TrackierIosSdk.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrackierIosSdk.m; sourceTree = "<group>"; };
+		677E5D37263A0527000CDA02 /* RNTrackierSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNTrackierSDK.swift; sourceTree = "<group>"; };
+		677E5D42263A055D000CDA02 /* RNTrackierSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNTrackierSDK.h; sourceTree = "<group>"; };
+		677E5D44263A0631000CDA02 /* RNTrackierSDK.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNTrackierSDK.m; sourceTree = "<group>"; };
 		6798101A2639F32800C40BA5 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../../swift-modules-for-react-native/node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		679810612639F66900C40BA5 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/iOSSupport/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -134,12 +134,12 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				671126962637E40C00D79006 /* TrackierIosSdk.m */,
-				671126932637E25200D79006 /* TrackierIosSdk.swift */,
+				677E5D44263A0631000CDA02 /* RNTrackierSDK.m */,
+				677E5D42263A055D000CDA02 /* RNTrackierSDK.h */,
+				677E5D37263A0527000CDA02 /* RNTrackierSDK.swift */,
 				134814211AA4EA7D00B7C361 /* Products */,
 				A03833429AE9F1F81D315E47 /* Frameworks */,
 				F1D62F2F8EEF2F4D8A8239F2 /* Pods */,
-				671126922637E25200D79006 /* TrackierSDK-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -326,8 +326,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				671126CE2638174000D79006 /* TrackierIosSdk.m in Sources */,
-				671126D02638174700D79006 /* TrackierIosSdk.swift in Sources */,
+				677E5D38263A0527000CDA02 /* RNTrackierSDK.swift in Sources */,
+				677E5D45263A0631000CDA02 /* RNTrackierSDK.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +395,7 @@
 					"-lc++",
 				);
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = RNTrackierSDK.h;
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "$(inherited) $(SRCROOT)/../node_modules/react-native/React/** $(SRCROOT)/../node_modules/react-native/ReactCommon/**";
 			};
 			name = Debug;
@@ -454,6 +455,7 @@
 				);
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = RNTrackierSDK.h;
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "$(inherited) $(SRCROOT)/../node_modules/react-native/React/** $(SRCROOT)/../node_modules/react-native/ReactCommon/**";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -475,7 +477,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = TrackierSDK;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "TrackierSDK-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = RNTrackierSDK.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -497,7 +499,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = TrackierSDK;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "TrackierSDK-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = RNTrackierSDK.h;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
