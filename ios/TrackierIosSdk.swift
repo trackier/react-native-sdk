@@ -9,8 +9,8 @@
 import Foundation
 import trackier_ios_sdk
 
-@objc(TrackierSDK)
-class TrackierIosSDK: NSObject {
+@objc(RNTrackierSDK)
+class RNTrackierSDK: NSObject {
   
   @objc func initializeSDK(_ dict: NSDictionary) -> Void {
     
