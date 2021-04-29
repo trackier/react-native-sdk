@@ -42,20 +42,21 @@ class RNTrackierSDK: NSObject {
         let RNparam8   = dict["param8"] as! String;
         let RNparam9   = dict["param9"] as! String;
         let RNparam10  = dict["param10"] as! String;
-        let RNev       = {};
+       // let RNev       = {};
               
         let event = TrackierEvent(id: RNeventId)
         //event.addEventValue(RNev)
         event.setRevenue(revenue: Float64(RNrevenue.floatValue), currency: RNcurrency)
-        event.param1 = RNparam1
-        event.param2 = RNparam2
-        event.param3 = RNparam3
-        event.param4 = RNparam4
-        event.param5 = RNparam5
-        event.param6 = RNparam6
-        event.param7 = RNparam7
-        event.param8 = RNparam8
-        event.param9 = RNparam9
+        event.orderId = RNorderId
+        event.param1  = RNparam1
+        event.param2  = RNparam2
+        event.param3  = RNparam3
+        event.param4  = RNparam4
+        event.param5  = RNparam5
+        event.param6  = RNparam6
+        event.param7  = RNparam7
+        event.param8  = RNparam8
+        event.param9  = RNparam9
         event.param10 = RNparam10
         DispatchQueue.global().async {
             sleep(1)
