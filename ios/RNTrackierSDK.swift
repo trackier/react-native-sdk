@@ -46,7 +46,7 @@ class RNTrackierSDK: NSObject {
               
         let event = TrackierEvent(id: RNeventId)
         //event.addEventValue(RNev)
-        event.setRevenue(revenue: RNrevenue, currency: RNcurrency)
+        event.setRevenue(revenue: Float64(RNrevenue.floatValue), currency: RNcurrency)
         event.param1 = RNparam1
         event.param2 = RNparam2
         event.param3 = RNparam3
@@ -64,6 +64,10 @@ class RNTrackierSDK: NSObject {
       
       NSLog("inside swift module trackEvent");
 
+    } 
+}
+extension String {
+    var floatValue: Float {
+        return (self as NSString).floatValue
     }
-  
 }
