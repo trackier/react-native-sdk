@@ -27,23 +27,63 @@ class RNTrackierSDK: NSObject {
     
     @objc func trackEvent(_ dict: NSDictionary) -> Void {
       NSLog("trackEvent  dict %@ ", dict);
+
+        let RNrevenue  = ""
+        let RNeventId  = ""
+        let RNorderId  = ""
+        let RNparam1   = ""
+        let RNparam2   = ""
+        let RNparam3   = ""
+        let RNparam4   = ""
+        let RNparam5   = ""
+        let RNparam6   = ""
+        let RNparam7   = ""
+        let RNparam8   = ""
+        let RNparam9   = ""
+        let RNparam10  = ""
         
-        if !dict["currency"] .isEmpty{
-          let RNcurrency = dict["currency"] as? String;
+        if(dict["currency"]  == [NSNull null]){
+           RNcurrency = dict["currency"] as? String;
          }
-        let RNrevenue  = dict["revenue"] as? String;
-        let RNeventId  = dict["eventId"] as? String;
-        let RNorderId  = dict["orderId"] as? String;
-        let RNparam1   = dict["param1"] as? String;
-        let RNparam2   = dict["param2"] as? String;
-        let RNparam3   = dict["param3"] as? String;
-        let RNparam4   = dict["param4"] as? String;
-        let RNparam5   = dict["param5"] as? String;
-        let RNparam6   = dict["param6"] as? String;
-        let RNparam7   = dict["param7"] as? String;
-        let RNparam8   = dict["param8"] as? String;
-        let RNparam9   = dict["param9"] as? String;
-        let RNparam10  = dict["param10"] as? String;
+         if(dict["currency"]  == [NSNull null]){
+         RNrevenue  = dict["revenue"] as? String;
+         }
+         if(dict["currency"]  == [NSNull null]){
+         RNeventId  = dict["eventId"] as? String;
+         }
+         if(dict["currency"]  == [NSNull null]){
+         RNorderId  = dict["orderId"] as? String;
+         }
+         if(dict["currency"]  == [NSNull null]){
+         RNparam1   = dict["param1"] as? String;
+         }
+         if(dict["currency"]  == [NSNull null]){
+         RNparam2   = dict["param2"] as? String;
+         }
+         if(dict["currency"]  == [NSNull null]){
+         RNparam3   = dict["param3"] as? String;
+         }
+         if(dict["currency"]  == [NSNull null]){
+         RNparam4   = dict["param4"] as? String;
+         }
+         if(dict["currency"]  == [NSNull null]){
+         RNparam5   = dict["param5"] as? String;
+         }
+         if(dict["currency"]  == [NSNull null]){
+         RNparam6   = dict["param6"] as? String;
+         }
+         if(dict["currency"]  == [NSNull null]){
+         RNparam7   = dict["param7"] as? String;
+         }
+         if(dict["currency"]  == [NSNull null]){
+         RNparam8   = dict["param8"] as? String;
+         }
+         if(dict["currency"]  == [NSNull null]){
+         RNparam9   = dict["param9"] as? String;
+         }
+         if(dict["currency"]  == [NSNull null]){
+         RNparam10  = dict["param10"] as? String;
+         }
        // let RNev       = {};
               
         let event = TrackierEvent(id: RNeventId)
