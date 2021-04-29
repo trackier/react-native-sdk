@@ -26,8 +26,9 @@ class RNTrackierSDK: NSObject {
   }
     
     @objc func trackEvent(_ dict: NSDictionary) -> Void {
+      NSLog("trackEvent  dict %@ ", dict);
       
-    NSLog("inside swift module trackEvent");
+      NSLog("inside swift module trackEvent");
 
     }
   
