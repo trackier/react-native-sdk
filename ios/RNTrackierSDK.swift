@@ -14,22 +14,18 @@ class RNTrackierSDK: NSObject {
   
   @objc func initializeSDK(_ dict: NSDictionary) -> Void {
     
-    // let RNappToken = dict["appToken"] as! String;
-    // let RNenvironment = dict["environment"] as! String;
+    let RNappToken = dict["appToken"] as! String;
+    let RNenvironment = dict["environment"] as! String;
+    NSLog("inside swift module initializeSDK %@  and  %@",RNappToken,RNenvironment);
     
-    // let config = TrackierSDKConfig(appToken: RNappToken , env: RNenvironment)
-    // TrackierSDK.initialize(config: config)
+    let config = TrackierSDKConfig(appToken: RNappToken , env: RNenvironment)
+    TrackierSDK.initialize(config: config)
     NSLog("inside swift module initializeSDK");
 
   }
     
     @objc func trackEvent(_ dict: NSDictionary) -> Void {
       
-//      let RNappToken = dict["appToken"] as! String;
-//      let RNenvironment = dict["environment"] as! String;
-//
-//      let config = TrackierSDKConfig(appToken: RNappToken , env: RNenvironment)
-//      TrackierSDK.initialize(config: config)
     NSLog("inside swift module trackEvent");
 
     }
