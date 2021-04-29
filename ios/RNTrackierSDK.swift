@@ -43,20 +43,20 @@ class RNTrackierSDK: NSObject {
         var RNparam9 : String?
         var RNparam10: String?
         
-         RNcurrency = dict["currency"] as? String
-         RNrevenue  = dict["revenue"] as? String
-         RNeventId  = dict["eventId"] as? String
-         RNorderId  = dict["orderId"] as? String
-         RNparam1   = dict["param1"] as? String
-         RNparam2   = dict["param2"] as? String
-         RNparam3   = dict["param3"] as? String
-         RNparam4   = dict["param4"] as? String
-         RNparam5   = dict["param5"] as? String
-         RNparam6   = dict["param6"] as? String
-         RNparam7   = dict["param7"] as? String
-         RNparam8   = dict["param8"] as? String
-         RNparam9   = dict["param9"] as? String
-         RNparam10  = dict["param10"] as? String
+         RNcurrency = dict["currency"] as? String ?? ""
+         RNrevenue  = dict["revenue"] as? String  ?? ""
+         RNeventId  = dict["eventId"] as? String  ?? ""
+         RNorderId  = dict["orderId"] as? String  ?? ""
+         RNparam1   = dict["param1"] as? String   ?? ""
+         RNparam2   = dict["param2"] as? String   ?? ""
+         RNparam3   = dict["param3"] as? String   ?? ""
+         RNparam4   = dict["param4"] as? String   ?? ""
+         RNparam5   = dict["param5"] as? String   ?? ""
+         RNparam6   = dict["param6"] as? String   ?? ""
+         RNparam7   = dict["param7"] as? String   ?? ""
+         RNparam8   = dict["param8"] as? String   ?? ""
+         RNparam9   = dict["param9"] as? String   ?? ""
+         RNparam10  = dict["param10"] as? String  ?? "" 
        // let RNev       = {};
               
         let event = TrackierEvent(id: RNeventId)
