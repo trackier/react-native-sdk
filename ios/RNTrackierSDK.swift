@@ -45,7 +45,7 @@ class RNTrackierSDK: NSObject {
         let RNev       = {};
               
         let event = TrackierEvent(id: RNeventId)
-        event.addEventValue(RNev)
+        //event.addEventValue(RNev)
         event.setRevenue(revenue: RNrevenue, currency: RNcurrency)
         event.param1 = RNparam1
         event.param2 = RNparam2
