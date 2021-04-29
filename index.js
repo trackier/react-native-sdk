@@ -14,6 +14,7 @@ var TrackierConfig = function(appToken,environment){
 var TrackierSDK = {};
 
 TrackierSDK.initialize = function(trackierConfig){
+    console.log(module_trackier);
     module_trackier.initializeSDK(trackierConfig)
 };
 
