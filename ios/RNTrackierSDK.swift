@@ -28,19 +28,19 @@ class RNTrackierSDK: NSObject {
     @objc func trackEvent(_ dict: NSDictionary) -> Void {
       NSLog("trackEvent  dict %@ ", dict);
 
-        let RNrevenue  = ""
-        let RNeventId  = ""
-        let RNorderId  = ""
-        let RNparam1   = ""
-        let RNparam2   = ""
-        let RNparam3   = ""
-        let RNparam4   = ""
-        let RNparam5   = ""
-        let RNparam6   = ""
-        let RNparam7   = ""
-        let RNparam8   = ""
-        let RNparam9   = ""
-        let RNparam10  = ""
+        var RNrevenue  = ""
+        var RNeventId  = ""
+        var RNorderId  = ""
+        var RNparam1   = ""
+        var RNparam2   = ""
+        var RNparam3   = ""
+        var RNparam4   = ""
+        var RNparam5   = ""
+        var RNparam6   = ""
+        var RNparam7   = ""
+        var RNparam8   = ""
+        var RNparam9   = ""
+        var RNparam10  = ""
         
         if(dict["currency"]  == [NSNull null]){
            RNcurrency = dict["currency"] as? String;
