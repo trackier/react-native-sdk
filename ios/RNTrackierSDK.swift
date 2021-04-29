@@ -16,10 +16,10 @@ class RNTrackierSDK: NSObject {
 
     NSLog("initializeSDK  dict %@ ", dict);
     
-    let RNappToken = dict["appToken"] as! String;
-    let RNenvironment = dict["environment"] as! String;
+    let appToken = dict["appToken"] as! String;
+    let environment = dict["environment"] as! String;
     
-    let config = TrackierSDKConfig(appToken: RNappToken , env: RNenvironment)
+    let config = TrackierSDKConfig(appToken: appToken , env: environment)
     TrackierSDK.initialize(config: config)
     NSLog("inside swift module initializeSDK");
 
@@ -28,51 +28,51 @@ class RNTrackierSDK: NSObject {
     @objc func trackEvent(_ dict: NSDictionary) -> Void {
       NSLog("trackEvent  dict %@ ", dict);
 
-        var RNcurrency: String?
-        var RNrevenue: String?
-        var RNeventId: String?
-        var RNorderId: String?
-        var RNparam1: String?
-        var RNparam2: String?
-        var RNparam3 : String?
-        var RNparam4 : String?
-        var RNparam5 : String?
-        var RNparam6 : String?
-        var RNparam7 : String?
-        var RNparam8 : String?
-        var RNparam9 : String?
-        var RNparam10: String?
+        var currency: String?
+        var revenue: String?
+        var eventId: String?
+        var orderId: String?
+        var param1: String?
+        var param2: String?
+        var param3 : String?
+        var param4 : String?
+        var param5 : String?
+        var param6 : String?
+        var param7 : String?
+        var param8 : String?
+        var param9 : String?
+        var param10: String?
         
-         RNcurrency = dict["currency"] as? String ?? ""
-         RNrevenue  = dict["revenue"] as? String  ?? ""
-         RNeventId  = dict["eventId"] as? String  ?? ""
-         RNorderId  = dict["orderId"] as? String  ?? ""
-         RNparam1   = dict["param1"] as? String   ?? ""
-         RNparam2   = dict["param2"] as? String   ?? ""
-         RNparam3   = dict["param3"] as? String   ?? ""
-         RNparam4   = dict["param4"] as? String   ?? ""
-         RNparam5   = dict["param5"] as? String   ?? ""
-         RNparam6   = dict["param6"] as? String   ?? ""
-         RNparam7   = dict["param7"] as? String   ?? ""
-         RNparam8   = dict["param8"] as? String   ?? ""
-         RNparam9   = dict["param9"] as? String   ?? ""
-         RNparam10  = dict["param10"] as? String  ?? "" 
+         currency = dict["currency"] as? String ?? ""
+         revenue  = dict["revenue"] as? String  ?? ""
+         eventId  = dict["eventId"] as? String  ?? ""
+         orderId  = dict["orderId"] as? String  ?? ""
+         param1   = dict["param1"] as? String   ?? ""
+         param2   = dict["param2"] as? String   ?? ""
+         param3   = dict["param3"] as? String   ?? ""
+         param4   = dict["param4"] as? String   ?? ""
+         param5   = dict["param5"] as? String   ?? ""
+         param6   = dict["param6"] as? String   ?? ""
+         param7   = dict["param7"] as? String   ?? ""
+         param8   = dict["param8"] as? String   ?? ""
+         param9   = dict["param9"] as? String   ?? ""
+         param10  = dict["param10"] as? String  ?? "" 
        // let RNev       = {};
               
-        let event = TrackierEvent(id: RNeventId)
+        let event = TrackierEvent(id: eventId)
         //event.addEventValue(RNev)
-        event.setRevenue(revenue: Float64(RNrevenue.floatValue), currency: RNcurrency)
-        event.orderId = RNorderId
-        event.param1  = RNparam1
-        event.param2  = RNparam2
-        event.param3  = RNparam3
-        event.param4  = RNparam4
-        event.param5  = RNparam5
-        event.param6  = RNparam6
-        event.param7  = RNparam7
-        event.param8  = RNparam8
-        event.param9  = RNparam9
-        event.param10 = RNparam10
+        event.setRevenue(revenue: Float64(revenue.floatValue), currency: currency)
+        event.orderId = orderId
+        event.param1  = param1
+        event.param2  = param2
+        event.param3  = param3
+        event.param4  = param4
+        event.param5  = param5
+        event.param6  = param6
+        event.param7  = param7
+        event.param8  = param8
+        event.param9  = param9
+        event.param10 = param10
         DispatchQueue.global().async {
             sleep(1)
             TrackierSDK.trackEvent(event: event)
