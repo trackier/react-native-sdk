@@ -28,6 +28,7 @@ class RNTrackierSDK: NSObject {
     @objc func trackEvent(_ dict: NSDictionary) -> Void {
       NSLog("trackEvent  dict %@ ", dict);
 
+        var RNcurrency: String?
         var RNrevenue: String?
         var RNeventId: String?
         var RNorderId: String?
