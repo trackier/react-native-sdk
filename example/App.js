@@ -29,13 +29,27 @@ const App: () => React$Node = () => {
     trackierEvent.param2 = "kkkkkkk";
     TrackierSDK.trackEvent(trackierEvent);
   }
+  function _onPress_trackRevenueEvent(){
+    var trackierEvent1 = new TrackierEvent(TrackierEvent.PURCHASE);
+    trackierEvent1.param1 = "XXXXXX";
+    trackierEvent1.param2 = "kkkkkkk";
+    trackierEvent1.revenue = 2.5;
+    trackierEvent1.currency = "USD";
+    TrackierSDK.trackEvent(trackierEvent1);
+  }
   return (
     <>
       <View style={styles.container}>
+        <Text style={{ color: "grey", fontSize: 30 }}>Trackier React-Native Sdk</Text>
         <TouchableHighlight
           style={styles.button}
           onPress={_onPress_trackSimpleEvent}>
           <Text>Track Simple Event</Text>
+        </TouchableHighlight>
+        <TouchableHighlight
+          style={styles.button}
+          onPress={_onPress_trackRevenueEvent}>
+          <Text>Track Revenue Event</Text>
         </TouchableHighlight>
         </View>
     </>
@@ -56,6 +70,7 @@ const styles = StyleSheet.create({
     width: '60%',
     height: 40,
     margin: 10,
+    marginTop: 75
   },
 });
 
