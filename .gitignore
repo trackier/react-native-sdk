@@ -1,10 +1,15 @@
-# OSX
-#
-.DS_Store
-
+### SVN template
+.svn/
+### Xcode template
 # Xcode
 #
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+
+## Build generated
 build/
+DerivedData/
+
+## Various settings
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -13,53 +18,78 @@ build/
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
-xcuserdata
-*.xccheckout
+xcuserdata/
+
+## Other
 *.moved-aside
-DerivedData
-*.hmap
-*.ipa
-*.xcuserstate
-project.xcworkspace
+*.xccheckout
+*.xcscmblueprint
+### JetBrains template
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
+# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
-# Android/IntelliJ
-#
-build/
+# User-specific stuff:
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+
+# Sensitive or high-churn files:
+.idea/dataSources.ids
+.idea/dataSources.xml
+.idea/dataSources.local.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
+
+# Gradle:
+.idea/gradle.xml
+.idea/libraries
 .idea
-.gradle
-local.properties
-*.iml
 
-# node.js
-#
+# Mongo Explorer plugin:
+.idea/mongoSettings.xml
+
+## File-based project format:
+*.iws
+
+## Plugin-specific files:
+
+# IntelliJ
+/out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+### TortoiseGit template
+# Project-level settings
+/.tgitconfig
+
+*.swp
+
+# node_modules/,Xcode and Webstorm will spend lots of time for indexing this dir
 node_modules/
-package-lock.json # include if you are using npm - don't use both yarn and npm
-npm-debug.log
-yarn-error.log
-yarn.lock # include if you are using yarn - don't use both npm and yarn
 
-# BUCK
-buck-out/
-\.buckd/
-*.keystore
+# ios/Pods,
+/ios/Pods/
 
-# Fastlane
-#
-# It is recommended to not store the screenshots in the git repo. Instead, use Fastlane to re-generate the
-# screenshots whenever they are needed.
-# For more information about the recommended setup visit:
-# https://docs.fastlane.tools/best-practices/source-control/
+# OS X temporary files that should never be committed
+.DS_Store
+src/components/.DS_Store
 
-*/fastlane/report.xml
-*/fastlane/Preview.html
-*/fastlane/screenshots
+# user personal info,for example debug info
+ios/ProjectName.xcodeproj/project.xcworkspace/
+ios/ProjectName.xcodeproj/xcuserdata
 
-# Bundle artifact
-*.jsbundle
-android/.project
-android/.settings/org.eclipse.buildship.core.prefs
-android/app/.classpath
-android/app/.project
-android/app/.settings/org.eclipse.buildship.core.prefs
-example/package.json
-package-lock.json
+# Podfile versions
+ios/Podfile.lock
+
+# Created by .ignore support plugin (hsz.mobi)
