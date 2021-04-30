@@ -42,6 +42,7 @@ class RNTrackierSDK: NSObject {
         var param8 : String?
         var param9 : String?
         var param10: String?
+        var ev : Dictionary<String,Any>?
         
          currency = dict["currency"] as? String ?? ""
          revenue  = dict["revenue"] as? String  ?? ""
@@ -56,8 +57,13 @@ class RNTrackierSDK: NSObject {
          param7   = dict["param7"] as? String   ?? ""
          param8   = dict["param8"] as? String   ?? ""
          param9   = dict["param9"] as? String   ?? ""
-         param10  = dict["param10"] as? String  ?? "" 
-       // let RNev       = {};
+         param10  = dict["param10"] as? String  ?? ""
+         ev       = dict["ev"] as? Dictionary<String,Any>  ?? [:]
+         
+        for (key, value) in ev! {
+           print("(\(key),\(value))")
+            ev![key] = value
+        }
               
         let event = TrackierEvent(id: eventId!)
         //event.addEventValue(RNev)
@@ -73,6 +79,10 @@ class RNTrackierSDK: NSObject {
         event.param8  = param8
         event.param9  = param9
         event.param10 = param10
+        for (key, value) in ev! {
+            event.addEventValue(prop: key, val: value)
+        }
+        
         DispatchQueue.global().async {
             sleep(1)
             TrackierSDK.trackEvent(event: event)
