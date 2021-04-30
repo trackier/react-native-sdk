@@ -59,9 +59,9 @@ class RNTrackierSDK: NSObject {
          param10  = dict["param10"] as? String  ?? "" 
        // let RNev       = {};
               
-        let event = TrackierEvent(id: eventId)
+        let event = TrackierEvent(id: eventId!)
         //event.addEventValue(RNev)
-        event.setRevenue(revenue: Float64(revenue.floatValue), currency: currency)
+        event.setRevenue(revenue: Float64(revenue!.floatValue), currency: currency!)
         event.orderId = orderId
         event.param1  = param1
         event.param2  = param2
