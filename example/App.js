@@ -19,8 +19,8 @@ const App: () => React$Node = () => {
     var trackierEvent = new TrackierEvent(TrackierEvent.UPDATE);
     trackierEvent.param1 = "XXXXXX";
     trackierEvent.param2 = "kkkkkkk";
-    trackierEvent.setEventValue("param","value");
-    trackierEvent.setEventValue("param2",2.0);
+    // trackierEvent.setEventValue("param","value");
+    // trackierEvent.setEventValue("param2",2.0);
     TrackierSDK.trackEvent(trackierEvent);
   }
   return (
