@@ -24,7 +24,7 @@
 
       var currency: String?
       var revenue: String?
-      var eventId: String?
+      var eventId: String
       var orderId: String?
       var param1: String?
       var param2: String?
@@ -40,7 +40,7 @@
 
       currency = dict["currency"] as? String ?? ""
       revenue  = dict["revenue"] as? String  ?? ""
-      eventId  = dict["eventId"] as? String  ?? ""
+      eventId  = dict["eventId"] as String  
       orderId  = dict["orderId"] as? String  ?? ""
       param1   = dict["param1"] as? String   ?? ""
       param2   = dict["param2"] as? String   ?? ""
@@ -75,10 +75,8 @@
         event.addEventValue(prop: key, val: value)
       }
 
-      DispatchQueue.global().async {
-        sleep(1)
-        TrackierSDK.trackEvent(event: event)
-       }
+       TrackierSDK.trackEvent(event: event)
+
       } 
   }
   extension String {
