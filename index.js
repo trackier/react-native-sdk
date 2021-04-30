@@ -14,7 +14,6 @@ var TrackierConfig = function(appToken,environment){
 var TrackierSDK = {};
 
 TrackierSDK.initialize = function(trackierConfig){
-    console.log(module_trackier);
     module_trackier.initializeSDK(trackierConfig)
 };
 
@@ -61,7 +60,6 @@ var TrackierEvent = function(eventId) {
     TrackierEvent.UPDATE = "sEQWVHGThl"
 
 TrackierEvent.prototype.setEventValue = function(key, value) {
-  //  if (typeof key !== 'string' || typeof value !== 'string') {
     if (typeof key !== 'string') {
         return;
     }
