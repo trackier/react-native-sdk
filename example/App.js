@@ -16,7 +16,7 @@ const App: () => React$Node = () => {
   TrackierSDK.initialize(trackierConfig);
 
   function _onPress_trackSimpleEvent(){
-    var trackierEvent = new TrackierEvent(TrackierEvent.UPDATE);
+    var trackierEvent = new TrackierEvent(23);
     trackierEvent.param1 = "XXXXXX";
     trackierEvent.param2 = "kkkkkkk";
     trackierEvent.setEventValue("param","value");

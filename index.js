@@ -25,6 +25,9 @@ TrackierConfig.EnvironmentDevelopment = "development";
 TrackierConfig.EnvironmentProduction = "production";
 
 var TrackierEvent = function(eventId) {
+    if(typeof eventId !== 'string') {
+        return;
+    }
     this.eventId = eventId;
     this.orderId = null ;
     this.currency = null ;
