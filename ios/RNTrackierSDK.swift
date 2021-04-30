@@ -22,38 +22,38 @@ class RNTrackierSDK: NSObject {
 
 	@objc func trackEvent(_ dict: NSDictionary) -> Void {
 
-		var currency: String
-		var revenue: String
-		var eventId: String
-		var orderId: String
-		var param1: String
-		var param2: String
-		var param3: String
-		var param4: String
-		var param5: String
-		var param6: String
-		var param7: String
-		var param8: String
-		var param9: String
-		var param10: String
-		var ev: Dictionary<String,Any>
+		// var currency: String
+		// var revenue: String
+		// var eventId: String
+		// var orderId: String
+		// var param1: String
+		// var param2: String
+		// var param3: String
+		// var param4: String
+		// var param5: String
+		// var param6: String
+		// var param7: String
+		// var param8: String
+		// var param9: String
+		// var param10: String
+		// var ev: Dictionary<String,Any>
 
 		
-		currency = dict["currency"] as? String ?? ""
-		revenue  = dict["revenue"] as? String  ?? ""
-		eventId  = dict["eventId"] as String  
-		orderId  = dict["orderId"] as? String  ?? ""
-		param1   = dict["param1"] as? String   ?? ""
-		param2   = dict["param2"] as? String   ?? ""
-		param3   = dict["param3"] as? String   ?? ""
-		param4   = dict["param4"] as? String   ?? ""
-		param5   = dict["param5"] as? String   ?? ""
-		param6   = dict["param6"] as? String   ?? ""
-		param7   = dict["param7"] as? String   ?? ""
-		param8   = dict["param8"] as? String   ?? ""
-		param9   = dict["param9"] as? String   ?? ""
-		param10  = dict["param10"] as? String  ?? ""
-		ev       = dict["ev"] as? Dictionary<String,Any>  ?? [:]
+		var currency = dict["currency"] as? String ?? ""
+		var revenue  = dict["revenue"] as? String  ?? ""
+		var eventId  = dict["eventId"] as String  
+		var orderId  = dict["orderId"] as? String  ?? ""
+		var param1   = dict["param1"] as? String   ?? ""
+		var param2   = dict["param2"] as? String   ?? ""
+		var param3   = dict["param3"] as? String   ?? ""
+		var param4   = dict["param4"] as? String   ?? ""
+		var param5   = dict["param5"] as? String   ?? ""
+		var param6   = dict["param6"] as? String   ?? ""
+		var param7   = dict["param7"] as? String   ?? ""
+		var param8   = dict["param8"] as? String   ?? ""
+		var param9   = dict["param9"] as? String   ?? ""
+		var param10  = dict["param10"] as? String  ?? ""
+		var ev       = dict["ev"] as? Dictionary<String,Any>  ?? [:]
 
 		for (key, value) in ev {
 			ev[key] = value
