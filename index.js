@@ -18,6 +18,22 @@ TrackierSDK.initialize = function(trackierConfig){
 };
 
 TrackierSDK.trackEvent = function(trackierEvent){
+    if(typeof eventId !== 'string'||
+    typeof orderId !== 'string'||
+    typeof currency !== 'string'||
+    typeof param1 !== 'string'||
+    typeof param2 !== 'string'||
+    typeof param3 !== 'string'||
+    typeof param4 !== 'string'||
+    typeof param5 !== 'string'||
+    typeof param6 !== 'string'||
+    typeof param7 !== 'string'||
+    typeof param8 !== 'string'||
+    typeof param9 !== 'string'||
+    typeof param10 !== 'string'||
+    typeof revenue !== 'number') {
+        return;
+    }
     module_trackier.trackEvent(trackierEvent)
 };
 
@@ -25,9 +41,6 @@ TrackierConfig.EnvironmentDevelopment = "development";
 TrackierConfig.EnvironmentProduction = "production";
 
 var TrackierEvent = function(eventId) {
-    if(typeof eventId !== 'string') {
-        return;
-    }
     this.eventId = eventId;
     this.orderId = null ;
     this.currency = null ;
