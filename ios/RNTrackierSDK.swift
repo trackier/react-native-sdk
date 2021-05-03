@@ -21,7 +21,6 @@ class RNTrackierSDK: NSObject {
 	}
 
 	@objc func trackEvent(_ dict: NSDictionary) -> Void {
-
         let currency: String = dict["currency"] as? String ?? ""
         let revenue: String = dict["revenue"] as? String ?? ""
         let eventId: String = dict["eventId"] as! String
