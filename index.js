@@ -18,9 +18,11 @@ TrackierSDK.initialize = function(trackierConfig) {
 };
 
 TrackierSDK.trackEvent = function(trackierEvent) {
+	console.log("trackierEvent[v]................start");
 	let isValidArgs = true;
 	let props = ['eventId', 'orderId', 'currency', 'param1', 'param2', 'param3', 'param4', 'param5', 'param6', 'param7', 'param8', 'param9', 'param10'];
 	props.forEach(function (v, k) {
+		console.log("trackierEvent[v]................", trackierEvent[v]);
 		if (typeof trackierEvent[v] != 'undefined' && typeof trackierEvent[v] != 'string') {
 			isValidArgs = false;
 			return false;
@@ -30,6 +32,7 @@ TrackierSDK.trackEvent = function(trackierEvent) {
 		return;
 	}
 	module_trackier.trackEvent(trackierEvent)
+	console.log("trackierEvent[v]................end");
 };
 
 TrackierConfig.EnvironmentDevelopment = "development";
