@@ -21,6 +21,7 @@ TrackierSDK.trackEvent = function(trackierEvent) {
 	let isValidArgs = true;
 	let props = ['eventId', 'orderId', 'currency', 'param1', 'param2', 'param3', 'param4', 'param5', 'param6', 'param7', 'param8', 'param9', 'param10'];
 	props.forEach(function (v, k) {
+		console.log("trackierEvent[v] "+ trackierEvent[v]+ "typeof trackierEvent[v] " + typeof trackierEvent[v])
 		if (typeof trackierEvent[v] != 'undefined' && typeof trackierEvent[v] != 'string') {
 			isValidArgs = false;
 			return false;
