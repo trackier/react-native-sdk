@@ -44,7 +44,6 @@ class RNTrackierSDK: NSObject {
 
 		let event = TrackierEvent(id: eventId)
 		event.setRevenue(revenue: Float64((revenue as NSString).floatValue), currency: currency)
-        event.setRevenue(revenue: 0.0, currency: currency)
 		event.orderId = orderId
 		event.param1  = param1
 		event.param2  = param2
