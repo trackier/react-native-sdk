@@ -21,21 +21,22 @@ class RNTrackierSDK: NSObject {
 	}
 
 	@objc func trackEvent(_ dict: NSDictionary) -> Void {
-        let currency: String = dict["currency"] as? String ?? ""
-        let revenue: String = dict["revenue"] as? String ?? ""
-        let eventId: String = dict["eventId"] as! String
-        let orderId: String = dict["orderId"] as? String ?? ""
-        let param1: String = dict["param1"] as? String ?? ""
-        let param2: String = dict["param2"] as? String ?? ""
-        let param3: String = dict["param3"] as? String ?? ""
-        let param4: String = dict["param4"] as? String ?? ""
-        let param5: String = dict["param5"] as? String ?? ""
-        let param6: String = dict["param6"] as? String ?? ""
-        let param7: String = dict["param7"] as? String ?? ""
-        let param8: String = dict["param8"] as? String ?? ""
-        let param9: String = dict["param9"] as? String ?? ""
-        let param10: String = dict["param10"] as? String ?? ""
-        var ev:Dictionary<String,Any> = dict["ev"] as? Dictionary<String,Any> ?? [:]
+
+		let currency: String = dict["currency"] as? String ?? ""
+		let revenue: String = dict["revenue"] as? String ?? ""
+		let eventId: String = dict["eventId"] as! String
+		let orderId: String = dict["orderId"] as? String ?? ""
+		let param1: String = dict["param1"] as? String ?? ""
+		let param2: String = dict["param2"] as? String ?? ""
+		let param3: String = dict["param3"] as? String ?? ""
+		let param4: String = dict["param4"] as? String ?? ""
+		let param5: String = dict["param5"] as? String ?? ""
+		let param6: String = dict["param6"] as? String ?? ""
+		let param7: String = dict["param7"] as? String ?? ""
+		let param8: String = dict["param8"] as? String ?? ""
+		let param9: String = dict["param9"] as? String ?? ""
+		let param10: String = dict["param10"] as? String ?? ""
+		var ev:Dictionary<String,Any> = dict["ev"] as? Dictionary<String,Any> ?? [:]
 
 		for (key, value) in ev {
 			ev[key] = value
@@ -64,6 +65,6 @@ class RNTrackierSDK: NSObject {
 
 extension String {
 	var floatValue: Float {
-	return (self as NSString).floatValue
+		return (self as NSString).floatValue
 	}
 }
