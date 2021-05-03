@@ -18,20 +18,20 @@ TrackierSDK.initialize = function(trackierConfig){
 };
 
 TrackierSDK.trackEvent = function(trackierEvent){
-    if(typeof eventId !== 'string'||
-    typeof orderId !== 'string'||
-    typeof currency !== 'string'||
-    typeof param1 !== 'string'||
-    typeof param2 !== 'string'||
-    typeof param3 !== 'string'||
-    typeof param4 !== 'string'||
-    typeof param5 !== 'string'||
-    typeof param6 !== 'string'||
-    typeof param7 !== 'string'||
-    typeof param8 !== 'string'||
-    typeof param9 !== 'string'||
-    typeof param10 !== 'string'||
-    typeof revenue !== 'number') {
+    if(typeof trackierEvent.eventId !== 'string'||
+    typeof trackierEvent.orderId !== 'string'||
+    typeof trackierEvent.currency !== 'string'||
+    typeof trackierEvent.param1 !== 'string'||
+    typeof trackierEvent.param2 !== 'string'||
+    typeof trackierEvent.param3 !== 'string'||
+    typeof trackierEvent.param4 !== 'string'||
+    typeof trackierEvent.param5 !== 'string'||
+    typeof trackierEvent.param6 !== 'string'||
+    typeof trackierEvent.param7 !== 'string'||
+    typeof trackierEvent.param8 !== 'string'||
+    typeof trackierEvent.param9 !== 'string'||
+    typeof trackierEvent.param10 !== 'string'||
+    typeof trackierEvent.revenue !== 'number') {
         return;
     }
     module_trackier.trackEvent(trackierEvent)
