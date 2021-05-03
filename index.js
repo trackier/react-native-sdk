@@ -26,7 +26,7 @@ TrackierSDK.trackEvent = function(trackierEvent) {
 			return false;
 		}
 	})
-	if (!isValidArgs || (typeof trackierEvent[v] != 'undefined' && typeof trackierEvent.revenue !== 'number')) {
+	if (!isValidArgs || (typeof trackierEvent.revenue != 'undefined' && typeof trackierEvent.revenue !== 'number')) {
 		return;
 	}
 	module_trackier.trackEvent(trackierEvent)
