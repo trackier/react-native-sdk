@@ -5,6 +5,10 @@ Basic integration
 First, download the library from npm:
 
      $ npm install trackier/react-native-sdk
+     
+For iOS app make sure to go to ios folder and install Cocoapods dependencies:
+     
+     $ cd ios && pod install
 
 Integrate the SDK into your app 
 
