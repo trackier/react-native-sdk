@@ -12,13 +12,31 @@ import trackier_ios_sdk
 class RNTrackierSDK: NSObject {
 
 	@objc func initializeSDK(_ dict: NSDictionary) -> Void {
-
 		let appToken = dict["appToken"] as! String;
 		let environment = dict["environment"] as! String;
 		let config = TrackierSDKConfig(appToken: appToken , env: environment)
 		TrackierSDK.initialize(config: config)
 
 	}
+    
+    @objc func setUserId(_ dict: NSDictionary) -> Void {
+        let userId = dict["userId"] as! String;
+        TrackierSDK.setUserID(userId: userId)
+
+    }
+    
+    @objc func setUserEmail(_ dict: NSDictionary) -> Void {
+        let userEmail = dict["userEmail"] as! String;
+        TrackierSDK.setUserEmail(userEmail: userEmail)
+    }
+    
+    @objc func setUserAdditionalDetails(_ dict: NSDictionary) -> Void {
+        var uad:Dictionary<String,Any> = dict["userAdditionalDetails"] as? Dictionary<String,Any> ?? [:]
+        for (key, value) in uad {
+            uad[key] = value
+        }
+        TrackierSDK.setUserAdditionalDetails(userAdditionalDetails: uad)
+    }
 
 	@objc func trackEvent(_ dict: NSDictionary) -> Void {
 

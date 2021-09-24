@@ -25,6 +25,34 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 	}
 
 	@ReactMethod
+	public void setUserId(ReadableMap userIdMap) {
+		if (checkKey(userIdMap, "userId")) {
+			com.trackier.sdk.TrackierSDK.setUserId(userIdMap.getString("userId"));
+		}
+	}
+
+	@ReactMethod
+	public void setUserEmail(ReadableMap userEmailMap) {
+		if (checkKey(userEmailMap, "userEmail")) {
+			com.trackier.sdk.TrackierSDK.setUserEmail(userEmailMap.getString("userEmail"));
+		}
+	}
+
+	@ReactMethod
+	public void setUserAdditionalDetails(ReadableMap userAdditionalDetailsMap) {
+		if (checkKey(userAdditionalDetailsMap, "userAdditionalMap")) {
+			Map<String, Object> userAdditionalDetail = TrackierUtil.toMap(userAdditionalDetailsMap.getMap("userAdditionalMap"));
+			Map<String, Object> ev = new LinkedHashMap<String, Object>();
+			if (userAdditionalDetail != null) {
+				for (Map.Entry<String, Object> entry : userAdditionalDetail.entrySet()) {
+					ev.put(entry.getKey(), entry.getValue().toString());
+				}
+			}
+			com.trackier.sdk.TrackierSDK.setUserAdditionalDetails(userAdditionalDetail);
+		}
+	}
+
+	@ReactMethod
 	public void trackEvent(ReadableMap trackierEventMap) {
 		com.trackier.sdk.TrackierEvent trackierEvent = new com.trackier.sdk.TrackierEvent(trackierEventMap.getString("eventId"));
 		

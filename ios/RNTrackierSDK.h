@@ -6,7 +6,7 @@
 //  Copyright © 2021 Trackier. All rights reserved.
 //
 
-#import "React/RCTBridgeModule.h"
+#import "RCTBridgeModule.h"
 
 @interface RNTrackierSDK : NSObject <RCTBridgeModule>
 @end

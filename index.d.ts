@@ -9,6 +9,9 @@ declare module 'react-native-trackier' {
         constructor(trackierEvent:TrackierEvent)
         initialize: (trackierConfig: TrackierConfig) => void
         trackEvent: (trackierEvent:TrackierEvent) => void
+        setUserId: (userId: String) => void
+        setUserEmail: (userEmail: String) => void
+        setUserAdditionalDetails: (key:string,value:string) => void
     }
 
     export class TrackierEvent{

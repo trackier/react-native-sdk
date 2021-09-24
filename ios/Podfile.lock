@@ -1,10 +1,10 @@
 PODS:
-  - Alamofire (4.9.1)
+  - Alamofire (5.4.4)
   - React (0.11.0):
     - React/Core (= 0.11.0)
   - React/Core (0.11.0)
-  - trackier-ios-sdk (1.3.4):
-    - Alamofire (~> 4.0)
+  - trackier-ios-sdk (1.6.10):
+    - Alamofire (~> 5.4.1)
     - Willow (~> 5.0)
   - Willow (5.2.1)
 
@@ -20,11 +20,11 @@ SPEC REPOS:
     - Willow
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
   React: ab1a2e21deb34965c38328d5ec40cc7d12c6050a
-  trackier-ios-sdk: 12a1093f03ec89f76ac1db648c6e5f60985c1739
+  trackier-ios-sdk: 34a5dc23e9be296475ccc965e9fe457d2843500c
   Willow: a6310f9aedcb6f4de8c35b94fd3416a660ae9280
 
 PODFILE CHECKSUM: 5f8ed5a2ddf903915962e34e54755dd0e616b435
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.2

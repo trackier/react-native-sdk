@@ -12,9 +12,28 @@ var TrackierConfig = function(appToken,environment) {
 }
 
 var TrackierSDK = {};
+var uad = {};
+
+TrackierSDK.setUserId = function(userId) {
+	module_trackier.setUserId(userId)
+};
+
+TrackierSDK.setUserEmail = function(userEmail) {
+	module_trackier.setUserEmail(userEmail)
+};
 
 TrackierSDK.initialize = function(trackierConfig) {
+	if(!Object.keys(uad).length === 0){
+		module_trackier.setUserAdditionalDetails(uad);
+	}
 	module_trackier.initializeSDK(trackierConfig)
+};
+
+TrackierSDK.prototype.setUserAdditionalDetails = function(key, value) {
+	if (typeof key !== 'string') {
+		return;
+	}
+	this.uad[key] = value;
 };
 
 TrackierSDK.trackEvent = function(trackierEvent) {

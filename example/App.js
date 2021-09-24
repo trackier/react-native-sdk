@@ -13,6 +13,8 @@ import { TrackierConfig, TrackierSDK, TrackierEvent} from 'react-native-trackier
 
 const App: () => React$Node = () => {
   var trackierConfig = new TrackierConfig("xxxx-xx-4505-bc8b-xx",TrackierConfig.EnvironmentDevelopment);
+  TrackierSDK.setUserId("userId");
+  TrackierSDK.setUserEmail("abc@xyz.com");
   TrackierSDK.initialize(trackierConfig);
 
   function _onPress_trackSimpleEvent(){
