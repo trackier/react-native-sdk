@@ -1,5 +1,7 @@
 package com.reactlibrary;
 
+import android.net.Uri;
+import android.util.Log;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -27,6 +29,7 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 	@ReactMethod
 	public void setUserId(ReadableMap userIdMap) {
 		if (checkKey(userIdMap, "userId")) {
+			Log.d("ReactSDK", "setUserId: "+userIdMap.getString("userId"));
 			com.trackier.sdk.TrackierSDK.setUserId(userIdMap.getString("userId"));
 		}
 	}
@@ -34,6 +37,7 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 	@ReactMethod
 	public void setUserEmail(ReadableMap userEmailMap) {
 		if (checkKey(userEmailMap, "userEmail")) {
+			Log.d("ReactSDK", "setUserEmail: "+userEmailMap.getString("userEmail"));
 			com.trackier.sdk.TrackierSDK.setUserEmail(userEmailMap.getString("userEmail"));
 		}
 	}
@@ -48,7 +52,36 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 					ev.put(entry.getKey(), entry.getValue().toString());
 				}
 			}
+			Log.d("ReactSDK", "setUserAdditionalDetails: "+userAdditionalDetail.toString());
 			com.trackier.sdk.TrackierSDK.setUserAdditionalDetails(userAdditionalDetail);
+		}
+	}
+
+	@ReactMethod
+	public void setLocalRefTrack(ReadableMap localRefTrackMap) {
+		if (checkKey(localRefTrackMap, "value") && checkKey(localRefTrackMap, "delimeter")) {
+			Log.d("ReactSDK", "setLocalRefTrack: value: "+localRefTrackMap.getBoolean("value")+"delimeter: "+localRefTrackMap.getString("delimeter"));
+			com.trackier.sdk.TrackierSDK.setLocalRefTrack(localRefTrackMap.getBoolean("value"),localRefTrackMap.getString("delimeter"));
+		}
+	}
+
+	@ReactMethod
+	public void fireInstall() {
+		Log.d("ReactSDK", "fireInstall called");
+		com.trackier.sdk.TrackierSDK.fireInstall();
+	}
+
+	@ReactMethod
+	public String getTrackierId() {
+		Log.d("ReactSDK", "getTrackierId "+com.trackier.sdk.TrackierSDK.getTrackierId());
+		return com.trackier.sdk.TrackierSDK.getTrackierId();
+	}
+
+	@ReactMethod
+	public void parseDeepLink(ReadableMap parseDeepLinkMap) {
+		Log.d("ReactSDK", "getTrackierId " + com.trackier.sdk.TrackierSDK.getTrackierId());
+		if (checkKey(parseDeepLinkMap, "uri")) {
+			com.trackier.sdk.TrackierSDK.parseDeepLink(Uri.parse(parseDeepLinkMap.getString("uri")),getReactApplicationContext());
 		}
 	}
 
