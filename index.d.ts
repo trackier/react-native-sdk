@@ -1,5 +1,5 @@
 declare module 'react-native-trackier' {
-    type Environment = 'development' | 'production'
+    type Environment = 'development' | 'production' | 'testing'
 
     export class TrackierConfig{
         constructor(appToken: string, environment: Environment)

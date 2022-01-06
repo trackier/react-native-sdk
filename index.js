@@ -37,6 +37,7 @@ TrackierSDK.trackEvent = function(trackierEvent) {
 
 TrackierConfig.EnvironmentDevelopment = "development";
 TrackierConfig.EnvironmentProduction = "production";
+TrackierConfig.EnvironmentTesting = "testing";
 
 var TrackierEvent = function(eventId) {
 	this.eventId = eventId;
