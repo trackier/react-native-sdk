@@ -59,20 +59,20 @@ TrackierConfig.EnvironmentProduction
 
 1. Event tracking with Trackier React Native SDK:
 ```js
-var trackierEvent = new TrackierEvent(TrackierEvent.UPDATE);
-trackierEvent.param1 = "XXXXXX";
-trackierEvent.param2 = "kkkkkkk";
-TrackierSDK.trackEvent(trackierEvent);
+  var trackierEvent = new TrackierEvent(TrackierEvent.UPDATE);
+  trackierEvent.param1 = "XXXXXX";
+  trackierEvent.param2 = "kkkkkkk";
+  TrackierSDK.trackEvent(trackierEvent);
 ```
 
 2. Event tracking with currency and revenue with Trackier React Native SDK:
 ```js
-var trackierEvent = new TrackierEvent(TrackierEvent.UPDATE);
-trackierEvent.param1 = "XXXXXX";
-trackierEvent.param2 = "kkkkkkk";
-trackierEvent.revenue = 2.5;
-trackierEvent.currency = "USD";
-TrackierSDK.trackEvent(trackierEvent);
+  var trackierEvent = new TrackierEvent(TrackierEvent.UPDATE);
+  trackierEvent.param1 = "XXXXXX";
+  trackierEvent.param2 = "kkkkkkk";
+  trackierEvent.revenue = 2.5;
+  trackierEvent.currency = "USD";
+  TrackierSDK.trackEvent(trackierEvent);
 ```
        
  ## <a id="qs-progaurd-settings"></a>Proguard Settings 
