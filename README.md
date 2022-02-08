@@ -1,6 +1,6 @@
 # react-native-sdk
 
-## Table of Content
+## Table of Contents
 
 * [Example App](#qs-example-app)
 * [Basic Integration](#qs-basic-integration)
@@ -74,8 +74,9 @@ TrackierConfig.EnvironmentProduction
   trackierEvent.currency = "USD";
   TrackierSDK.trackEvent(trackierEvent);
 ```
-       
- ## <a id="qs-progaurd-settings"></a>Proguard Settings 
+
+
+## <a id="qs-progaurd-settings"></a>Proguard Settings 
 
 If your app is using proguard then add these lines to the proguard config file 
 
