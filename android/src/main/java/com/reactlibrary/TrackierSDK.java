@@ -27,7 +27,7 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 	@ReactMethod
     public void setEnable(ReadableMap enableMap){
 		if(checkKey(enableMap,"trackierEnable")){
-			com.trackier.sdk.setEnabled(enableMap.getString("trackierEnable"))
+			com.trackier.sdk.TrackierSDK.setEnabled(enableMap.getString("trackierEnable"))
 		}
 	   
     }
@@ -35,7 +35,7 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
     @ReactMethod
      public void setUserId(ReadableMap userIdMap) {
 	 if (checkKey(userIdMap, "userId")) {
-		com.trackier.sdk.setUserId(userIdMap.getString("userId"));
+		com.trackier.sdk.TrackierSDK.setUserId(userIdMap.getString("userId"));
 	 }
     
 	} 
@@ -43,7 +43,7 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 	@ReactMethod
 	public void setTrackAsOrganic(ReadableMap organicMap){
 		if(checkKey(organicMap,trackAsOrganic )){
-			com.trackier.sdk.trackAsOrganic(organicMap.getString("trackAsOrganic"))
+			com.trackier.sdk.TrackierSDK.trackAsOrganic(organicMap.getString("trackAsOrganic"))
 		}
 		
 	}
@@ -56,7 +56,7 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
     }
 	@ReactMethod
 	public void setTrackSession(){
-		com.trackier.sdk.trackSession()
+		com.trackier.sdk.TrackierSDK.trackSession()
 	}
 
 
@@ -64,7 +64,7 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 	
 	@ReactMethod
 	public void localRefTrack(boolean value, String delimeter){
-		com.trackier.sdk.localRefTrack(value, delimeter)
+		com.trackier.sdk.TrackierSDK.localRefTrack(value, delimeter)
 	}
 
 	@ReactMethod
@@ -77,7 +77,7 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 					ev.put(entry.getKey(), entry.getValue().toString());
 				}
 			}
-			com.trackier.sdk.setUserAdditionalDetails(userAdditionalDetail);
+			com.trackier.sdk.TrackierSDK.setUserAdditionalDetails(userAdditionalDetail);
 		}
 	}
 
