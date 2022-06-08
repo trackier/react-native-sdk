@@ -25,8 +25,66 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 	}
 
 	@ReactMethod
+    public void setEnable(ReadableMap enableMap){
+		if(checkKey(enableMap,"trackierEnable")){
+			com.trackier.sdk.setEnabled(enableMap.getString("trackierEnable"))
+		}
+	   
+    }
+
+    @ReactMethod
+     public void setUserId(ReadableMap userIdMap) {
+	 if (checkKey(userIdMap, "userId")) {
+		com.trackier.sdk.setUserId(userIdMap.getString("userId"));
+	 }
+    
+	} 
+
+	@ReactMethod
+	public void setTrackAsOrganic(ReadableMap organicMap){
+		if(checkKey(organicMap,trackAsOrganic )){
+			com.trackier.sdk.trackAsOrganic(organicMap.getString("trackAsOrganic"))
+		}
+		
+	}
+     @ReactMethod
+    public void setUserEmail(ReadableMap userEmailMap) {
+	if (checkKey(userEmailMap, "userEmail")) {
+		com.trackier.sdk.TrackierSDK.setUserEmail(userEmailMap.getString("userEmail"));
+	 }
+
+    }
+	@ReactMethod
+	public void setTrackSession(){
+		com.trackier.sdk.trackSession()
+	}
+
+
+
+	
+	@ReactMethod
+	public void localRefTrack(boolean value, String delimeter){
+		com.trackier.sdk.localRefTrack(value, delimeter)
+	}
+
+	@ReactMethod
+	public void setUserAdditionalDetails(ReadableMap userAdditionalDetailsMap) {
+		if (checkKey(userAdditionalDetailsMap, "userAdditionalMap")) {
+			Map<String, Object> userAdditionalDetail = TrackierUtil.toMap(userAdditionalDetailsMap.getMap("userAdditionalMap"));
+			Map<String, Object> ev = new LinkedHashMap<String, Object>();
+			if (userAdditionalDetail != null) {
+				for (Map.Entry<String, Object> entry : userAdditionalDetail.entrySet()) {
+					ev.put(entry.getKey(), entry.getValue().toString());
+				}
+			}
+			com.trackier.sdk.setUserAdditionalDetails(userAdditionalDetail);
+		}
+	}
+
+
+	@ReactMethod
 	public void trackEvent(ReadableMap trackierEventMap) {
-		com.trackier.sdk.TrackierEvent trackierEvent = new com.trackier.sdk.TrackierEvent(trackierEventMap.getString("eventId"));
+		com.trackier.sdk.TrackierEvent trackietrarEvent = new com.trackier.sdk.TrackierEvent(trackierEventMap.getString("eventId"));
 		
 		trackierEvent.orderId = null;
 		trackierEvent.currency = null;
