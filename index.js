@@ -25,19 +25,17 @@ TrackierSDK.setUserEmail = function(userEmail) {
 	module_trackier.setUserEmail(userEmail)
 };
 
-TrackierSDK.setTrackAsOrganic= function(trackAsOrganic){
+TrackierSDK.setTrackAsOrganic = function(trackAsOrganic) {
 	module_trackier.setTrackAsOrganic(trackAsOrganic)
 }
 
-TrackierSDK.setEnabled= function(trackierEnable){
-	module_trackier.setEnabled(trackierEnable)
+TrackierSDK.setEnabled = function(value) {
+	module_trackier.setEnabled(value)
 }
 
 TrackierSDK.setTrackSession= function(trackierSession){
 	module_trackier.setTrackSession(trackierSession)
 }
-
-
 
 TrackierSDK.trackEvent = function(trackierEvent) {
 	let isValidArgs = true;

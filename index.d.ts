@@ -1,7 +1,7 @@
 declare module 'react-native-trackier' {
     type Environment = 'development' | 'production' | 'testing'
 
-    export class TrackierConfig{
+    export class TrackierConfig {
         constructor(appToken: string, environment: Environment)
     }
  
@@ -10,7 +10,7 @@ declare module 'react-native-trackier' {
         initialize: (trackierConfig: TrackierConfig) => void
         trackEvent: (trackierEvent:TrackierEvent) => void
 
-        setEnabled: (trackierEnabled:boolean) => void 
+        setEnabled: (value:boolean) => void 
         setUserId: (userId: String) => void
         setUserEmail: (userEmail: String) => void
         trackOrganic: (trackAsOrganic: boolean)=> void
@@ -20,10 +20,8 @@ declare module 'react-native-trackier' {
        
     }
 
-    export class TrackierEvent{
+    export class TrackierEvent {
         constructor(eventId:string)
         setEventValue: (key:string,value:string) => void
     }
-  
-    
 }

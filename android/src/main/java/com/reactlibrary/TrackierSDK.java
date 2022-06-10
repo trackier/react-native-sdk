@@ -25,60 +25,47 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 	}
 
 	@ReactMethod
-    public void setEnabled(ReadableMap enableMap){
-		if (checkKey(enableMap,"trackierEnable")) {
-			com.trackier.sdk.TrackierSDK.setEnabled(enableMap.getString("trackierEnable"))
-		}
-	   
+    public void setEnabled(boolean value) {
+		com.trackier.sdk.TrackierSDK.setEnabled(value);
 	}
     @ReactMethod
-     public void setUserId(ReadableMap userIdMap) {
-	 	if (checkKey(userIdMap, "userId")) {
-			com.trackier.sdk.TrackierSDK.setUserId(userIdMap.getString("userId"));
-	    }
-    
+     public void setUserId(String userId) {
+	 	com.trackier.sdk.TrackierSDK.setUserId(userId);
 	} 
 
 	@ReactMethod
-	public void trackAsOrganic(ReadableMap organicMap){
-		if (checkKey(organicMap,trackAsOrganic )) {
-			com.trackier.sdk.TrackierSDK.trackAsOrganic(organicMap.getString("trackAsOrganic"))
-		}
-		
+	public void trackAsOrganic(boolean value) {
+		com.trackier.sdk.TrackierSDK.trackAsOrganic(value);
 	}
 
     @ReactMethod
-    public void setUserEmail(ReadableMap userEmailMap) {
-		if (checkKey(userEmailMap, "userEmail")) {
-			com.trackier.sdk.TrackierSDK.setUserEmail(userEmailMap.getString("userEmail"));
-		 }
-
+    public void setUserEmail(String userEmail) {
+		com.trackier.sdk.TrackierSDK.setUserEmail(userEmail);
     }
-	@ReactMethod
-	public void trackSession(){
-		com.trackier.sdk.TrackierSDK.trackSession()
-	}
 
+	@ReactMethod
+	public void trackSession() {
+		com.trackier.sdk.TrackierSDK.trackSession();
+	}
 	
 	@ReactMethod
-	public void localRefTrack(boolean value, String delimeter){
-		com.trackier.sdk.TrackierSDK.localRefTrack(value, delimeter)
+	public void localRefTrack(boolean value, String delimeter) {
+		com.trackier.sdk.TrackierSDK.localRefTrack(value, delimeter);
 	}
 
 	@ReactMethod
 	public void setUserAdditionalDetails(ReadableMap userAdditionalDetailsMap) {
-		if (checkKey(userAdditionalDetailsMap, "userAdditionalMap")) {
-			Map<String, Object> userAdditionalDetail = TrackierUtil.toMap(userAdditionalDetailsMap.getMap("userAdditionalMap"));
-			Map<String, Object> ev = new LinkedHashMap<String, Object>();
-			if (userAdditionalDetail != null) {
-				for (Map.Entry<String, Object> entry : userAdditionalDetail.entrySet()) {
-					ev.put(entry.getKey(), entry.getValue().toString());
-				}
-			}
-			com.trackier.sdk.TrackierSDK.setUserAdditionalDetails(userAdditionalDetail);
-		}
+		// if (checkKey(userAdditionalDetailsMap, "userAdditionalMap")) {
+		// 	Map<String, Object> userAdditionalDetail = TrackierUtil.toMap(userAdditionalDetailsMap.getMap("userAdditionalMap"));
+		// 	Map<String, Object> ev = new LinkedHashMap<String, Object>();
+		// 	if (userAdditionalDetail != null) {
+		// 		for (Map.Entry<String, Object> entry : userAdditionalDetail.entrySet()) {
+		// 			ev.put(entry.getKey(), entry.getValue().toString());
+		// 		}
+		// 	}
+		// 	com.trackier.sdk.TrackierSDK.setUserAdditionalDetails(userAdditionalDetail);
+		// }
 	}
-
 
 	@ReactMethod
 	public void trackEvent(ReadableMap trackierEventMap) {
