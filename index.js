@@ -3,7 +3,6 @@
 import { 
 	NativeModules
 } from 'react-native';
-import { TrackierSetEnabled, TrackierSetUserId, TrackierSetEmailId, TrackAsOrganic, LocalRefTrack } from 'react-native-trackier';
 
 const module_trackier = NativeModules.TrackierSDK;
 
@@ -16,25 +15,30 @@ var TrackierSDK = {};
 
 TrackierSDK.initialize = function(trackierConfig) {
 	module_trackier.initializeSDK(trackierConfig)
-};
-TrackierSDK.setUserId = function(userId) {
-	module_trackier.setUserId(userId)
-};
-
-TrackierSDK.setUserEmail = function(userEmail) {
-	module_trackier.setUserEmail(userEmail)
-};
-
-TrackierSDK.setTrackAsOrganic = function(trackAsOrganic) {
-	module_trackier.setTrackAsOrganic(trackAsOrganic)
 }
 
-TrackierSDK.setEnabled = function(value) {
+TrackierSDK.setEnabled = function (value) {
 	module_trackier.setEnabled(value)
 }
 
-TrackierSDK.setTrackSession= function(trackierSession){
-	module_trackier.setTrackSession(trackierSession)
+TrackierSDK.setUserId = function(userId) {
+	module_trackier.setUserId(userId)
+}
+
+TrackierSDK.setUserEmail = function(userEmail) {
+	module_trackier.setUserEmail(userEmail)
+}
+
+TrackierSDK.trackAsOrganic = function(value) {
+	module_trackier.trackAsOrganic(value)
+}
+
+TrackierSDK.setLocalRefTrack = function (value, delimeter) {
+	module_trackier.setLocalRefTrack(value, delimeter)
+}
+
+TrackierSDK.setUserAdditionalDetails = function (key, value) {
+	module_trackier.setUserAdditionalDetails(value, delimeter)
 }
 
 TrackierSDK.trackEvent = function(trackierEvent) {
@@ -101,54 +105,9 @@ TrackierEvent.prototype.setEventValue = function(key, value) {
 	this.ev[key] = value;
 };
 
-TrackierSetEnabled.prototype.setEnableValue = function(key, value){
-	if(typeof key!=='string'){
-		return;
-	}
-	this.ev[key] = value;
-}
-TrackierSetUserId.prototype.setuserIdValue = function(key, value){
-	if(typeof key!=='string'){
-		return;
-	}
-	this.ev[key] = value;
-}
-TrackierSetEmailId.prototype.setEmailValue = function(key, value){
-	if(typeof key!=='string'){
-		return;
-	}
-	this.ev[key] = value;
-}
-TrackAsOrganic.prototype.setTrackAsOrganic = function(key, value){
-	if(typeof key!=='string'){
-		return;
-	}
-	this.ev[key] = value;
-}
-TrackSession.prototype.setTrackSession= function(key, value){
-	if(typeof key!=='string'){
-		return;
-	}
-	this.ev[key] = value;	
-}
-LocalRefTrack.prototype.setLocalRefTrack= function(key, value){
-	if(typeof key!=='string'){
-		return;
-	}
-	this.ev[key] = value;	
-}
-
-
 module.exports = {
 	TrackierConfig,
 	TrackierSDK,
-	TrackierEvent,
-	TrackierSetEnabled,
-	TrackierSetUserId,
-	TrackierSetEmailId,
-	TrackAsOrganic, 
-	TrackSession,
-	LocalRefTrack
-
+	TrackierEvent
 }
 

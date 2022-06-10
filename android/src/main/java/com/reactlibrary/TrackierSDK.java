@@ -42,15 +42,10 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
     public void setUserEmail(String userEmail) {
 		com.trackier.sdk.TrackierSDK.setUserEmail(userEmail);
     }
-
-	@ReactMethod
-	public void trackSession() {
-		com.trackier.sdk.TrackierSDK.trackSession();
-	}
 	
 	@ReactMethod
-	public void localRefTrack(boolean value, String delimeter) {
-		com.trackier.sdk.TrackierSDK.localRefTrack(value, delimeter);
+	public void setLocalRefTrack(boolean value, String delimeter) {
+		com.trackier.sdk.TrackierSDK.setLocalRefTrack(value, delimeter);
 	}
 
 	@ReactMethod
