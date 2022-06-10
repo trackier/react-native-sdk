@@ -10,7 +10,7 @@ declare module 'react-native-trackier' {
         initialize: (trackierConfig: TrackierConfig) => void
         trackEvent: (trackierEvent:TrackierEvent) => void
 
-        setEnable: (trackierEnable:boolean) => void 
+        setEnabled: (trackierEnabled:boolean) => void 
         setUserId: (userId: String) => void
         setUserEmail: (userEmail: String) => void
         trackOrganic: (trackAsOrganic: boolean)=> void

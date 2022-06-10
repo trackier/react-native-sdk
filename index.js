@@ -3,7 +3,7 @@
 import { 
 	NativeModules
 } from 'react-native';
-import { TrackierSetEnable, TrackierSetUserId, TrackierSetEmailId, TrackAsOrganic, LocalRefTrack } from 'react-native-trackier';
+import { TrackierSetEnabled, TrackierSetUserId, TrackierSetEmailId, TrackAsOrganic, LocalRefTrack } from 'react-native-trackier';
 
 const module_trackier = NativeModules.TrackierSDK;
 
@@ -29,8 +29,8 @@ TrackierSDK.setTrackAsOrganic= function(trackAsOrganic){
 	module_trackier.setTrackAsOrganic(trackAsOrganic)
 }
 
-TrackierSDK.setEnable= function(trackierEnable){
-	module_trackier.setEnable(trackierEnable)
+TrackierSDK.setEnabled= function(trackierEnable){
+	module_trackier.setEnabled(trackierEnable)
 }
 
 TrackierSDK.setTrackSession= function(trackierSession){
@@ -103,7 +103,7 @@ TrackierEvent.prototype.setEventValue = function(key, value) {
 	this.ev[key] = value;
 };
 
-TrackierSetEnable.prototype.setEnableValue = function(key, value){
+TrackierSetEnabled.prototype.setEnableValue = function(key, value){
 	if(typeof key!=='string'){
 		return;
 	}
@@ -145,7 +145,7 @@ module.exports = {
 	TrackierConfig,
 	TrackierSDK,
 	TrackierEvent,
-	TrackierSetEnable,
+	TrackierSetEnabled,
 	TrackierSetUserId,
 	TrackierSetEmailId,
 	TrackAsOrganic, 

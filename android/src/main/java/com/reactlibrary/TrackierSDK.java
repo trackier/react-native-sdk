@@ -25,41 +25,39 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 	}
 
 	@ReactMethod
-    public void setEnable(ReadableMap enableMap){
-		if(checkKey(enableMap,"trackierEnable")){
+    public void setEnabled(ReadableMap enableMap){
+		if (checkKey(enableMap,"trackierEnable")) {
 			com.trackier.sdk.TrackierSDK.setEnabled(enableMap.getString("trackierEnable"))
 		}
 	   
-    }
-
+	}
     @ReactMethod
      public void setUserId(ReadableMap userIdMap) {
-	 if (checkKey(userIdMap, "userId")) {
-		com.trackier.sdk.TrackierSDK.setUserId(userIdMap.getString("userId"));
-	 }
+	 	if (checkKey(userIdMap, "userId")) {
+			com.trackier.sdk.TrackierSDK.setUserId(userIdMap.getString("userId"));
+	    }
     
 	} 
 
 	@ReactMethod
-	public void setTrackAsOrganic(ReadableMap organicMap){
-		if(checkKey(organicMap,trackAsOrganic )){
+	public void trackAsOrganic(ReadableMap organicMap){
+		if (checkKey(organicMap,trackAsOrganic )) {
 			com.trackier.sdk.TrackierSDK.trackAsOrganic(organicMap.getString("trackAsOrganic"))
 		}
 		
 	}
-     @ReactMethod
+
+    @ReactMethod
     public void setUserEmail(ReadableMap userEmailMap) {
-	if (checkKey(userEmailMap, "userEmail")) {
-		com.trackier.sdk.TrackierSDK.setUserEmail(userEmailMap.getString("userEmail"));
-	 }
+		if (checkKey(userEmailMap, "userEmail")) {
+			com.trackier.sdk.TrackierSDK.setUserEmail(userEmailMap.getString("userEmail"));
+		 }
 
     }
 	@ReactMethod
-	public void setTrackSession(){
+	public void trackSession(){
 		com.trackier.sdk.TrackierSDK.trackSession()
 	}
-
-
 
 	
 	@ReactMethod
@@ -84,7 +82,7 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 
 	@ReactMethod
 	public void trackEvent(ReadableMap trackierEventMap) {
-		com.trackier.sdk.TrackierEvent trackietrarEvent = new com.trackier.sdk.TrackierEvent(trackierEventMap.getString("eventId"));
+		com.trackier.sdk.TrackierEvent trackierEvent = new com.trackier.sdk.TrackierEvent(trackierEventMap.getString("eventId"));
 		
 		trackierEvent.orderId = null;
 		trackierEvent.currency = null;
