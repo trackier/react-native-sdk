@@ -1,18 +1,11 @@
+import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-  TouchableHighlight
-} from 'react-native';
-
 import { TrackierConfig, TrackierSDK, TrackierEvent} from 'react-native-trackier';
+import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 
-const App: () => React$Node = () => {
-  var trackierConfig = new TrackierConfig("xxxx-xx-4505-bc8b-xx",TrackierConfig.EnvironmentDevelopment);
+export default function App() {
+
+  var trackierConfig = new TrackierConfig("xxxx-xx-4505-bc8b-xx", TrackierConfig.EnvironmentDevelopment);
   TrackierSDK.initialize(trackierConfig);
 
   function _onPress_trackSimpleEvent(){
@@ -23,6 +16,7 @@ const App: () => React$Node = () => {
     trackierEvent.setEventValue("param2",2.0);
     TrackierSDK.trackEvent(trackierEvent);
   }
+
   function _onPress_trackRevenueEvent(){
     var trackierEvent1 = new TrackierEvent(TrackierEvent.PURCHASE);
     trackierEvent1.param1 = "XXXXXX";
@@ -30,7 +24,13 @@ const App: () => React$Node = () => {
     trackierEvent1.revenue = 2.5;
     trackierEvent1.currency = "USD";
     TrackierSDK.trackEvent(trackierEvent1);
+    TrackierSDK.setEnabled(true);
+    TrackierSDK.setUserEmail("anuj@trackier.com");
+    TrackierSDK.setUserId("abcd");
+    TrackierSDK.trackAsOrganic(false);
+    TrackierSDK.setLocalRefTrack(true,"test");
   }
+
   return (
     <>
       <View style={styles.container}>
@@ -48,24 +48,13 @@ const App: () => React$Node = () => {
         </View>
     </>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
     justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  button: {
-    alignItems: 'center',
-    backgroundColor: '#61D4FB',
-    padding: 10,
-    width: '60%',
-    height: 40,
-    margin: 10,
-    marginTop: 75
   },
 });
-
-export default App;

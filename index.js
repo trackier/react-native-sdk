@@ -15,7 +15,31 @@ var TrackierSDK = {};
 
 TrackierSDK.initialize = function(trackierConfig) {
 	module_trackier.initializeSDK(trackierConfig)
-};
+}
+
+TrackierSDK.setEnabled = function (value) {
+	module_trackier.setEnabled(value)
+}
+
+TrackierSDK.setUserId = function(userId) {
+	module_trackier.setUserId(userId)
+}
+
+TrackierSDK.setUserEmail = function(userEmail) {
+	module_trackier.setUserEmail(userEmail)
+}
+
+TrackierSDK.trackAsOrganic = function(value) {
+	module_trackier.trackAsOrganic(value)
+}
+
+TrackierSDK.setLocalRefTrack = function (value, delimeter) {
+	module_trackier.setLocalRefTrack(value, delimeter)
+}
+
+TrackierSDK.setUserAdditionalDetails = function (key, value) {
+	module_trackier.setUserAdditionalDetails(value, delimeter)
+}
 
 TrackierSDK.trackEvent = function(trackierEvent) {
 	let isValidArgs = true;
@@ -84,6 +108,6 @@ TrackierEvent.prototype.setEventValue = function(key, value) {
 module.exports = {
 	TrackierConfig,
 	TrackierSDK,
-	TrackierEvent,
+	TrackierEvent
 }
 
