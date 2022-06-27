@@ -25,12 +25,12 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 	}
 
 	@ReactMethod
-    public void setEnabled(boolean value) {
+	public void setEnabled(boolean value) {
 		com.trackier.sdk.TrackierSDK.setEnabled(value);
 	}
-    @ReactMethod
-     public void setUserId(String userId) {
-	 	com.trackier.sdk.TrackierSDK.setUserId(userId);
+	@ReactMethod
+	 public void setUserId(String userId) {
+		com.trackier.sdk.TrackierSDK.setUserId(userId);
 	} 
 
 	@ReactMethod
@@ -38,10 +38,10 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 		com.trackier.sdk.TrackierSDK.trackAsOrganic(value);
 	}
 
-    @ReactMethod
-    public void setUserEmail(String userEmail) {
+	@ReactMethod
+	public void setUserEmail(String userEmail) {
 		com.trackier.sdk.TrackierSDK.setUserEmail(userEmail);
-    }
+	}
 	
 	@ReactMethod
 	public void setLocalRefTrack(boolean value, String delimeter) {
