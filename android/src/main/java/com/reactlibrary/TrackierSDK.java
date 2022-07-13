@@ -21,6 +21,8 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 	@ReactMethod
 	public void initializeSDK(ReadableMap initializeMap) {
 		com.trackier.sdk.TrackierSDKConfig sdkConfig = new com.trackier.sdk.TrackierSDKConfig(getReactApplicationContext(), initializeMap.getString("appToken"), initializeMap.getString("environment"));
+		sdkConfig.setSDKType("react_sdk");
+        sdkConfig.setSDKVersion("1.6.27");
 		com.trackier.sdk.TrackierSDK.initialize(sdkConfig);
 	}
 
