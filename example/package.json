@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "expo start --dev-client",
-    "android": "expo run:android",
-    "ios": "expo run:ios",
+    "start": "npx react-native start",
+    "android": "npx react-native run-android",
+    "ios": "npx react-native run-ios",
     "web": "expo start --web"
   },
   "dependencies": {
@@ -15,7 +15,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-native": "0.68.2",
-    "react-native-trackier": "github:trackier/react-native-sdk#feat-react_add_method",
+    "react-native-trackier": "github:trackier/react-native-sdk",
     "react-native-web": "0.17.7"
   },
   "devDependencies": {
