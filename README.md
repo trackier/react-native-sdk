@@ -105,7 +105,7 @@ If your app is using proguard then add these lines to the proguard config file
 #### Add the Analytics SDK to your app
 
 
-* Once installed, you can access the `firebase_analytics` plugin by importing it in your Dart code:
+* Once installed, you can access the `firebase_analytics` plugin by importing it in your JS code:
   ```js
     import analytics from '@react-native-firebase/analytics';
   ```
@@ -114,7 +114,7 @@ If your app is using proguard then add these lines to the proguard config file
     var analytics = analytics();
   ```
 * Use the `analytics` instance obtained above to set the following user property:
-  ```dart
+  ```js
     var trackierId = await TrackierSDK.getTrackierId();
     await analytics().setUserProperty('ct_objectId', trackierId); 
   ``` 
