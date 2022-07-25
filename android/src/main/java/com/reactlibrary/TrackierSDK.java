@@ -1,11 +1,12 @@
 package com.reactlibrary;
 
+import java.util.Map;
+import java.util.LinkedHashMap;
+import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
 
 public class TrackierSDK extends ReactContextBaseJavaModule {
 
@@ -30,6 +31,13 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 	public void setEnabled(boolean value) {
 		com.trackier.sdk.TrackierSDK.setEnabled(value);
 	}
+
+	@ReactMethod
+	public void getTrackierId(Promise promise) {
+		String id = com.trackier.sdk.TrackierSDK.getTrackierId();
+		promise.resolve(id);
+	}
+
 	@ReactMethod
 	 public void setUserId(String userId) {
 		com.trackier.sdk.TrackierSDK.setUserId(userId);
