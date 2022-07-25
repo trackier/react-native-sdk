@@ -22,7 +22,7 @@ TrackierSDK.setEnabled = function (value) {
 }
 
 TrackierSDK.getTrackierId = async function () {
-	var id = await module_trackier.getTrackierId()
+	const id = await module_trackier.getTrackierId()
 	return id;
 }
 
