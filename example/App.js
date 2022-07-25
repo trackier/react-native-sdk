@@ -12,6 +12,7 @@ export default function App() {
     var trackierEvent = new TrackierEvent(TrackierEvent.UPDATE);
     trackierEvent.param1 = "XXXXXX";
     trackierEvent.param2 = "kkkkkkk";
+    // TrackierSDK.getTrackierId().then(val => console.log('===trackierid: ', val)).catch(e => console.log('==error: ', e))
     trackierEvent.setEventValue("param","value");
     trackierEvent.setEventValue("param2",2.0);
     TrackierSDK.trackEvent(trackierEvent);

@@ -21,6 +21,11 @@ TrackierSDK.setEnabled = function (value) {
 	module_trackier.setEnabled(value)
 }
 
+TrackierSDK.getTrackierId = async function () {
+	const id = await module_trackier.getTrackierId()
+	return id;
+}
+
 TrackierSDK.setUserId = function(userId) {
 	module_trackier.setUserId(userId)
 }
