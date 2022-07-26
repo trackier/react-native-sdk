@@ -13,5 +13,17 @@
 RCT_EXTERN_METHOD(initializeSDK:(NSDictionary *)dict)
 
 RCT_EXTERN_METHOD(trackEvent:(NSDictionary *)dict)
+
+RCT_EXTERN_METHOD(setEnabled:(BOOL *)value)
+
+RCT_EXTERN_METHOD(setUserId:(NSString *)userId)
+
+RCT_EXTERN_METHOD(setUserEmail:(NSString *)userEmail)
+
+RCT_EXTERN_METHOD(trackAsOrganic:(BOOL *)value)
+
+RCT_EXTERN_METHOD(setLocalRefTrack:(BOOL *)value withDelim: (NSString *)delimeter)
+
+RCT_EXTERN_METHOD(setUserAdditionalDetails:(NSString *)key withValue: (NSString *)value)
 @end
 

@@ -12,16 +12,15 @@ import trackier_ios_sdk
 class RNTrackierSDK: NSObject {
 
 	@objc func initializeSDK(_ dict: NSDictionary) -> Void {
-
 		let appToken = dict["appToken"] as! String;
 		let environment = dict["environment"] as! String;
 		let config = TrackierSDKConfig(appToken: appToken , env: environment)
+		config.setSDKType(sdkType: "react_native_sdk")
+		config.setSDKVersion(sdkVersion: "1.6.27")
 		TrackierSDK.initialize(config: config)
-
 	}
 
 	@objc func trackEvent(_ dict: NSDictionary) -> Void {
-
 		let currency: String = dict["currency"] as? String ?? ""
 		let revenue: String = dict["revenue"] as? String ?? ""
 		let eventId: String = dict["eventId"] as! String
@@ -59,6 +58,30 @@ class RNTrackierSDK: NSObject {
 			event.addEventValue(prop: key, val: value)
 		}
 		TrackierSDK.trackEvent(event: event)
-	} 
+	}
+
+	@objc func setEnabled(_ value: Bool) {
+		TrackierSDK.setEnabled(value: value)
+	}
+
+	@objc func setUserId(_ userId: String) {
+		TrackierSDK.setUserID(userId: userId)
+	}
+
+	@objc func setUserEmail(_ userEmail: String) {
+		TrackierSDK.setUserEmail(userEmail: userEmail)
+	}
+
+	@objc func trackAsOrganic(_ value: Bool) {
+		// Do nothing, android only method
+	}
+
+	@objc func setLocalRefTrack(_ value: Bool, withDelim delimeter: String) {
+		// Do nothing, android only method
+	}
+
+	@objc func setUserAdditionalDetails(_ key: String, withValue value: String) {
+		// TODO
+	}
 }
 
