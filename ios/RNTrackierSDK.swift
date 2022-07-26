@@ -60,27 +60,27 @@ class RNTrackierSDK: NSObject {
 		TrackierSDK.trackEvent(event: event)
 	}
 
-	@objc func setEnabled(value: Bool) {
+	@objc func setEnabled(_ value: Bool) {
 		TrackierSDK.setEnabled(value: value)
 	}
 
-	@objc func setUserId(userId: String) {
+	@objc func setUserId(_ userId: String) {
 		TrackierSDK.setUserID(userId: userId)
 	}
 
-	@objc func setUserEmail(userEmail: String) {
+	@objc func setUserEmail(_ userEmail: String) {
 		TrackierSDK.setUserEmail(userEmail: userEmail)
 	}
 
-	@objc func trackAsOrganic(value: Bool) {
+	@objc func trackAsOrganic(_ value: Bool) {
 		// Do nothing, android only method
 	}
 
-	@objc func setLocalRefTrack(value: Bool, delimeter: String) {
+	@objc func setLocalRefTrack(_ value: Bool, withDelim delimeter: String) {
 		// Do nothing, android only method
 	}
 
-	@objc func setUserAdditionalDetails(key: String, value: String) {
+	@objc func setUserAdditionalDetails(_ key: String, withValue value: String) {
 		// TODO
 	}
 }
