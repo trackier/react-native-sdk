@@ -67,5 +67,21 @@ class RNTrackierSDK: NSObject {
 	@objc func setUserId(userId: String) {
 		TrackierSDK.setUserID(userId: userId)
 	}
+
+	@objc func setUserEmail(userEmail: String) {
+		TrackierSDK.setUserEmail(userEmail: userEmail)
+	}
+
+	@objc func trackAsOrganic(value: Bool) {
+		// Do nothing, android only method
+	}
+
+	@objc func setLocalRefTrack(value: Bool, delimeter: String) {
+		// Do nothing, android only method
+	}
+
+	@objc func setUserAdditionalDetails(key: String, value: String) {
+		// TODO
+	}
 }
 
