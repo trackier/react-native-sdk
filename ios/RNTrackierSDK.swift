@@ -66,7 +66,7 @@ class RNTrackierSDK: NSObject {
 	}
 
 	@objc func setUserId(userId: String) {
-		TrackierSDK.setUserId(userId: userId)
+		TrackierSDK.setUserID(userId: userId)
 	}
 }
 
