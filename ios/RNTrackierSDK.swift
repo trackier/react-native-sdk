@@ -12,7 +12,6 @@ import trackier_ios_sdk
 class RNTrackierSDK: NSObject {
 
 	@objc func initializeSDK(_ dict: NSDictionary) -> Void {
-
 		let appToken = dict["appToken"] as! String;
 		let environment = dict["environment"] as! String;
 		let config = TrackierSDKConfig(appToken: appToken , env: environment)
@@ -22,7 +21,6 @@ class RNTrackierSDK: NSObject {
 	}
 
 	@objc func trackEvent(_ dict: NSDictionary) -> Void {
-
 		let currency: String = dict["currency"] as? String ?? ""
 		let revenue: String = dict["revenue"] as? String ?? ""
 		let eventId: String = dict["eventId"] as! String
