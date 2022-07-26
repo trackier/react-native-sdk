@@ -19,6 +19,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.dependency "React"
-  s.dependency 'trackier-ios-sdk', '1.6.20'
+  s.dependency 'trackier-ios-sdk', '1.6.27'
 end
 

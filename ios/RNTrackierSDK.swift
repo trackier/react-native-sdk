@@ -59,6 +59,14 @@ class RNTrackierSDK: NSObject {
 			event.addEventValue(prop: key, val: value)
 		}
 		TrackierSDK.trackEvent(event: event)
-	} 
+	}
+
+	@objc func setEnabled(value: Bool) {
+		TrackierSDK.setEnabled(value: value)
+	}
+
+	@objc func setUserId(userId: String) {
+		TrackierSDK.setUserId(userId: userId)
+	}
 }
 
