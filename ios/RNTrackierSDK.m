@@ -13,5 +13,9 @@
 RCT_EXTERN_METHOD(initializeSDK:(NSDictionary *)dict)
 
 RCT_EXTERN_METHOD(trackEvent:(NSDictionary *)dict)
+
+RCT_EXTERN_METHOD(setEnabled:(BOOL *)dict)
+
+RCT_EXTERN_METHOD(setUserId:(NSString *)dict)
 @end
 
