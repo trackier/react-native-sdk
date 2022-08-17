@@ -34,6 +34,14 @@ TrackierSDK.setUserEmail = function(userEmail) {
 	module_trackier.setUserEmail(userEmail)
 }
 
+TrackierSDK.setUserName = function(userName) {
+	module_trackier.setUserName(userName)
+}
+
+TrackierSDK.setUserPhone = function(userPhone) {
+	module_trackier.setUserPhone(userPhone)
+}
+
 TrackierSDK.trackAsOrganic = function(value) {
 	module_trackier.trackAsOrganic(value)
 }
@@ -48,7 +56,7 @@ TrackierSDK.setUserAdditionalDetails = function (key, value) {
 
 TrackierSDK.trackEvent = function(trackierEvent) {
 	let isValidArgs = true;
-	let props = ['eventId', 'orderId', 'currency', 'param1', 'param2', 'param3', 'param4', 'param5', 'param6', 'param7', 'param8', 'param9', 'param10'];
+	let props = ['eventId', 'orderId', 'currency', 'couponCode', 'param1', 'param2', 'param3', 'param4', 'param5', 'param6', 'param7', 'param8', 'param9', 'param10'];
 	props.forEach(function (v, k) {
 		if (trackierEvent[v] === null || trackierEvent[v] === undefined) {
 			return;
@@ -61,6 +69,7 @@ TrackierSDK.trackEvent = function(trackierEvent) {
 	if (!isValidArgs || (typeof trackierEvent.revenue != 'undefined' && typeof trackierEvent.revenue != 'number')) {
 		return;
 	}
+	
 	module_trackier.trackEvent(trackierEvent)
 };
 
@@ -72,6 +81,8 @@ var TrackierEvent = function(eventId) {
 	this.eventId = eventId;
 	this.orderId = null;
 	this.currency = null;
+	this.discount = 0;
+	this.couponCode = null;
 	this.param1 = null;
 	this.param2 = null;
 	this.param3 = null;

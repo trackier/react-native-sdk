@@ -52,7 +52,17 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 	public void setUserEmail(String userEmail) {
 		com.trackier.sdk.TrackierSDK.setUserEmail(userEmail);
 	}
-	
+
+	@ReactMethod
+	public void setUserName(String userName) {
+		com.trackier.sdk.TrackierSDK.setUserName(userName);
+	}
+
+	@ReactMethod
+	public void setUserPhone(String userPhone) {
+		com.trackier.sdk.TrackierSDK.setUserPhone(userPhone);
+	}
+
 	@ReactMethod
 	public void setLocalRefTrack(boolean value, String delimeter) {
 		com.trackier.sdk.TrackierSDK.setLocalRefTrack(value, delimeter);
@@ -78,6 +88,8 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 		
 		trackierEvent.orderId = null;
 		trackierEvent.currency = null;
+		trackierEvent.discount = null;
+		trackierEvent.couponCode = null;
 		trackierEvent.param1 = null;
 		trackierEvent.param2 = null;
 		trackierEvent.param3 = null;
@@ -95,6 +107,12 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 		}
 		if (checkKey(trackierEventMap, "currency")) {            
 		   trackierEvent.currency = trackierEventMap.getString("currency");
+		}
+		if (checkKey(trackierEventMap, "couponCode")) {
+			trackierEvent.couponCode = trackierEventMap.getString("couponCode");
+		}
+		if (checkKey(trackierEventMap, "discount")) {
+			trackierEvent.discount = (float) trackierEventMap.getDouble("discount");
 		}
 		if (checkKey(trackierEventMap, "param1")) {            
 			trackierEvent.param1 = trackierEventMap.getString("param1");

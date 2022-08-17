@@ -12,6 +12,10 @@ export default function App() {
     var trackierEvent = new TrackierEvent(TrackierEvent.UPDATE);
     trackierEvent.param1 = "XXXXXX";
     trackierEvent.param2 = "kkkkkkk";
+    trackierEvent.couponCode = "testReact";
+    trackierEvent.discount = 2.0;
+    TrackierSDK.setUserName("abc");
+    TrackierSDK.setUserPhone("813434721");
     // TrackierSDK.getTrackierId().then(val => console.log('===trackierid: ', val)).catch(e => console.log('==error: ', e))
     trackierEvent.setEventValue("param","value");
     trackierEvent.setEventValue("param2",2.0);
@@ -22,12 +26,18 @@ export default function App() {
     var trackierEvent1 = new TrackierEvent(TrackierEvent.PURCHASE);
     trackierEvent1.param1 = "XXXXXX";
     trackierEvent1.param2 = "kkkkkkk";
+    trackierEvent1.couponCode = "testReact";
+    //trackierEvent1.discount = 2.0;
+
     trackierEvent1.revenue = 2.5;
     trackierEvent1.currency = "USD";
     TrackierSDK.trackEvent(trackierEvent1);
     TrackierSDK.setEnabled(true);
     TrackierSDK.setUserEmail("anuj@trackier.com");
+    TrackierSDK.setUserName("Sanu");
+    TrackierSDK.setUserPhone("8130300721");
     TrackierSDK.setUserId("abcd");
+
     TrackierSDK.trackAsOrganic(false);
     TrackierSDK.setLocalRefTrack(true,"test");
   }
