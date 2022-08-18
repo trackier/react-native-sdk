@@ -131,8 +131,7 @@ export default function App() {
     trackierEvent.setEventValue("param2",2.0);
     TrackierSDK.trackEvent(trackierEvent);
   }
-
- } 
+} 
 ```
 
 Also check the example app screenshot of above example
@@ -250,9 +249,7 @@ Screenshot[6]
     customData.set("phone", "81xxxxx84");
     trackierEvent.ev=customData;
     TrackierSDK.trackEvent(trackierEvent);
-
   }
-
 
 ```
 
@@ -275,7 +272,6 @@ function _userDetails(){
     /*Passing the UserId and User EmailId Data */
     TrackierSDk.setUserId("XXXXXXXX"); //Pass the UserId values here
     TrackierSDk.setUserEmail("abc@gmail.com"); //Pass the user email id in the argument.
-
   }
 
 ```
@@ -298,7 +294,6 @@ Trackier allow for passing the additional user details like UserName, Mobile Num
     userDetails={"name":"Sanu"}; //You can pass the Username data.
     userDetails={"mobile_number":"872xxxxx87"}; // You can pass user mobile number
     TrackierSDk.setUserAdditonalDetail(userDetails);
-
   }
 
 ```
