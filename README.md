@@ -184,7 +184,6 @@ export default function App() {
     TrackierSDK.trackEvent(trackierEvent);
   }
 }
-
 ```
 
 Check below the example screenshot of customs events:-
@@ -221,10 +220,8 @@ export default function App() {
     revenueEvent.revenue = 2.5; //Pass your generated revenue here.
     revenueEvent.currency = "USD"; //Pass your currency here.
     revenueEvent.trackEvent(trackierEvent1);
- 
   }
-}
-  
+} 
 ```
 
 Check below the revenue events calling screenshots.
@@ -250,7 +247,6 @@ Screenshot[6]
     trackierEvent.ev=customData;
     TrackierSDK.trackEvent(trackierEvent);
   }
-
 ```
 
 - First create a map.
@@ -273,7 +269,6 @@ function _userDetails(){
     TrackierSDk.setUserId("XXXXXXXX"); //Pass the UserId values here
     TrackierSDk.setUserEmail("abc@gmail.com"); //Pass the user email id in the argument.
   }
-
 ```
 
 ### For Passing Additional Data
@@ -295,7 +290,6 @@ Trackier allow for passing the additional user details like UserName, Mobile Num
     userDetails={"mobile_number":"872xxxxx87"}; // You can pass user mobile number
     TrackierSDk.setUserAdditonalDetail(userDetails);
   }
-
 ```
 
 Below are the screenshots of the customs data passing 
@@ -322,85 +316,5 @@ If your app is using proguard then add these lines to the proguard config file
       boolean isLimitAdTrackingEnabled();
   }
   -keep public class com.android.installreferrer.** { *; }
+  
 ```
-
-In your `App.js` file, add the following code to initialize the Trackier SDK:
-```js
-var trackierConfig = new TrackierConfig("app_token", TrackierConfig.EnvironmentProduction);
-TrackierSDK.initialize(trackierConfig);
-```
-
-Depending on whether you build your app for testing or for production, you must set the environment with one of these values:
-```js
-TrackierConfig.EnvironmentDevelopment
-TrackierConfig.EnvironmentProduction
-```
-
-
-### <a id="qs-track-events"></a>Track Events
-
-1. Event tracking with Trackier React Native SDK:
-```js
-  var trackierEvent = new TrackierEvent(TrackierEvent.UPDATE);
-  trackierEvent.param1 = "XXXXXX";
-  trackierEvent.param2 = "kkkkkkk";
-  TrackierSDK.trackEvent(trackierEvent);
-```
-
-2. Event tracking with currency and revenue with Trackier React Native SDK:
-```js
-  var trackierEvent = new TrackierEvent(TrackierEvent.UPDATE);
-  trackierEvent.param1 = "XXXXXX";
-  trackierEvent.param2 = "kkkkkkk";
-  trackierEvent.revenue = 2.5;
-  trackierEvent.currency = "USD";
-  TrackierSDK.trackEvent(trackierEvent);
-```
-
-
-## <a id="qs-progaurd-settings"></a>Proguard Settings 
-
-If your app is using proguard then add these lines to the proguard config file 
-
-``` 
-  -keep class com.trackier.sdk.** { *; }
-  -keep class com.google.android.gms.common.ConnectionResult {
-      int SUCCESS;
-  }
-  -keep class com.google.android.gms.ads.identifier.AdvertisingIdClient {
-      com.google.android.gms.ads.identifier.AdvertisingIdClient$Info getAdvertisingIdInfo(android.content.Context);
-  }
-  -keep class com.google.android.gms.ads.identifier.AdvertisingIdClient$Info {
-      java.lang.String getId();
-      boolean isLimitAdTrackingEnabled();
-  }
-  -keep public class com.android.installreferrer.** { *; }
-```
-
-### <a id="qs-track-uninstall-android"></a> Track Uninstall for Android
-
- **Before you begin**
-* [Install `firebase_core`](https://rnfirebase.io/analytics/usage) and add the initialization code to your app if you haven't already.
-* Add your app to your Firebase project in the [Firebase console](https://console.firebase.google.com/).
-
-#### Add the Analytics SDK to your app
-
-
-* Once installed, you can access the `firebase_analytics` plugin by importing it in your JS code:
-  ```js
-    import analytics from '@react-native-firebase/analytics';
-  ```
-* Create a new Firebase Analytics instance by with this code
-  ```js
-    var analytics = analytics();
-  ```
-* Use the `analytics` instance obtained above to set the following user property:
-  ```js
-    var trackierId = await TrackierSDK.getTrackierId();
-    await analytics().setUserProperty('ct_objectId', trackierId); 
-  ``` 
-
-* Adding the above code to your app sets up a common identifier. 
-* Set the `app_remove` event as a conversion event in Firebase. 
-* Use the Firebase cloud function to send uninstall information to Trackier MMP. 
-* You can find the support article [here](https://help.trackier.com/support/solutions/articles/31000162841-android-uninstall-tracking).
