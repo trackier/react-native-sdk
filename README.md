@@ -2,50 +2,6 @@
 
 ## Table of Contents
 
-* [Example App](#qs-example-app)
-* [Basic Integration](#qs-basic-integration)
-    * [Retrieve your app token](#qs-retrieve-app-token)
-    * [Initialize the SDK](#qs-initialize-sdk)
-    * [Track Events](#qs-track-events)
-* [Proguard Settings](#qs-progaurd-settings)
-* [Track Uninstall for Android](#qs-track-uninstall-android)
-
-
-## <a id="qs-example-app"></a>Example App
-
-There is an example app inside the [example directory](https://github.com/trackier/react-native-sdk/tree/main/example).
-
-
-## <a id="qs-basic-integration"></a>Basic Integration
-
-First, download the library from npm:
-```sh
-$ npm install trackier/react-native-sdk
-```
-
-For iOS app make sure to go to ios folder and install Cocoapods dependencies:
-```sh
-$ cd ios && pod install
-```    
-
-### <a id="qs-retrieve-app-token"></a>Retrieve your app token
-
-1. Login to your Trackier MMP account.
-2. Select the application from dashboard which you want to get the app token for.
-3. Go to SDK Integration via the left side navigation menu.
-4. Copy the SDK Key there to be used as the `"app_token"`.
-
-
-### <a id="qs-initialize-sdk"></a>Initialize the SDK
-
-You should use the following import statement on top of your `.js` file:
-```js
-import { TrackierConfig, TrackierSDK, TrackierEvent} from 'react-native-trackier';
-```
-Welcome to the react-native-sdk wiki!# react-native-sdk
-
-## Table of Contents
-
 * [Quick Integration Guide](#qs-basic-integration)
     * [Retrieve your app token](#qs-retrieve-app-token)
     * [Initialize the SDK](#qs-initialize-sdk)
