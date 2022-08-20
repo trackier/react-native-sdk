@@ -24,7 +24,7 @@ class RNTrackierSDK: NSObject {
 		let currency: String = dict["currency"] as? String ?? ""
 		let revenue: String = dict["revenue"] as? String ?? ""
 		let discount: Float64 = (dict["discount"] as? Float64 ?? 0.0)
-        let couponCode: String = dict["couponCode"] as? String ?? ""
+		let couponCode: String = dict["couponCode"] as? String ?? ""
 		let eventId: String = dict["eventId"] as! String
 		let orderId: String = dict["orderId"] as? String ?? ""
 		let param1: String = dict["param1"] as? String ?? ""
@@ -47,7 +47,7 @@ class RNTrackierSDK: NSObject {
 		event.setRevenue(revenue: Float64((revenue as NSString).floatValue), currency: currency)
 		event.orderId = orderId
 		event.setCouponCode(couponCode: couponCode)
-        event.setDiscount(discount: discount)
+		event.setDiscount(discount: discount)
 		event.param1  = param1
 		event.param2  = param2
 		event.param3  = param3
@@ -76,13 +76,13 @@ class RNTrackierSDK: NSObject {
 		TrackierSDK.setUserEmail(userEmail: userEmail)
 	}
 
-    @objc func setUserName(_ userName: String) {
-        TrackierSDK.setUserName(userName: userName)
-    }
-    
-    @objc func setUserPhone(_ userPhone: String) {
-        TrackierSDK.setUserPhone(userPhone: userPhone)
-    }
+	@objc func setUserName(_ userName: String) {
+		TrackierSDK.setUserName(userName: userName)
+	}
+	
+	@objc func setUserPhone(_ userPhone: String) {
+		TrackierSDK.setUserPhone(userPhone: userPhone)
+	}
 	
 	@objc func trackAsOrganic(_ value: Bool) {
 		// Do nothing, android only method
