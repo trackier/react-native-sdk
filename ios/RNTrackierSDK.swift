@@ -16,13 +16,15 @@ class RNTrackierSDK: NSObject {
 		let environment = dict["environment"] as! String;
 		let config = TrackierSDKConfig(appToken: appToken , env: environment)
 		config.setSDKType(sdkType: "react_native_sdk")
-		config.setSDKVersion(sdkVersion: "1.6.27")
+		config.setSDKVersion(sdkVersion: "1.6.29")
 		TrackierSDK.initialize(config: config)
 	}
 
 	@objc func trackEvent(_ dict: NSDictionary) -> Void {
 		let currency: String = dict["currency"] as? String ?? ""
 		let revenue: String = dict["revenue"] as? String ?? ""
+		let discount: Float64 = (dict["discount"] as? Float64 ?? 0.0)
+		let couponCode: String = dict["couponCode"] as? String ?? ""
 		let eventId: String = dict["eventId"] as! String
 		let orderId: String = dict["orderId"] as? String ?? ""
 		let param1: String = dict["param1"] as? String ?? ""
@@ -44,6 +46,8 @@ class RNTrackierSDK: NSObject {
 		let event = TrackierEvent(id: eventId)
 		event.setRevenue(revenue: Float64((revenue as NSString).floatValue), currency: currency)
 		event.orderId = orderId
+		event.setCouponCode(couponCode: couponCode)
+		event.setDiscount(discount: discount)
 		event.param1  = param1
 		event.param2  = param2
 		event.param3  = param3
@@ -72,6 +76,14 @@ class RNTrackierSDK: NSObject {
 		TrackierSDK.setUserEmail(userEmail: userEmail)
 	}
 
+	@objc func setUserName(_ userName: String) {
+		TrackierSDK.setUserName(userName: userName)
+	}
+	
+	@objc func setUserPhone(_ userPhone: String) {
+		TrackierSDK.setUserPhone(userPhone: userPhone)
+	}
+	
 	@objc func trackAsOrganic(_ value: Bool) {
 		// Do nothing, android only method
 	}

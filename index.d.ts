@@ -14,6 +14,8 @@ declare module 'react-native-trackier' {
         getTrackierId: () => Promise<string> 
         setUserId: (userId: string) => void
         setUserEmail: (userEmail: string) => void
+        setUserName: (userName: string) => void
+        setUserPhone: (userPhone: string) => void
         trackAsOrganic: (value: boolean) => void
         setLocalRefTrack: (value: boolean, delimeter: string) => void 
         setUserAdditionalDetails: (key: string, value: string) => void

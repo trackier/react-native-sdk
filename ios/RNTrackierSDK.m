@@ -20,6 +20,10 @@ RCT_EXTERN_METHOD(setUserId:(NSString *)userId)
 
 RCT_EXTERN_METHOD(setUserEmail:(NSString *)userEmail)
 
+RCT_EXTERN_METHOD(setUserName:(NSString *)userName)
+
+RCT_EXTERN_METHOD(setUserPhone:(NSString *)userPhone)
+
 RCT_EXTERN_METHOD(trackAsOrganic:(BOOL *)value)
 
 RCT_EXTERN_METHOD(setLocalRefTrack:(BOOL *)value withDelim: (NSString *)delimeter)
