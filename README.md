@@ -61,7 +61,7 @@ import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 
 export default function App() {
 
-/*While Initializing the SDK, You need to pass the three parameter in the TrackierSDKConfig.
+/* While Initializing the SDK, You need to pass the three parameter in the TrackierSDKConfig.
  * In First argument, you need to pass the Trackier SDK api key
  * In third argument, you need to pass the environment which can be either "EnvironmentDevelopment", "EnvironmentProduction". */
 
@@ -116,11 +116,10 @@ export default function App() {
 
   function _builtInEvents(){
 
-    // Below are the example of built-in events function calling
+    //Below are the example of built-in events function calling
     //The arguments - "TTrackierEvent.PURCHASE" passed in the Trackier event class is Events id.
 
     var trackierEvent = new TrackierEvent(TrackierEvent.PURCHASE); // Purchase is our in-build events.
-
 
  /* Below are the function for the adding the extra data,
     You can add the extra data like login details of user or anything you need.
@@ -209,7 +208,7 @@ export default function App() {
 
   function _trackRevenueEvent(){
 
-    // Below are the example of inbuilt events function calling
+    //Below are the example of inbuilt events function calling
     //The arguments - "TrackierEvent.PURCHASE" passed in the event class is Events id
 
     var revenueEvent = new TrackierEvent(TrackierEvent.PURCHASE);
@@ -237,7 +236,7 @@ Screenshot[6]
 ```js
 
   function _customsDataPassing(){
-    // Below are the example of revenue events function calling
+    //Below are the example of revenue events function calling
     //The arguments - "sEMWSCTXeu" passed in the event class is Events id for AppOpen.
     var trackierEvent = new TrackierEvent("sEMWSCTXeu");
 
@@ -266,7 +265,7 @@ Just need to pass the data of User Id, Email Id and other additional data to Tra
 
 function _userDetails(){
 
-    /*Passing the UserId and User EmailId Data */
+    //Passing the UserId and User EmailId Data
     TrackierSDk.setUserId("XXXXXXXX"); //Pass the UserId values here
     TrackierSDk.setUserEmail("abc@gmail.com"); //Pass the user email id in the argument.
   }
@@ -280,11 +279,11 @@ Trackier allow for passing the additional user details like UserName, Mobile Num
 ```dart
 
   function _userDetails(){
-    /*Passing the UserId and User EmailId Data */
+    //Passing the UserId and User EmailId Data 
     TrackierSDk.setUserId("XXXXXXXX"); //Pass the UserId values here
     TrackierSDk.setUserEmail("abc@gmail.com"); //Pass the user email id in the argument.
 
-    /*Passing the additional data */
+    /* Passing the additional data */
 
     const userDetails = new Map();
     userDetails = {"name":"Sanu"}; //You can pass the Username data.
