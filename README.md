@@ -9,6 +9,7 @@
     * [Revenue Events Tracking](#qs-track-event-with-currencey)
     * [Pass the custom params in events](#qs-add-custom-parms-event)
     * [Passing User Data to SDK](#qs-passing-user-data)
+    * [Track Uninstall for Android](#qs-track-uninstall-android)
 * [Proguard Settings](#qs-progaurd-settings)
 
 
@@ -47,7 +48,7 @@ $ cd ios && pod install
 
 You should use the following import statement on top of your `.js` file:
 ```js
-import { TrackierConfig, TrackierSDK, TrackierEvent} from 'react-native-trackier';
+import { TrackierConfig, TrackierSDK, TrackierEvent } from 'react-native-trackier';
 ```
 
 In your `App.js` file, add the following code to initialize the Trackier SDK:
@@ -55,7 +56,7 @@ In your `App.js` file, add the following code to initialize the Trackier SDK:
 
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { TrackierConfig, TrackierSDK, TrackierEvent} from 'react-native-trackier';
+import { TrackierConfig, TrackierSDK, TrackierEvent } from 'react-native-trackier';
 import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 
 export default function App() {
@@ -105,7 +106,7 @@ Screenshot[2]
 
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { TrackierConfig, TrackierSDK, TrackierEvent} from 'react-native-trackier';
+import { TrackierConfig, TrackierSDK, TrackierEvent } from 'react-native-trackier';
 import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 
 export default function App() {
@@ -121,9 +122,9 @@ export default function App() {
     var trackierEvent = new TrackierEvent(TrackierEvent.PURCHASE); // Purchase is our in-build events.
 
 
-   /*Below are the function for the adding the extra data,
-     You can add the extra data like login details of user or anything you need.
-     We have 10 params to add data, Below 2 are mentioned*/
+ /* Below are the function for the adding the extra data,
+    You can add the extra data like login details of user or anything you need.
+    We have 10 params to add data, Below 2 are mentioned */
 
     trackierEvent.param1 = "XXXXXX";
     trackierEvent.param2 = "kkkkkkk";
@@ -158,7 +159,7 @@ Screenshot[4]
 
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { TrackierConfig, TrackierSDK, TrackierEvent} from 'react-native-trackier';
+import { TrackierConfig, TrackierSDK, TrackierEvent } from 'react-native-trackier';
 import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 
 export default function App() {
@@ -173,9 +174,9 @@ export default function App() {
 
     var trackierEvent = new TrackierEvent("sEMWSCTXeu"); // This is customs events event id and the events name is "AppOpen"
 
-    /*Below are the function for the adding the extra data,
-     You can add the extra data like login details of user or anything you need.
-     We have 10 params to add data, Below 2 are mentioned*/
+ /* Below are the function for the adding the extra data,
+    You can add the extra data like login details of user or anything you need.
+    We have 10 params to add data, Below 2 are mentioned */
 
     trackierEvent.param1 = "XXXXXX";
     trackierEvent.param2 = "kkkkkkk";
@@ -201,7 +202,7 @@ Trackier allow user to pass the revenue data which is generated from the app thr
     
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { TrackierConfig, TrackierSDK, TrackierEvent} from 'react-native-trackier';
+import { TrackierConfig, TrackierSDK, TrackierEvent } from 'react-native-trackier';
 import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 
 export default function App() {
@@ -244,7 +245,7 @@ Screenshot[6]
     const customData = new Map();
     customData.set("name", "sanu");
     customData.set("phone", "81xxxxx84");
-    trackierEvent.ev=customData;
+    trackierEvent.ev = customData;
     TrackierSDK.trackEvent(trackierEvent);
   }
 ```
@@ -286,8 +287,8 @@ Trackier allow for passing the additional user details like UserName, Mobile Num
     /*Passing the additional data */
 
     const userDetails = new Map();
-    userDetails={"name":"Sanu"}; //You can pass the Username data.
-    userDetails={"mobile_number":"872xxxxx87"}; // You can pass user mobile number
+    userDetails = {"name":"Sanu"}; //You can pass the Username data.
+    userDetails = {"mobile_number":"872xxxxx87"}; // You can pass user mobile number
     TrackierSDk.setUserAdditonalDetail(userDetails);
   }
 ```
@@ -297,6 +298,34 @@ Below are the screenshots of the customs data passing
 Screenshots[7]
 
 <img width="1000" alt="Screenshot 2022-06-29 at 11 54 07 PM" src="https://user-images.githubusercontent.com/16884982/176509080-84cff240-3577-4c1b-9871-0e559ecd0dfa.png">
+
+### <a id="qs-track-uninstall-android"></a> Track Uninstall for Android
+
+ **Before you begin**
+* [Install `firebase_core`](https://rnfirebase.io/analytics/usage) and add the initialization code to your app if you haven't already.
+* Add your app to your Firebase project in the [Firebase console](https://console.firebase.google.com/).
+
+#### Add the Analytics SDK to your app
+
+
+* Once installed, you can access the `firebase_analytics` plugin by importing it in your JS code:
+  ```js
+    import analytics from '@react-native-firebase/analytics';
+  ```
+* Create a new Firebase Analytics instance by with this code
+  ```js
+    var analytics = analytics();
+  ```
+* Use the `analytics` instance obtained above to set the following user property:
+  ```js
+    var trackierId = await TrackierSDK.getTrackierId();
+    await analytics().setUserProperty('ct_objectId', trackierId); 
+  ``` 
+
+* Adding the above code to your app sets up a common identifier. 
+* Set the `app_remove` event as a conversion event in Firebase. 
+* Use the Firebase cloud function to send uninstall information to Trackier MMP. 
+* You can find the support article [here](https://help.trackier.com/support/solutions/articles/31000162841-android-uninstall-tracking).
 
 
 ## <a id="qs-progaurd-settings"></a>Proguard Settings 
