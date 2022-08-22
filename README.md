@@ -168,7 +168,7 @@ export default function App() {
 
   function _customsEvents(){
 
-    // Below are the example of built-in events function calling
+    //Below are the example of built-in events function calling
     //The arguments - "sEMWSCTXeu" passed in the Trackier event class is Events id for AppOpen
 
     var trackierEvent = new TrackierEvent("sEMWSCTXeu"); // This is customs events event id and the events name is "AppOpen"
