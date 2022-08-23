@@ -1,5 +1,7 @@
 package com.reactlibrary;
 
+import android.util.Log;
+
 import java.util.Map;
 import java.util.LinkedHashMap;
 import com.facebook.react.bridge.Promise;
@@ -9,6 +11,9 @@ import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
 
 public class TrackierSDK extends ReactContextBaseJavaModule {
+
+	String secretId = "";
+	String secretKey = "";
 
 	public TrackierSDK(ReactApplicationContext context) {
 		super(context);
@@ -23,8 +28,15 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 	public void initializeSDK(ReadableMap initializeMap) {
 		com.trackier.sdk.TrackierSDKConfig sdkConfig = new com.trackier.sdk.TrackierSDKConfig(getReactApplicationContext(), initializeMap.getString("appToken"), initializeMap.getString("environment"));
 		sdkConfig.setSDKType("react_native_sdk");
-		sdkConfig.setSDKVersion("1.6.29");
+		sdkConfig.setSDKVersion("1.6.30");
+		sdkConfig.setAppSecret(secretId,secretKey);
 		com.trackier.sdk.TrackierSDK.initialize(sdkConfig);
+	}
+
+	@ReactMethod
+	public void getAppSecretKey(ReadableMap readableMap){
+		secretId = readableMap.getString("secretId");
+		secretKey = readableMap.getString("secretKey");
 	}
 
 	@ReactMethod

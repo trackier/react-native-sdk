@@ -12,6 +12,8 @@
  
 RCT_EXTERN_METHOD(initializeSDK:(NSDictionary *)dict)
 
+RCT_EXTERN_METHOD(setAppSecretKey:(NSDictionary *)dict)
+
 RCT_EXTERN_METHOD(trackEvent:(NSDictionary *)dict)
 
 RCT_EXTERN_METHOD(setEnabled:(BOOL *)value)

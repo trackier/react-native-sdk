@@ -16,9 +16,15 @@ class RNTrackierSDK: NSObject {
 		let environment = dict["environment"] as! String;
 		let config = TrackierSDKConfig(appToken: appToken , env: environment)
 		config.setSDKType(sdkType: "react_native_sdk")
-		config.setSDKVersion(sdkVersion: "1.6.29")
+		config.setSDKVersion(sdkVersion: "1.6.30")
+		config.setAppSecret(secretId: secretId, secretKey: secretKey)
 		TrackierSDK.initialize(config: config)
 	}
+
+	 @objc func setAppSecretKey(_ dict: NSDictionary) -> Void {
+        secretId = dict["secretId"] as! String;
+        secretKey = dict["secretKey"] as! String;
+    }
 
 	@objc func trackEvent(_ dict: NSDictionary) -> Void {
 		let currency: String = dict["currency"] as? String ?? ""
