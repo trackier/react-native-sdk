@@ -9,6 +9,7 @@
     * [Revenue Events Tracking](#qs-track-event-with-currencey)
     * [Pass the custom params in events](#qs-add-custom-parms-event)
     * [Passing User Data to SDK](#qs-passing-user-data)
+    * [SDK Signing](#qs-sdk-signing)
     * [Track Uninstall for Android](#qs-track-uninstall-android)
 * [Proguard Settings](#qs-progaurd-settings)
 
@@ -297,6 +298,45 @@ Below are the screenshots of the customs data passing
 Screenshots[7]
 
 <img width="1000" alt="Screenshot 2022-06-29 at 11 54 07 PM" src="https://user-images.githubusercontent.com/16884982/176509080-84cff240-3577-4c1b-9871-0e559ecd0dfa.png">
+
+
+## <a id="qs-sdk-signing"></a>SDK Signing 
+
+Following below are the steps to retrieve the secretId and secretKey :-
+
+- Login your Trackier Panel and select your application.
+- In the Dashboard, click on the `SDK Integration` option on the left side of panel. 
+- Under on the SDK Integration, click on the Advanced tab. 
+- Under the Advanced tab, you will get the secretId and secretKey.
+
+Please check on the below screenshot
+
+Screenshot[11]
+
+<img width="1000" alt="Screenshot 11" src="https://user-images.githubusercontent.com/16884982/185338826-bcf802d0-c493-4a67-adb3-a9b52bae289e.png">
+
+
+Check below the example code for passing the secretId and secretKey to the SDK
+
+```js 
+
+import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { TrackierConfig, TrackierSDK, TrackierEvent } from 'react-native-trackier';
+import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
+
+export default function App() {
+
+/* While Initializing the SDK, You need to pass the three parameter in the TrackierSDKConfig.
+ * In First argument, you need to pass the Trackier SDK api key
+ * In third argument, you need to pass the environment which can be either "EnvironmentDevelopment", "EnvironmentProduction". */
+
+  var trackierConfig = new TrackierConfig("xxxx-xx-4505-bc8b-xx", TrackierConfig.EnvironmentDevelopment);
+  TrackierSDK.setAppSecret("ysxxxx-xx-4505c","xxxx-xx-4505"); // Pass secretId in first param and secretKey in second param
+  TrackierSDK.initialize(trackierConfig);
+}
+
+```
 
 ### <a id="qs-track-uninstall-android"></a> Track Uninstall for Android
 
