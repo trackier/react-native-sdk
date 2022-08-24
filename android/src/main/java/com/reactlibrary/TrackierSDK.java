@@ -1,6 +1,5 @@
 package com.reactlibrary;
 
-import android.util.Log;
 
 import java.util.Map;
 import java.util.LinkedHashMap;
