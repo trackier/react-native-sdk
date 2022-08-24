@@ -34,7 +34,7 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 	}
 
 	@ReactMethod
-	public void getAppSecretKey(ReadableMap readableMap){
+	public void setAppSecret(ReadableMap readableMap){
 		secretId = readableMap.getString("secretId");
 		secretKey = readableMap.getString("secretKey");
 	}

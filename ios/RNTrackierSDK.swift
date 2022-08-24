@@ -11,6 +11,9 @@ import trackier_ios_sdk
 @objc(RNTrackierSDK)
 class RNTrackierSDK: NSObject {
 
+	var secretId: String = ""
+    var secretKey: String = ""
+
 	@objc func initializeSDK(_ dict: NSDictionary) -> Void {
 		let appToken = dict["appToken"] as! String;
 		let environment = dict["environment"] as! String;
@@ -21,7 +24,7 @@ class RNTrackierSDK: NSObject {
 		TrackierSDK.initialize(config: config)
 	}
 
-	 @objc func setAppSecretKey(_ dict: NSDictionary) -> Void {
+	 @objc func setAppSecret(_ dict: NSDictionary) -> Void {
         secretId = dict["secretId"] as! String;
         secretKey = dict["secretKey"] as! String;
     }
