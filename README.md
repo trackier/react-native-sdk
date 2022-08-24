@@ -82,7 +82,7 @@ Check below the screenshot of above code
 
 Screenshot[1]
 
-<img width="1000" alt="Screenshot 2022-06-29 at 6 46 06 PM" src="https://user-images.githubusercontent.com/16884982/176446477-3f45befe-9439-4214-8a22-adf2ef44399b.png">
+<img width="1000" alt="Screenshot 1" src="https://user-images.githubusercontent.com/16884982/176446477-3f45befe-9439-4214-8a22-adf2ef44399b.png">
 
 ### <a id="qs-track-events"></a>Events Tracking
 
@@ -99,7 +99,7 @@ You can use directly to track those events. Just need to implements events in th
 
 Screenshot[2]
 
-<img width="1000" alt="Screenshot 2022-06-10 at 1 23 01 PM" src="https://user-images.githubusercontent.com/16884982/173018185-3356c117-8b9f-46d1-bfd5-c41653f9ac9e.png">
+<img width="1000" alt="Screenshot 2" src="https://user-images.githubusercontent.com/16884982/173018185-3356c117-8b9f-46d1-bfd5-c41653f9ac9e.png">
 
 ### Example code for calling Built-in events
 
@@ -139,7 +139,7 @@ Also check the example app screenshot of above example
 
 Screenshot[3]
 
-<img width="1000" alt="Screenshot 2022-06-29 at 6 48 18 PM" src="https://user-images.githubusercontent.com/16884982/176446927-c5be2fc2-7bcd-486b-aabc-75df38519f09.png">
+<img width="1000" alt="Screenshot 3" src="https://user-images.githubusercontent.com/16884982/176446927-c5be2fc2-7bcd-486b-aabc-75df38519f09.png">
 
 
 #### **Customs Events** - 
@@ -150,7 +150,7 @@ You can create the events in the Trackier dashboard and integrate those events i
 
 Screenshot[4]
 
-<img width="1000" alt="Screenshot 2022-06-29 at 4 09 37 PM" src="https://user-images.githubusercontent.com/16884982/176417552-a8c80137-aa1d-480a-81a3-ea1e03172868.png">
+<img width="1000" alt="Screenshot 4" src="https://user-images.githubusercontent.com/16884982/176417552-a8c80137-aa1d-480a-81a3-ea1e03172868.png">
 
 
 ### Example code for calling Customs Events.
@@ -189,9 +189,9 @@ export default function App() {
 
 Check below the example screenshot of customs events:-
 
-Screenshots[5]
+Screenshot[5]
 
-<img width="1000" alt="Screenshot 2022-06-29 at 6 54 42 PM" src="https://user-images.githubusercontent.com/16884982/176447553-cacc6b0c-ff84-4702-8a22-fd224540a53e.png">
+<img width="1000" alt="Screenshot 5" src="https://user-images.githubusercontent.com/16884982/176447553-cacc6b0c-ff84-4702-8a22-fd224540a53e.png">
 
 
 ### <a id="qs-track-event-with-currencey"></a>Revenue Event Tracking
@@ -229,7 +229,7 @@ Check below the revenue events calling screenshots.
 
 Screenshot[6]
 
-<img width="1000" alt="Screenshot 2022-06-29 at 6 57 15 PM" src="https://user-images.githubusercontent.com/16884982/176448259-6b8b8525-a423-448e-80c9-80848a69448f.png">
+<img width="1000" alt="Screenshot 6" src="https://user-images.githubusercontent.com/16884982/176448259-6b8b8525-a423-448e-80c9-80848a69448f.png">
 
 
 ### <a id="qs-add-custom-parms-event"></a>Pass the custom params in events
@@ -295,9 +295,9 @@ Trackier allow for passing the additional user details like UserName, Mobile Num
 
 Below are the screenshots of the customs data passing 
 
-Screenshots[7]
+Screenshot[7]
 
-<img width="1000" alt="Screenshot 2022-06-29 at 11 54 07 PM" src="https://user-images.githubusercontent.com/16884982/176509080-84cff240-3577-4c1b-9871-0e559ecd0dfa.png">
+<img width="1000" alt="Screenshot 7" src="https://user-images.githubusercontent.com/16884982/176509080-84cff240-3577-4c1b-9871-0e559ecd0dfa.png">
 
 
 ## <a id="qs-sdk-signing"></a>SDK Signing 
@@ -311,9 +311,9 @@ Following below are the steps to retrieve the secretId and secretKey :-
 
 Please check on the below screenshot
 
-Screenshot[11]
+Screenshot[8]
 
-<img width="1000" alt="Screenshot 11" src="https://user-images.githubusercontent.com/16884982/185338826-bcf802d0-c493-4a67-adb3-a9b52bae289e.png">
+<img width="1000" alt="Screenshot 8" src="https://user-images.githubusercontent.com/16884982/185338826-bcf802d0-c493-4a67-adb3-a9b52bae289e.png">
 
 
 Check below the example code for passing the secretId and secretKey to the SDK
