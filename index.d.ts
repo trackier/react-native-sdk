@@ -8,6 +8,7 @@ declare module 'react-native-trackier' {
     export class TrackierSDK {
         constructor(trackierEvent:TrackierEvent)
         initialize: (trackierConfig: TrackierConfig) => void
+        setAppSecret: (secretId: string, secretKey: string) => void
         trackEvent: (trackierEvent: TrackierEvent) => void
 
         setEnabled: (value:boolean) => void 

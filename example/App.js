@@ -6,6 +6,7 @@ import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 export default function App() {
 
   var trackierConfig = new TrackierConfig("xxxx-xx-4505-bc8b-xx", TrackierConfig.EnvironmentDevelopment);
+  TrackierSDK.setAppSecret("ysc","abc");
   TrackierSDK.initialize(trackierConfig);
 
   function _onPress_trackSimpleEvent(){
