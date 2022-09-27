@@ -31,7 +31,7 @@ class RNTrackierSDK: NSObject {
 
 	@objc func trackEvent(_ dict: NSDictionary) -> Void {
 		let currency: String = dict["currency"] as? String ?? ""
-		let revenue: String = dict["revenue"] as? String ?? ""
+		let revenue: Float64 = (dict["revenue"] as? Float64 ?? 0.0)
 		let discount: Float64 = (dict["discount"] as? Float64 ?? 0.0)
 		let couponCode: String = dict["couponCode"] as? String ?? ""
 		let eventId: String = dict["eventId"] as! String
@@ -53,7 +53,7 @@ class RNTrackierSDK: NSObject {
 		}
 
 		let event = TrackierEvent(id: eventId)
-		event.setRevenue(revenue: Float64((revenue as NSString).floatValue), currency: currency)
+		event.setRevenue(revenue: revenue, currency: currency)
 		event.orderId = orderId
 		event.setCouponCode(couponCode: couponCode)
 		event.setDiscount(discount: discount)
