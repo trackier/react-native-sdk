@@ -38,7 +38,9 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 		sdkConfig.setDeepLinkListener(new DeepLinkListener() {
 			@Override
 			public void onDeepLinking(@NonNull DeepLink deepLink) {
-				sendEvent(getReactApplicationContext(), "trackier_deferredDeeplink", deepLink.getUrl());
+				if(deepLink != null) {
+					sendEvent(getReactApplicationContext(), "trackier_deferredDeeplink", deepLink.getUrl());
+				}
 			}
 		});
 		com.trackier.sdk.TrackierSDK.initialize(sdkConfig);
