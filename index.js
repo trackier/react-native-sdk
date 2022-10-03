@@ -91,6 +91,7 @@ TrackierConfig.EnvironmentProduction = "production";
 TrackierConfig.EnvironmentTesting = "testing";
 
 TrackierConfig.prototype.setDeferredDeeplinkCallbackListener = function(deferredDeeplinkCallbackListener) {
+	this.hasDeferredDeeplinkCallback = true;
 	module_trackier_emitter.addListener('trackier_deferredDeeplink', deferredDeeplinkCallbackListener);
 };
 
