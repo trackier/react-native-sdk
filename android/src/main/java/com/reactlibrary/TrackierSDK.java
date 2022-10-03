@@ -1,6 +1,9 @@
 package com.reactlibrary;
 
+import android.util.Log;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import java.util.Map;
 import java.util.LinkedHashMap;
 import com.facebook.react.bridge.Promise;
@@ -8,6 +11,9 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
+import com.facebook.react.modules.core.DeviceEventManagerModule;
+import com.trackier.sdk.DeepLink;
+import com.trackier.sdk.DeepLinkListener;
 
 public class TrackierSDK extends ReactContextBaseJavaModule {
 
@@ -18,6 +24,13 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 		super(context);
 	}
 
+	DeepLinkListener deepLinkListener = new DeepLinkListener() {
+		@Override
+		public void onDeepLinking(@NonNull DeepLink deepLink) {
+			sendEvent(getReactApplicationContext(), "trackier_deferredDeeplink", deepLink.getUrl());
+		}
+	};
+
 	@Override
 	public String getName() {
 		return "TrackierSDK";
@@ -27,8 +40,9 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 	public void initializeSDK(ReadableMap initializeMap) {
 		com.trackier.sdk.TrackierSDKConfig sdkConfig = new com.trackier.sdk.TrackierSDKConfig(getReactApplicationContext(), initializeMap.getString("appToken"), initializeMap.getString("environment"));
 		sdkConfig.setSDKType("react_native_sdk");
-		sdkConfig.setSDKVersion("1.6.31");
+		sdkConfig.setSDKVersion("1.6.32");
 		sdkConfig.setAppSecret(secretId,secretKey);
+		sdkConfig.setDeepLinkListener(deepLinkListener);
 		com.trackier.sdk.TrackierSDK.initialize(sdkConfig);
 	}
 
@@ -172,5 +186,11 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 
 	private boolean checkKey(ReadableMap map, String key) {
 		return map.hasKey(key) && !map.isNull(key);
+	}
+
+	private void sendEvent(ReactApplicationContext reactContext, String eventName, @Nullable String params) {
+		reactContext
+				.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+				.emit(eventName, params);
 	}
 }

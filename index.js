@@ -1,10 +1,19 @@
 'use strict';
 
 import { 
-	NativeModules
+	NativeModules,
+	NativeEventEmitter,
+	Platform,
 } from 'react-native';
 
 const module_trackier = NativeModules.TrackierSDK;
+
+let module_trackier_emitter = null;
+if (Platform.OS === "android") {
+    module_trackier_emitter = new NativeEventEmitter(NativeModules.TrackierSDK);
+} else if (Platform.OS === "ios") {
+    //module_trackier_emitter = new NativeEventEmitter(NativeModules.TrackierSDK);
+}
 
 var TrackierConfig = function(appToken,environment) {
 	this.appToken = appToken;
@@ -80,6 +89,10 @@ TrackierSDK.trackEvent = function(trackierEvent) {
 TrackierConfig.EnvironmentDevelopment = "development";
 TrackierConfig.EnvironmentProduction = "production";
 TrackierConfig.EnvironmentTesting = "testing";
+
+TrackierConfig.prototype.setDeferredDeeplinkCallbackListener = function(deferredDeeplinkCallbackListener) {
+	module_trackier_emitter.addListener('trackier_deferredDeeplink', deferredDeeplinkCallbackListener);
+};
 
 var TrackierEvent = function(eventId) {
 	this.eventId = eventId;
