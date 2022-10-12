@@ -11,6 +11,7 @@
     * [Passing User Data to SDK](#qs-passing-user-data)
     * [SDK Signing](#qs-sdk-signing)
     * [Track Uninstall for Android](#qs-track-uninstall-android)
+* [Deep linking](#gs-deeplink)
 * [Proguard Settings](#qs-progaurd-settings)
 
 
@@ -365,6 +366,112 @@ export default function App() {
 * Set the `app_remove` event as a conversion event in Firebase. 
 * Use the Firebase cloud function to send uninstall information to Trackier MMP. 
 * You can find the support article [here](https://help.trackier.com/support/solutions/articles/31000162841-android-uninstall-tracking).
+
+
+### <a id="gs-deeplink"></a> Deep linking 
+
+Deep linking is a techniques in which the user directly redirect to the specific pages of the application by click on the deeplink url.
+
+There are two types deeplinking
+
+* ***Normal deeplinking*** - Direct deep linking occurs when a user already has your app installed on their device. When this is the case, the deep link will redirect the user to the screen specified in the link.
+
+* ***Deferred deeplinking*** - Deferred deep linking occurs when a user does not have your app installed on their device. When this is the case, the deep link will first send the user to the device app store to install the app. Once the user has installed and opened the app, the SDK will redirect them to the screen specified in the link.
+
+Please check below the Deeplinking scenario 
+
+<img width="705" alt="Screenshot 2022-06-22 at 10 48 20 PM" src="https://user-images.githubusercontent.com/16884982/175099075-349910ce-ce7b-4a71-868c-11c34c4331cd.png">
+
+
+### Normal Deep linking
+
+If a user already has your app on their device, it will open when they interact with a tracker containing a deep link. You can then parse the deep link information for further use. To do this, you need to choose a desired unique scheme name.
+
+You can set up a specific activity to launch when a user interacts with a deep link. To do this:
+
+* Assign the unique scheme name to the activity in your AndroidManifest.xml file.
+* Add the intent-filter section to the activity definition.
+* Assign an android:scheme property value with your preferred scheme name.
+
+For example, you could set up an activity called FirstActivity to open like this:
+#### AndroidManifest.xml 
+
+```
+
+        <activity
+            android:name=".Activity.FirstProduct"
+            android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data
+                android:host="trackier.u9ilnk.me"
+                android:pathPrefix="/product"
+                android:scheme="https" />
+        </intent-filter>
+        </activity>
+
+```
+
+```
+https://trackier.u9ilnk.me/product?dlv=FirstProduct&quantity=10&pid=sms
+```
+
+### Deferred Deep linking
+
+Deferred deep linking happened, when a user does not have your app installed on their device. When the user clicks a trackier URL, the URL will redirect them to the Play Store to download and install your app. When the user opens the app for the first time, the SDK will read the deep_link content.
+
+The Trackier SDK opens the deferred deep link by default. just need to add some code in application class just after initilazation of Trackier SDk
+
+Below are the example of the code :-
+
+```js
+
+import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { TrackierConfig, TrackierSDK, TrackierEvent} from 'react-native-trackier';
+import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
+
+export default function App() {
+
+  var trackierConfig = new TrackierConfig("abcf2270-xxxxxxx-xxxx-34903c6e1d53", TrackierConfig.EnvironmentDevelopment);
+  //Getting deeplink data from the below method
+  trackierConfig.setDeferredDeeplinkCallbackListener(function(uri) {
+    console.log("Deferred Deeplink Callback received");
+    console.log("URL: " + uri);
+  });
+  TrackierSDK.initialize(trackierConfig);
+
+  return (
+    <>
+      <View style={styles.container}>
+        <Text style={{ color: "grey", fontSize: 30 }}>Trackier React-Native Sdk</Text>
+        <TouchableHighlight
+          style={styles.button}
+          onPress={_onPress_trackSimpleEvent}>
+          <Text>Track Simple Event</Text>
+        </TouchableHighlight>
+        <TouchableHighlight
+          style={styles.button}
+          onPress={_onPress_trackRevenueEvent}>
+          <Text>Track Revenue Event</Text>
+        </TouchableHighlight>
+        </View>
+    </>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
+
+```
 
 
 ## <a id="qs-progaurd-settings"></a>Proguard Settings 
