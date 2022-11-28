@@ -6,6 +6,6 @@ target 'TrackierSDK' do
   use_frameworks!
 
   # Pods for TrackierSDK
-  pod 'trackier-ios-sdk', '1.6.28'
+  pod 'trackier-ios-sdk', '1.6.29'
   pod 'React'
 end
