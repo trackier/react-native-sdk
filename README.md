@@ -75,6 +75,7 @@ export default function App() {
 
 Depending on whether you build your app for testing or for production, you must set the environment with one of these values:
 ```js
+TrackierConfig.EnvironmentTesting
 TrackierConfig.EnvironmentDevelopment
 TrackierConfig.EnvironmentProduction
 ```
