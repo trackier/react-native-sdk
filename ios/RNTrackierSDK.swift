@@ -19,7 +19,7 @@ class RNTrackierSDK: NSObject {
 		let environment = dict["environment"] as! String;
 		let config = TrackierSDKConfig(appToken: appToken , env: environment)
 		config.setSDKType(sdkType: "react_native_sdk")
-		config.setSDKVersion(sdkVersion: "1.6.34")
+		config.setSDKVersion(sdkVersion: "1.6.37")
 		config.setAppSecret(secretId: secretId, secretKey: secretKey)
 		TrackierSDK.initialize(config: config)
 	}
