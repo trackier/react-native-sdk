@@ -7,5 +7,5 @@ target 'TrackierSDK' do
 
   # Pods for TrackierSDK
   pod 'trackier-ios-sdk', '1.6.35'
-  pod 'React'
+  # pod 'React'
 end
