@@ -26,7 +26,7 @@ TrackierSDK.initialize = function(trackierConfig) {
 	module_trackier.initializeSDK(trackierConfig)
 }
 
-TrackierSDK.setAppSecret = function(secretId, secretKey){
+TrackierSDK.setAppSecret = function(secretId, secretKey) {
 	module_trackier.setAppSecret({"secretId": secretId, "secretKey": secretKey})
 }
 
