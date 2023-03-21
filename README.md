@@ -4,6 +4,7 @@
 
 * [Quick Integration Guide](#qs-basic-integration)
     * [Retrieve your app token](#qs-retrieve-app-token)
+    * [Getting Google Advertising ID](#qs-getting-gaid)
     * [Initialize the SDK](#qs-initialize-sdk)
     * [Events Tracking](#qs-track-events)
     * [Revenue Events Tracking](#qs-track-event-with-currencey)
@@ -37,6 +38,39 @@ For Ios app, make sure to go to ios folder and install Cocoapods dependencies:
 ```sh
 $ cd ios && pod install
 ```    
+
+## <a id="qs-getting-gaid"></a> Getting Google Advertising ID
+
+Trackier SDK need the advertising id from the application. 
+
+For achieving this, you need to add some line of code in the build.gradle and also in Manifest.xml for read the Advertising id from the application which is mentioned below
+
+- Add the google advertising id dependency in your app **build.gradle**
+
+```gradle
+dependencies {
+  // This can be added where the SDK dependency has been added
+  implementation 'com.google.android.gms:play-services-ads-identifier:18.0.1'
+}
+```
+- Update your Android Manifest file by adding the following permission. This is required if your app is targeting devices with android version 12+
+
+```xml
+<uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+```
+
+- Add meta data inside the application tag (If not already added)
+```xml
+<meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" /> // Add this meta-data in the manifest.xml under Application tag.
+```
+Below are the screenshot of application tag in manifest.xml for the reference
+
+Screenshot[5]
+
+<img width="1000" alt="Screenshot 2022-06-08 at 4 16 40 PM" src="https://user-images.githubusercontent.com/16884982/172598171-2f16460b-9376-40ad-b13d-6be226754aa9.png">
+
 
 ### <a id="qs-retrieve-app-token"></a>Retrieve your app token
 
