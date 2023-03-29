@@ -53,6 +53,12 @@ dependencies {
   implementation 'com.google.android.gms:play-services-ads-identifier:18.0.1'
 }
 ```
+
+Also update the gradle.properties file by adding this lines in case the gradle version is lower than 7.0
+
+```gradle
+android.jetifier.blacklist=moshi-1.13.0.jar
+```
 - Update your Android Manifest file by adding the following permission. This is required if your app is targeting devices with android version 12+
 
 ```xml
