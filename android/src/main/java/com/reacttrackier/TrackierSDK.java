@@ -1,4 +1,4 @@
-package com.reactlibrary;
+package com.reacttrackier;
 
 import android.util.Log;
 
