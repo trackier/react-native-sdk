@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { TrackierConfig, TrackierSDK, TrackierEvent} from 'react-native-trackier';
+import { TrackierConfig, TrackierSDK, TrackierEvent} from 'node_modules/react-native-trackier';
 import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 
 export default function App() {
