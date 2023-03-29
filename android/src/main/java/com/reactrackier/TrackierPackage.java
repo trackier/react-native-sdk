@@ -1,4 +1,4 @@
-package com.reacttrackier;
+package com.reactrackier;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;
