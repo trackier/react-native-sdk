@@ -6,7 +6,11 @@ import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 export default function App() {
 
   var trackierConfig = new TrackierConfig("xxxx-xx-4505-bc8b-xx", TrackierConfig.EnvironmentDevelopment);
-  TrackierSDK.setAppSecret("ysc","abc");
+  trackierConfig.setAppSecret("640710587f41ea36ac0cb370","9e043b7e-7f44-403c-ae11-8cf6bfe8daa0");
+  trackierConfig.setDeferredDeeplinkCallbackListener(function(uri) {
+    console.log("Deferred Deeplink Callback received");
+    console.log("URL: " + uri);
+  });
   TrackierSDK.initialize(trackierConfig);
 
   function _onPress_trackSimpleEvent(){
