@@ -9,25 +9,26 @@ import Foundation
 import trackier_ios_sdk
 
 @objc(RNTrackierSDK)
-class RNTrackierSDK: NSObject {
-
-	var secretId: String = ""
-    var secretKey: String = ""
+class RNTrackierSDK: NSObject, DeepLinkListener {
+	func onDeepLinking(result: trackier_ios_sdk.DeepLink) {
+		<#code#>
+	}
 
 	@objc func initializeSDK(_ dict: NSDictionary) -> Void {
 		let appToken = dict["appToken"] as! String;
 		let environment = dict["environment"] as! String;
+		let deeplinking = dict["hasDeferredDeeplinkCallback"] as! Bool?
 		let config = TrackierSDKConfig(appToken: appToken , env: environment)
 		config.setSDKType(sdkType: "react_native_sdk")
+		let appSecret:Dictionary<String,Any> = dict["appSecret"] as? Dictionary<String,Any> ?? [:]
+		config.setAppSecret(secretId: appSecret["secretId"] as! String, secretKey: appSecret["secretKey"] as! String)
 		config.setSDKVersion(sdkVersion: "1.6.39")
-		config.setAppSecret(secretId: secretId, secretKey: secretKey)
+		if(deeplinking == true){
+			config.setDeeplinkListerner(listener: self)
+		}
 		TrackierSDK.initialize(config: config)
 	}
 
-	 @objc func setAppSecret(_ dict: NSDictionary) -> Void {
-        secretId = dict["secretId"] as! String;
-        secretKey = dict["secretKey"] as! String;
-    }
 
 	@objc func trackEvent(_ dict: NSDictionary) -> Void {
 		let currency: String = dict["currency"] as? String ?? ""

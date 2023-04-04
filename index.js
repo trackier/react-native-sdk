@@ -12,12 +12,13 @@ let module_trackier_emitter = null;
 if (Platform.OS === "android") {
     module_trackier_emitter = new NativeEventEmitter(NativeModules.TrackierSDK);
 } else if (Platform.OS === "ios") {
-    //module_trackier_emitter = new NativeEventEmitter(NativeModules.TrackierSDK);
+    module_trackier_emitter = new NativeEventEmitter(NativeModules.TrackierSDK);
 }
 
 var TrackierConfig = function(appToken,environment) {
 	this.appToken = appToken;
 	this.environment = environment;
+	this.appSecret = {}
 }
 
 var TrackierSDK = {};
@@ -26,8 +27,9 @@ TrackierSDK.initialize = function(trackierConfig) {
 	module_trackier.initializeSDK(trackierConfig)
 }
 
-TrackierSDK.setAppSecret = function(secretId, secretKey){
-	module_trackier.setAppSecret({"secretId": secretId, "secretKey": secretKey})
+TrackierConfig.prototype.setAppSecret = function(secretId, secretKey){
+	this.appSecret["secretId"] = secretId;
+	this.appSecret["secretKey"] = secretKey;
 }
 
 TrackierSDK.setEnabled = function (value) {
