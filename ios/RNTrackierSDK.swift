@@ -23,7 +23,7 @@ class RNTrackierSDK: NSObject, DeepLinkListener {
 		let appSecret:Dictionary<String,Any> = dict["appSecret"] as? Dictionary<String,Any> ?? [:]
 		config.setAppSecret(secretId: appSecret["secretId"] as! String, secretKey: appSecret["secretKey"] as! String)
 		config.setSDKVersion(sdkVersion: "1.6.39")
-		if(deeplinking == true){
+		if((deeplinking) != nil) {
 			config.setDeeplinkListerner(listener: self)
 		}
 		TrackierSDK.initialize(config: config)
