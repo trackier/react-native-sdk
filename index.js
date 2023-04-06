@@ -18,8 +18,8 @@ if (Platform.OS === "android") {
 var TrackierConfig = function(appToken,environment) {
 	this.appToken = appToken;
 	this.environment = environment;
-	this.secretId = {}
-	this.secretKey = {}
+	this.secretId = ''
+	this.secretKey = ''
 }
 
 var TrackierSDK = {};
@@ -28,9 +28,9 @@ TrackierSDK.initialize = function(trackierConfig) {
 	module_trackier.initializeSDK(trackierConfig)
 }
 
-TrackierConfig.prototype.setAppSecret = function(secretId, secretKey){
-	this.secretId["secretId"] = secretId;
-	this.secretKey["secretKey"] = secretKey;
+TrackierConfig.prototype.setAppSecret = function(key, value){
+	this.secretId = key;
+	this.secretKey = value;
 }
 
 TrackierSDK.setEnabled = function (value) {

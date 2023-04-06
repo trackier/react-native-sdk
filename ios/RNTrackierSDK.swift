@@ -20,8 +20,7 @@ class RNTrackierSDK: NSObject, DeepLinkListener {
 		let deeplinking = dict["hasDeferredDeeplinkCallback"] as! Bool?
 		let config = TrackierSDKConfig(appToken: appToken , env: environment)
 		config.setSDKType(sdkType: "react_native_sdk")
-		let appSecret:Dictionary<String,Any> = dict["appSecret"] as? Dictionary<String,Any> ?? [:]
-		config.setAppSecret(secretId: appSecret["secretId"] as! String, secretKey: appSecret["secretKey"] as! String)
+		config.setAppSecret(secretId: dict["secretId"] as! String, secretKey: dict["secretKey"] as! String)
 		config.setSDKVersion(sdkVersion: "1.6.39")
 		if((deeplinking) != nil) {
 			config.setDeeplinkListerner(listener: self)
