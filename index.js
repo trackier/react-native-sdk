@@ -28,7 +28,7 @@ TrackierSDK.initialize = function(trackierConfig) {
 	module_trackier.initializeSDK(trackierConfig)
 }
 
-TrackierConfig.prototype.setAppSecret = function(key, value){
+TrackierConfig.prototype.setAppSecret = function(key, value) {
 	this.secretId = key;
 	this.secretKey = value;
 }
