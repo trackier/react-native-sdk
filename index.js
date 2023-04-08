@@ -19,7 +19,7 @@ var TrackierConfig = function(appToken,environment) {
 	this.appToken = appToken;
 	this.environment = environment;
 	this.secretId = '';
-	this.secretKey = ''
+	this.secretKey = '';
 }
 
 var TrackierSDK = {};
