@@ -18,7 +18,7 @@ if (Platform.OS === "android") {
 var TrackierConfig = function(appToken,environment) {
 	this.appToken = appToken;
 	this.environment = environment;
-	this.secretId = ''
+	this.secretId = '';
 	this.secretKey = ''
 }
 
