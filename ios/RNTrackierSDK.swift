@@ -22,7 +22,7 @@ class RNTrackierSDK: NSObject, DeepLinkListener {
 		config.setSDKType(sdkType: "react_native_sdk")
 		config.setAppSecret(secretId: dict["secretId"] as! String, secretKey: dict["secretKey"] as! String)
 		config.setSDKVersion(sdkVersion: "1.6.39")
-		if((deeplinking) != nil) {
+		if (deeplinking != nil) {
 			config.setDeeplinkListerner(listener: self)
 		}
 		TrackierSDK.initialize(config: config)
