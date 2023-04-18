@@ -10,9 +10,20 @@ import trackier_ios_sdk
 
 @objc(RNTrackierSDK)
 class RNTrackierSDK: NSObject, DeepLinkListener {
-	func onDeepLinking(result: trackier_ios_sdk.DeepLink) {
-		<#code#>
-	}
+    
+    var deeplinkValue: String = ""
+    
+    func onDeepLinking(result: trackier_ios_sdk.DeepLink) {
+        print("deeplink Data -\(result.getUrlParams())")
+    }
+
+    func deeplinkData() {
+    }
+    
+    @objc func deferredDeeplinkCallbackListener(_ callback: RCTResponseSenderBlock) -> Void {
+        print("deplinkcalie -under func--- \(deeplinkValue)")
+        callback(["san8\(deeplinkValue)"])
+    }
 
 	@objc func initializeSDK(_ dict: NSDictionary) -> Void {
 		let appToken = dict["appToken"] as! String;
