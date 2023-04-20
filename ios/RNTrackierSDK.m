@@ -31,5 +31,7 @@ RCT_EXTERN_METHOD(trackAsOrganic:(BOOL *)value)
 RCT_EXTERN_METHOD(setLocalRefTrack:(BOOL *)value withDelim: (NSString *)delimeter)
 
 RCT_EXTERN_METHOD(setUserAdditionalDetails:(NSString *)key withValue: (NSString *)value)
+
+RCT_EXTERN_METHOD(waitForATTUserAuthorization:(NSInteger *)timeoutInterval)
 @end
 
