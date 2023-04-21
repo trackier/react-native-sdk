@@ -19,7 +19,7 @@ class RNTrackierSDK: NSObject {
 		let environment = dict["environment"] as! String;
 		let config = TrackierSDKConfig(appToken: appToken , env: environment)
 		config.setSDKType(sdkType: "react_native_sdk")
-		config.setSDKVersion(sdkVersion: "1.6.39")
+		config.setSDKVersion(sdkVersion: "1.6.42")
 		config.setAppSecret(secretId: secretId, secretKey: secretKey)
 		TrackierSDK.initialize(config: config)
 	}
@@ -92,6 +92,10 @@ class RNTrackierSDK: NSObject {
 	@objc func setUserPhone(_ userPhone: String) {
 		TrackierSDK.setUserPhone(userPhone: userPhone)
 	}
+    
+    @objc func waitForATTUserAuthorization(_ timeoutInterval: Int) {
+        TrackierSDK.waitForATTUserAuthorization(timeoutInterval: timeoutInterval)
+    }
 	
 	@objc func trackAsOrganic(_ value: Bool) {
 		// Do nothing, android only method
