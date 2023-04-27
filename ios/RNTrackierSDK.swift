@@ -7,23 +7,18 @@
 
 import Foundation
 import trackier_ios_sdk
+import React
 
 @objc(RNTrackierSDK)
-class RNTrackierSDK: NSObject, DeepLinkListener {
-    
-    var deeplinkValue: String = ""
-    
-    func onDeepLinking(result: trackier_ios_sdk.DeepLink) {
-        print("deeplink Data -\(result.getUrlParams())")
-    }
-
-    func deeplinkData() {
-    }
-    
-    @objc func deferredDeeplinkCallbackListener(_ callback: RCTResponseSenderBlock) -> Void {
-        print("deplinkcalie -under func--- \(deeplinkValue)")
-        callback(["san8\(deeplinkValue)"])
-    }
+class RNTrackierSDK: RCTEventEmitter, DeepLinkListener {
+	
+	func onDeepLinking(result: trackier_ios_sdk.DeepLink) {
+		sendEvent(withName: "trackier_deferredDeeplink", body: result.getUrlParams())
+	}
+	
+	open override func supportedEvents() -> [String] {
+		["trackier_deferredDeeplink"]
+	  }
 
 	@objc func initializeSDK(_ dict: NSDictionary) -> Void {
 		let appToken = dict["appToken"] as! String;
@@ -32,7 +27,7 @@ class RNTrackierSDK: NSObject, DeepLinkListener {
 		let config = TrackierSDKConfig(appToken: appToken , env: environment)
 		config.setSDKType(sdkType: "react_native_sdk")
 		config.setAppSecret(secretId: dict["secretId"] as! String, secretKey: dict["secretKey"] as! String)
-		config.setSDKVersion(sdkVersion: "1.6.39")
+		config.setSDKVersion(sdkVersion: "1.6.43")
 		if (deeplinking != nil) {
 			config.setDeeplinkListerner(listener: self)
 		}

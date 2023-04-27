@@ -99,7 +99,7 @@ TrackierConfig.prototype.setDeferredDeeplinkCallbackListener = function(deferred
 		module_trackier_emitter.addListener('trackier_deferredDeeplink', deferredDeeplinkCallbackListener);
 	} else if (Platform.OS === "ios") {
 		this.hasDeferredDeeplinkCallback = true;
-		module_trackier.deferredDeeplinkCallbackListener( deferredDeeplinkCallbackListener);
+		module_trackier_emitter.addListener('trackier_deferredDeeplink', deferredDeeplinkCallbackListener);
 	}
 };
 

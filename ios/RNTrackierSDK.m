@@ -7,8 +7,9 @@
 //
 
 #import "React/RCTBridgeModule.h"
+#import "React/RCTEventEmitter.h"
 
-@interface RCT_EXTERN_REMAP_MODULE(TrackierSDK, RNTrackierSDK, NSObject)
+@interface RCT_EXTERN_REMAP_MODULE(TrackierSDK, RNTrackierSDK, RCTEventEmitter)
  
 RCT_EXTERN_METHOD(initializeSDK:(NSDictionary *)dict)
 
