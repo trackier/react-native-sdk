@@ -98,10 +98,7 @@ TrackierConfig.EnvironmentProduction = "production";
 TrackierConfig.EnvironmentTesting = "testing";
 
 TrackierConfig.prototype.setDeferredDeeplinkCallbackListener = function(deferredDeeplinkCallbackListener) {
-	if (Platform.OS === "android") {
-		this.hasDeferredDeeplinkCallback = true;
-		module_trackier_emitter.addListener('trackier_deferredDeeplink', deferredDeeplinkCallbackListener);
-	} else if (Platform.OS === "ios") {
+	if (Platform.OS === "android" || Platform.OS === "ios") {
 		this.hasDeferredDeeplinkCallback = true;
 		module_trackier_emitter.addListener('trackier_deferredDeeplink', deferredDeeplinkCallbackListener);
 	}
