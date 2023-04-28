@@ -10,14 +10,16 @@ const module_trackier = NativeModules.TrackierSDK;
 
 let module_trackier_emitter = null;
 if (Platform.OS === "android") {
-    module_trackier_emitter = new NativeEventEmitter(NativeModules.TrackierSDK);
+	module_trackier_emitter = new NativeEventEmitter(NativeModules.TrackierSDK);
 } else if (Platform.OS === "ios") {
-    //module_trackier_emitter = new NativeEventEmitter(NativeModules.TrackierSDK);
+	module_trackier_emitter = new NativeEventEmitter(NativeModules.TrackierSDK);
 }
 
 var TrackierConfig = function(appToken,environment) {
 	this.appToken = appToken;
 	this.environment = environment;
+	this.secretId = '';
+	this.secretKey = '';
 }
 
 var TrackierSDK = {};
@@ -26,8 +28,9 @@ TrackierSDK.initialize = function(trackierConfig) {
 	module_trackier.initializeSDK(trackierConfig)
 }
 
-TrackierSDK.setAppSecret = function(secretId, secretKey){
-	module_trackier.setAppSecret({"secretId": secretId, "secretKey": secretKey})
+TrackierConfig.prototype.setAppSecret = function(key, value) {
+	this.secretId = key;
+	this.secretKey = value;
 }
 
 TrackierSDK.setEnabled = function (value) {
@@ -95,8 +98,10 @@ TrackierConfig.EnvironmentProduction = "production";
 TrackierConfig.EnvironmentTesting = "testing";
 
 TrackierConfig.prototype.setDeferredDeeplinkCallbackListener = function(deferredDeeplinkCallbackListener) {
-	this.hasDeferredDeeplinkCallback = true;
-	module_trackier_emitter.addListener('trackier_deferredDeeplink', deferredDeeplinkCallbackListener);
+	if (Platform.OS === "android" || Platform.OS === "ios") {
+		this.hasDeferredDeeplinkCallback = true;
+		module_trackier_emitter.addListener('trackier_deferredDeeplink', deferredDeeplinkCallbackListener);
+	}
 };
 
 var TrackierEvent = function(eventId) {

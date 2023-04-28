@@ -5,8 +5,12 @@ import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 
 export default function App() {
 
-  var trackierConfig = new TrackierConfig("xxxx-xx-4505-bc8b-xx", TrackierConfig.EnvironmentDevelopment);
-  TrackierSDK.setAppSecret("ysc","abc");
+  var trackierConfig = new TrackierConfig("67607dc5-8dc2-4bdc-99f1-b577324d97ce", TrackierConfig.EnvironmentDevelopment);
+  trackierConfig.setAppSecret("640710587f41ea36ac0cb370","9e043b7e-7f44-403c-ae11-8cf6bfe8daa0");
+  trackierConfig.setDeferredDeeplinkCallbackListener(function(uri) {
+    console.log("Deferred Deeplink Callback received");
+    console.log("URL: " + uri);
+  });
   TrackierSDK.initialize(trackierConfig);
 
   function _onPress_trackSimpleEvent(){
@@ -15,11 +19,18 @@ export default function App() {
     trackierEvent.param2 = "kkkkkkk";
     trackierEvent.couponCode = "testReact";
     trackierEvent.discount = 2.0;
-    TrackierSDK.setUserName("abc");
+    TrackierSDK.setUserName('abc');
     TrackierSDK.setUserPhone("813434721");
     // TrackierSDK.getTrackierId().then(val => console.log('===trackierid: ', val)).catch(e => console.log('==error: ', e))
-    trackierEvent.setEventValue("param","value");
-    trackierEvent.setEventValue("param2",2.0);
+    trackierEvent.setEventValue("param","8130300721");
+   // trackierEvent.setEventValue("param2",2.0);
+    let customData = new Map();
+    customData.set("name", "sanu");
+    customData.set("phone", "8130300784");
+    var jsonData = 
+        [{ "id": 1, "phone": "+91-8130300721" },
+        { "id": 2, "name": "Embassies" }];
+    trackierEvent.setEventValue("param",jsonData);
     TrackierSDK.trackEvent(trackierEvent);
   }
 
