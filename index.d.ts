@@ -20,6 +20,7 @@ declare module 'react-native-trackier' {
         trackAsOrganic: (value: boolean) => void
         setLocalRefTrack: (value: boolean, delimeter: string) => void 
         setUserAdditionalDetails: (key: string, value: string) => void
+        waitForATTUserAuthorization: (timeoutInterval: int) => void
     }
 
     export class TrackierEvent {

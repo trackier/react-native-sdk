@@ -70,6 +70,10 @@ TrackierSDK.setUserAdditionalDetails = function (key, value) {
 	module_trackier.setUserAdditionalDetails(value, delimeter)
 }
 
+TrackierSDK.waitForATTUserAuthorization = function (timeoutInterval) {
+	module_trackier.waitForATTUserAuthorization(timeoutInterval)
+}
+
 TrackierSDK.trackEvent = function(trackierEvent) {
 	let isValidArgs = true;
 	let props = ['eventId', 'orderId', 'currency', 'couponCode', 'param1', 'param2', 'param3', 'param4', 'param5', 'param6', 'param7', 'param8', 'param9', 'param10'];

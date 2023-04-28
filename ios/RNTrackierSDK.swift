@@ -98,6 +98,10 @@ class RNTrackierSDK: RCTEventEmitter, DeepLinkListener {
 	@objc func setUserPhone(_ userPhone: String) {
 		TrackierSDK.setUserPhone(userPhone: userPhone)
 	}
+    
+    @objc func waitForATTUserAuthorization(_ timeoutInterval: Int) {
+        TrackierSDK.waitForATTUserAuthorization(timeoutInterval: timeoutInterval)
+    }
 	
 	@objc func trackAsOrganic(_ value: Bool) {
 		// Do nothing, android only method

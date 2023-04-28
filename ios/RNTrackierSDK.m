@@ -33,6 +33,6 @@ RCT_EXTERN_METHOD(setLocalRefTrack:(BOOL *)value withDelim: (NSString *)delimete
 
 RCT_EXTERN_METHOD(setUserAdditionalDetails:(NSString *)key withValue: (NSString *)value)
 
-RCT_EXTERN_METHOD(deferredDeeplinkCallbackListener: (RCTResponseSenderBlock) callback)
+RCT_EXTERN_METHOD(waitForATTUserAuthorization:(NSInteger *)timeoutInterval)
 @end
 
