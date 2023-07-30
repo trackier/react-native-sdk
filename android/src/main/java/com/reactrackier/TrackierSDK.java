@@ -33,7 +33,7 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 	public void initializeSDK(ReadableMap initializeMap) {
 		com.trackier.sdk.TrackierSDKConfig sdkConfig = new com.trackier.sdk.TrackierSDKConfig(getReactApplicationContext(), initializeMap.getString("appToken"), initializeMap.getString("environment"));
 		sdkConfig.setSDKType("react_native_sdk");
-		sdkConfig.setSDKVersion("1.6.43");
+		sdkConfig.setSDKVersion("1.6.46");
 		sdkConfig.setAppSecret(secretId,secretKey);
 		if (initializeMap.hasKey("hasDeferredDeeplinkCallback")) {
 			sdkConfig.setDeepLinkListener(new DeepLinkListener() {
@@ -86,6 +86,85 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 	@ReactMethod
 	public void setUserPhone(String userPhone) {
 		com.trackier.sdk.TrackierSDK.setUserPhone(userPhone);
+	}
+
+	@ReactMethod
+	public void getAd(Promise promise) {
+		promise.resolve(com.trackier.sdk.TrackierSDK.getAd());
+	}
+
+	@ReactMethod
+	public void getAdID(Promise promise) {
+		promise.resolve(com.trackier.sdk.TrackierSDK.getAdID());
+	}
+
+	@ReactMethod
+	public void getAdSet(Promise promise) {
+		promise.resolve(com.trackier.sdk.TrackierSDK.getAdSet());
+	}
+
+	@ReactMethod
+	public void getCampaign(Promise promise) {
+		promise.resolve(com.trackier.sdk.TrackierSDK.getCampaign());
+	}
+
+	@ReactMethod
+	public void getCampaignID(Promise promise) {
+		promise.resolve(com.trackier.sdk.TrackierSDK.getCampaignID());
+	}
+
+	@ReactMethod
+	public void getChannel(Promise promise) {
+		promise.resolve(com.trackier.sdk.TrackierSDK.getChannel());
+	}
+
+	@ReactMethod
+	public void getP1(Promise promise) {
+		promise.resolve(com.trackier.sdk.TrackierSDK.getP1());
+	}
+
+	@ReactMethod
+	public void getP2(Promise promise) {
+		promise.resolve(com.trackier.sdk.TrackierSDK.getP2());
+	}
+
+	@ReactMethod
+	public void getP3(Promise promise) {
+		promise.resolve(com.trackier.sdk.TrackierSDK.getP3());
+	}
+
+	@ReactMethod
+	public void getP4(Promise promise) {
+		promise.resolve(com.trackier.sdk.TrackierSDK.getP4());
+	}
+
+	@ReactMethod
+	public void getP5(Promise promise) {
+		promise.resolve(com.trackier.sdk.TrackierSDK.getP5());
+	}
+
+	@ReactMethod
+	public void getClickId(Promise promise) {
+		promise.resolve(com.trackier.sdk.TrackierSDK.getClickId());
+	}
+
+	@ReactMethod
+	public void getDlv(Promise promise) {
+		promise.resolve(com.trackier.sdk.TrackierSDK.getDlv());
+	}
+
+	@ReactMethod
+	public void getPid(Promise promise) {
+		promise.resolve(com.trackier.sdk.TrackierSDK.getPid());
+	}
+
+	@ReactMethod
+	public void getIsRetargeting(Promise promise) {
+		promise.resolve(com.trackier.sdk.TrackierSDK.getIsRetargeting());
+	}
+	@ReactMethod
+	public void setPreinstallAttribution(String pid, String campaign, String campaignId) {
+		com.trackier.sdk.TrackierSDK.setPreinstallAttribution(pid, campaign, campaignId);
 	}
 
 	@ReactMethod
