@@ -74,6 +74,66 @@ TrackierSDK.waitForATTUserAuthorization = function (timeoutInterval) {
 	module_trackier.waitForATTUserAuthorization(timeoutInterval)
 }
 
+TrackierSDK.getAd = function () {
+	return module_trackier.getAd();
+}
+
+TrackierSDK.getAdID = function () {
+	return module_trackier.getAdID();
+}
+
+TrackierSDK.getAdSet = function () {
+	return module_trackier.getAdSet();
+}
+
+TrackierSDK.getCampaign = function () {
+	return module_trackier.getCampaign();
+}
+
+TrackierSDK.getCampaignID = function () {
+	return module_trackier.getCampaignID();
+}
+
+TrackierSDK.getChannel = function () {
+	return module_trackier.getChannel();
+}
+
+TrackierSDK.getP1 = function () {
+	return module_trackier.getP1();
+}
+
+TrackierSDK.getP2 = function () {
+	return module_trackier.getP2();
+}
+
+TrackierSDK.getP3 = function () {
+	return module_trackier.getP3();
+}
+
+TrackierSDK.getP4 = function () {
+	return module_trackier.getP4();
+}
+
+TrackierSDK.getP5 = function () {
+	return module_trackier.getP5();
+}
+
+TrackierSDK.getClickId = function () {
+	return module_trackier.getClickId();
+}
+
+TrackierSDK.getDlv = function () {
+	return module_trackier.getDlv();
+}
+
+TrackierSDK.getPid = function () {
+	return module_trackier.getPid();
+}
+
+TrackierSDK.getIsRetargeting = function () {
+	return module_trackier.getIsRetargeting();
+}
+
 TrackierSDK.trackEvent = function(trackierEvent) {
 	let isValidArgs = true;
 	let props = ['eventId', 'orderId', 'currency', 'couponCode', 'param1', 'param2', 'param3', 'param4', 'param5', 'param6', 'param7', 'param8', 'param9', 'param10'];
