@@ -12,7 +12,8 @@
     * [Passing User Data to SDK](#qs-passing-user-data)
     * [SDK Signing](#qs-sdk-signing)
     * [Track Uninstall for Android](#qs-track-uninstall-android)
-* [Deep linking](#gs-deeplink)
+* [Deep linking](#qs-deeplink)
+* [Getting Campaign Data](#qs-campaign-data)
 * [Proguard Settings](#qs-progaurd-settings)
 
 
@@ -409,7 +410,7 @@ export default function App() {
 * You can find the support article [here](https://help.trackier.com/support/solutions/articles/31000162841-android-uninstall-tracking).
 
 
-### <a id="gs-deeplink"></a> Deep linking 
+### <a id="qs-deeplink"></a> Deep linking 
 
 Deep linking is a techniques in which the user directly redirect to the specific pages of the application by click on the deeplink url.
 
@@ -513,7 +514,32 @@ const styles = StyleSheet.create({
 });
 
 ```
+## <a id="qs-campaign-data"></a>Getting Campaign Data
+For getting the campaign data, We have a function that return the campaign data. Please check below the example code.
 
+```js
+
+function _onPress_trackSimpleEvent(){
+    var trackierEvent = new TrackierEvent(TrackierEvent.UPDATE);
+    //Campaign Data 
+    TrackierSDK.getAd().then(val => console.log('===getAD: ', val)).catch(e => console.log('==error: ', e))
+    TrackierSDK.getCampaign().then(val => console.log('===getCampaign: ', val)).catch(e => console.log('==error: ', e))
+    TrackierSDK.getCampaignID().then(val => console.log('===getCampaignID: ', val)).catch(e => console.log('==error: ', e))
+    TrackierSDK.getAdSet().then(val => console.log('===getAdSet: ', val)).catch(e => console.log('==error: ', e))
+    TrackierSDK.getAdSetID().then(val => console.log('===getAdSetID: ', val)).catch(e => console.log('==error: ', e))
+    TrackierSDK.getChannel().then(val => console.log('===getChannel: ', val)).catch(e => console.log('==error: ', e))
+    TrackierSDK.getP1().then(val => console.log('===getP1: ', val)).catch(e => console.log('==error: ', e))
+    TrackierSDK.getP2().then(val => console.log('===getP2: ', val)).catch(e => console.log('==error: ', e))
+    TrackierSDK.getP3().then(val => console.log('===getP3: ', val)).catch(e => console.log('==error: ', e))
+    TrackierSDK.getP4().then(val => console.log('===getP4: ', val)).catch(e => console.log('==error: ', e))
+    TrackierSDK.getP5().then(val => console.log('===getP5: ', val)).catch(e => console.log('==error: ', e))
+    TrackierSDK.getClickId().then(val => console.log('===getClickId: ', val)).catch(e => console.log('==error: ', e))
+    TrackierSDK.getDlv().then(val => console.log('===getDlv: ', val)).catch(e => console.log('==error: ', e))
+    TrackierSDK.getIsRetargeting().then(val => console.log('===getIsRetargeting: ', val)).catch(e => console.log('==error: ', e))
+    TrackierSDK.trackEvent(trackierEvent);
+  }
+
+```
 
 ## <a id="qs-progaurd-settings"></a>Proguard Settings 
 
