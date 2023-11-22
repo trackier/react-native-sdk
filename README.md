@@ -535,6 +535,7 @@ function _onPress_trackSimpleEvent(){
     TrackierSDK.getP5().then(val => console.log('===getP5: ', val)).catch(e => console.log('==error: ', e))
     TrackierSDK.getClickId().then(val => console.log('===getClickId: ', val)).catch(e => console.log('==error: ', e))
     TrackierSDK.getDlv().then(val => console.log('===getDlv: ', val)).catch(e => console.log('==error: ', e))
+    TrackierSDK.getPid().then(val => console.log('===getPid: ', val)).catch(e => console.log('==error: ', e))
     TrackierSDK.getIsRetargeting().then(val => console.log('===getIsRetargeting: ', val)).catch(e => console.log('==error: ', e))
     TrackierSDK.trackEvent(trackierEvent);
   }
