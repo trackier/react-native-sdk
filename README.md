@@ -374,9 +374,9 @@ export default function App() {
  * In First argument, you need to pass the Trackier SDK api key
  * In third argument, you need to pass the environment which can be either "EnvironmentDevelopment", "EnvironmentProduction". */
 
-  var trackierConfig = new TrackierConfig("xxxx-xx-4505-bc8b-xx", TrackierConfig.EnvironmentDevelopment);
-  TrackierSDK.setAppSecret("62xxxxxxxx152","xxxx-xx-2c24"); // Pass secretId in first param and secretKey in second param
-  TrackierSDK.initialize(trackierConfig);
+   var trackierConfig = new TrackierConfig("67607dc5-xxxx-xxxx-xxxx-b577324d97ce", TrackierConfig.EnvironmentDevelopment);
+   trackierConfig.setAppSecret("640710587xxxx6ac0cb370","9e043b7e-7f44-403c-xxxx-8cf6bfe8daa0"); //Pass secretId in first param and secretKey in second param
+   TrackierSDK.initialize(trackierConfig);
 }
 
 ```
