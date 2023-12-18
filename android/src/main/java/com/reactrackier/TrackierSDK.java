@@ -170,16 +170,6 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 	}
 
 	@ReactMethod
-	public void setDOB(String dob) {
-		com.trackier.sdk.TrackierSDK.setDOB(dob);
-	}
-
-	@ReactMethod
-	public void setGender(String gender) {
-		com.trackier.sdk.TrackierSDK.setGender(com.trackier.sdk.TrackierSDK.Gender.valueOf(gender));
-	}
-
-	@ReactMethod
 	public void setUserAdditionalDetails(ReadableMap userAdditionalDetailsMap) {
 		// if (checkKey(userAdditionalDetailsMap, "userAdditionalMap")) {
 		// Map<String, Object> userAdditionalDetail =
