@@ -9,7 +9,7 @@
     "android",
     "index.js",
     "ios",
-    "@trackier/react-native-trackier.podspec"
+    "react-native-trackier.podspec"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
