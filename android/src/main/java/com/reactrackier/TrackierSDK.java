@@ -32,10 +32,10 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 	@ReactMethod
 	public void initializeSDK(ReadableMap initializeMap) {
 		com.trackier.sdk.TrackierSDKConfig sdkConfig = new com.trackier.sdk.TrackierSDKConfig(
-				getReactApplicationContext(), initializeMap.getString("appToken"),
-				initializeMap.getString("environment"));
+		getReactApplicationContext(), initializeMap.getString("appToken"),
+		initializeMap.getString("environment"));
 		sdkConfig.setSDKType("react_native_sdk");
-		sdkConfig.setSDKVersion("1.6.49");
+		sdkConfig.setSDKVersion("1.6.50");
 		sdkConfig.setAppSecret(initializeMap.getString("secretId"), initializeMap.getString("secretKey"));
 		if (initializeMap.hasKey("hasDeferredDeeplinkCallback")) {
 			sdkConfig.setDeepLinkListener(new DeepLinkListener() {
