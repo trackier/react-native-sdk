@@ -263,7 +263,7 @@ export default function App() {
 
     revenueEvent.revenue = 2.5; //Pass your generated revenue here.
     revenueEvent.currency = "USD"; //Pass your currency here.
-    revenueEvent.trackEvent(trackierEvent1);
+    revenueEvent.trackEvent(revenueEvent);
   }
 } 
 ```
@@ -320,7 +320,7 @@ function _userDetails(){
 Trackier allow for passing the additional user details like UserName, Mobile Number, UserAge, UserGender etc. . You need to first make a hashmap and pass it in setUserAdditionalDetail function. The example are in mentioned below
 
 
-```dart
+```js
 
   function _userDetails(){
     //Passing the UserId and User EmailId Data 
