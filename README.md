@@ -425,7 +425,7 @@ Please check below the Deeplinking scenario
 <img width="705" alt="Screenshot 2022-06-22 at 10 48 20 PM" src="https://user-images.githubusercontent.com/16884982/175099075-349910ce-ce7b-4a71-868c-11c34c4331cd.png">
 
 
-### Normal Deep linking
+### Normal Deep linking for Android
 
 If a user already has your app on their device, it will open when they interact with a tracker containing a deep link. You can then parse the deep link information for further use. To do this, you need to choose a desired unique scheme name.
 
@@ -459,6 +459,58 @@ For example, you could set up an activity called FirstActivity to open like this
 ```
 https://trackier.u9ilnk.me/product?dlv=FirstProduct&quantity=10&pid=sms
 ```
+
+### Normal Deep linking Setup for iOS
+    
+There is a Universal Links iOS app opening method which needs to be implemented for deeplink to work. This method directly opens the mobile app at default activity. Universal links take the format of normal web links for example. https://yourbrand.com or https://yourbrand.u9ilnk.me
+
+Follow the steps for configuring Universal Links
+
+**a. Getting the app bundle ID and prefix ID**
+
+1. Log into your Apple Developer Account.
+2. On the left-hand menu, select Certificates, IDs & Profiles.
+3. Under Identifiers, select App IDs.
+4. Click the relevant app.
+5. Copy the prefix ID and app bundle ID and insert in app settings page in Trackier MMP.
+
+Screenshot[9]
+
+<img width="1000" alt="Screenshot apple" src="https://user-images.githubusercontent.com/16884982/190552695-060b22bc-e269-4a53-b397-09b6162b2faf.png">
+
+**b. Adding the prefix ID and app bundle ID in the Trackier MMP.**
+
+- Login your Trackier Panel
+- Select your application and click on Action button and login as
+- In the Dashboard, Click on the `UniLink` option on the left side of panel.
+- On the Unilink page, create template by click on Action button which is located on the right side header of the page.
+- After creating template, Edit that template by click on the edit button.
+- On the edit template page, Add the prefix ID and app bundle ID in the **Link Behaviour (When application is installed)**
+
+Please check the screenshot for the reference
+
+Screenshot[10]
+
+<img width="1000" alt="Screenshot dashboard" src="https://user-images.githubusercontent.com/16884982/190556533-c05419b8-ea6c-4850-9ea3-11ce5545b764.png">
+
+**c. Configure mobile apps to register associated domains**
+
+Configuring mobile apps to register approved domains takes place inside Xcode. It requires the unilink subdomain that you can get from app setting page in Trackier MMP.
+
+1. Follow this [iOS instructions](https://developer.apple.com/documentation/xcode/supporting-associated-domains)
+2. Get the unilink subdomain from app settings page in Trackier MMP.
+3. In Xcode, click on your project. Click on the project target.
+4. Switch to Capabilities tab.
+5. Turn on Associated Domain.
+6. Add the unilink subdomain that you got from Trackier MMP.
+7. The format is applinks:subdomain.unilink.me. Add **applinks:** before the domain as like `applinks:subdomain.unilink.me`
+
+Screenshot[11]
+
+<img width="1000" alt="Screenshotxcode" src="https://user-images.githubusercontent.com/16884982/190557503-a13cbf23-8485-491b-a9d7-dcd86e44c912.png">
+
+To associate a domain with your app, you need to have the associated domain file on your domain and the appropriate entitlement in your app. Once the unilink is created, Trackier hosts the apple-app-site-association file. When a user installs your app, the system attempts to download the associated domain file and verify the domains in your Associated Domains Entitlement.
+
 
 ### Deferred Deep linking
 
