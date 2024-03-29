@@ -20,6 +20,8 @@ var TrackierConfig = function(appToken,environment) {
 	this.environment = environment;
 	this.secretId = '';
 	this.secretKey = '';
+	this.manualMode = false;
+	this.disableOrganicTrack = false;
 }
 
 var TrackierSDK = {};
@@ -31,6 +33,14 @@ TrackierSDK.initialize = function(trackierConfig) {
 TrackierConfig.prototype.setAppSecret = function(key, value) {
 	this.secretId = key;
 	this.secretKey = value;
+}
+
+TrackierConfig.prototype.setManualMode = function(value) {
+	this.manualMode = value;
+}
+
+TrackierConfig.prototype.disableOrganicTracking = function(value) {
+	this.disableOrganicTrack = value;
 }
 
 TrackierSDK.setEnabled = function (value) {
@@ -72,6 +82,14 @@ TrackierSDK.setUserAdditionalDetails = function (key, value) {
 
 TrackierSDK.waitForATTUserAuthorization = function (timeoutInterval) {
 	module_trackier.waitForATTUserAuthorization(timeoutInterval)
+}
+
+TrackierSDK.fireInstall = function () {
+	module_trackier.fireInstall()
+}
+
+TrackierSDK.parseDeepLink = function (value) {
+	module_trackier.parseDeepLink(value)
 }
 
 TrackierSDK.getAd = function () {

@@ -35,8 +35,10 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 		getReactApplicationContext(), initializeMap.getString("appToken"),
 		initializeMap.getString("environment"));
 		sdkConfig.setSDKType("react_native_sdk");
-		sdkConfig.setSDKVersion("1.6.50");
+		sdkConfig.setSDKVersion("1.6.56");
 		sdkConfig.setAppSecret(initializeMap.getString("secretId"), initializeMap.getString("secretKey"));
+		sdkConfig.setManualMode(initializeMap.getBoolean("manualMode"));
+		sdkConfig.disableOrganicTracking(initializeMap.getBoolean("disableOrganicTrack"));
 		if (initializeMap.hasKey("hasDeferredDeeplinkCallback")) {
 			sdkConfig.setDeepLinkListener(new DeepLinkListener() {
 				@Override
@@ -82,6 +84,12 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 	@ReactMethod
 	public void setUserPhone(String userPhone) {
 		com.trackier.sdk.TrackierSDK.setUserPhone(userPhone);
+	}
+
+	@ReactMethod
+	public void parseDeepLink(String uri) {
+		Uri data = Uri.parse(uri);
+		com.trackier.sdk.TrackierSDK.parseDeepLink(data);
 	}
 
 	@ReactMethod
@@ -167,6 +175,11 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 	@ReactMethod
 	public void setLocalRefTrack(boolean value, String delimeter) {
 		com.trackier.sdk.TrackierSDK.setLocalRefTrack(value, delimeter);
+	}
+
+	@ReactMethod
+	public void fireInstall() {
+		com.trackier.sdk.TrackierSDK.fireInstall();
 	}
 
 	@ReactMethod
