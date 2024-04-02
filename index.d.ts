@@ -4,6 +4,8 @@ declare module 'react-native-trackier' {
     export class TrackierConfig {
         constructor(appToken: string, environment: Environment)
         setAppSecret: (secretId: string, secretKey: string) => void
+        setManualMode: (value: boolean) => void
+        disableOrganicTracking: (value: boolean) => void
         
     }
  
@@ -21,6 +23,8 @@ declare module 'react-native-trackier' {
         setLocalRefTrack: (value: boolean, delimeter: string) => void 
         setUserAdditionalDetails: (key: string, value: string) => void
         waitForATTUserAuthorization: (timeoutInterval: int) => void
+        parseDeepLink: (value: string) => void
+        fireInstall: () => void 
     }
 
     export class TrackierEvent {
