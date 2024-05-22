@@ -306,11 +306,14 @@ Just need to pass the data of User Id, Email Id and other additional data to Tra
 ```js
 
 function _userDetails(){
-
-    //Passing the UserId and User EmailId Data
+    var trackierEvent = new TrackierEvent(TrackierEvent.ADD_TO_CART);
+    //Passing the data as mentioned below 
     TrackierSDk.setUserId("XXXXXXXX"); //Pass the UserId values here
     TrackierSDk.setUserEmail("abc@gmail.com"); //Pass the user email id in the argument.
-  }
+    TrackierSDK.setUserName("abc");
+    TrackierSDK.setUserPhone("813434721");
+    TrackierSDK.trackEvent(trackierEvent);
+}
 ```
 
 ### For Passing Additional Data
@@ -327,6 +330,8 @@ Trackier allow for passing the additional user details like UserName, Mobile Num
     TrackierSDk.setUserEmail("abc@gmail.com"); //Pass the user email id in the argument.
     TrackierSDK.setUserName("abc");
     TrackierSDK.setUserPhone("813434721");
+    var jsonData = {"phone": "+91-8137872378" , "name": "Embassies"};
+    TrackierSDK.setUserAdditionalDetails("data", jsonData)
     TrackierSDK.trackEvent(trackierEvent);
   }
 ```
