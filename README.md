@@ -171,8 +171,6 @@ export default function App() {
 
     trackierEvent.param1 = "XXXXXX";
     trackierEvent.param2 = "kkkkkkk";
-    trackierEvent.setEventValue("param","value");
-    trackierEvent.setEventValue("param2",2.0);
     TrackierSDK.trackEvent(trackierEvent);
   }
 } 
@@ -223,13 +221,15 @@ export default function App() {
 
     trackierEvent.param1 = "XXXXXX";
     trackierEvent.param2 = "kkkkkkk";
-    trackierEvent.setEventValue("param","value");
-    trackierEvent.setEventValue("param2",2.0);
+    var value = 
+        { "id": 1, "phone": "+91-8130XXX721" ,
+        "id": 2, "name": "Embassies" };
+    trackierEvent.setEventValue("data","value");
     TrackierSDK.trackEvent(trackierEvent);
   }
 }
 ```
-
+   
 Check below the example screenshot of customs events:-
 
 Screenshot[5]
@@ -285,10 +285,8 @@ Screenshot[6]
     var trackierEvent = new TrackierEvent("sEMWSCTXeu");
 
     //Passing the custom params in events be like below example
-    const customData = new Map();
-    customData.set("name", "sanu");
-    customData.set("phone", "81xxxxx84");
-    trackierEvent.ev = customData;
+    var jsonData = {"phone": "+91-8137872378" , "name": "Embassies"};
+    trackierEvent.ev = jsonData;
     TrackierSDK.trackEvent(trackierEvent);
   }
 ```
@@ -323,16 +321,13 @@ Trackier allow for passing the additional user details like UserName, Mobile Num
 ```js
 
   function _userDetails(){
-    //Passing the UserId and User EmailId Data 
+    var trackierEvent = new TrackierEvent(TrackierEvent.ADD_TO_CART);
+    //Passing the data as mentioned below 
     TrackierSDk.setUserId("XXXXXXXX"); //Pass the UserId values here
     TrackierSDk.setUserEmail("abc@gmail.com"); //Pass the user email id in the argument.
-
-    /* Passing the additional data */
-
-    const userDetails = new Map();
-    userDetails = {"name":"Sanu"}; //You can pass the Username data.
-    userDetails = {"mobile_number":"872xxxxx87"}; // You can pass user mobile number
-    TrackierSDk.setUserAdditonalDetail(userDetails);
+    TrackierSDK.setUserName("abc");
+    TrackierSDK.setUserPhone("813434721");
+    TrackierSDK.trackEvent(trackierEvent);
   }
 ```
 
