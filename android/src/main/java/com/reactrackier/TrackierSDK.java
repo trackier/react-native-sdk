@@ -241,7 +241,7 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 			trackierEvent.couponCode = trackierEventMap.getString("couponCode");
 		}
 		if (checkKey(trackierEventMap, "productId")) {
-			trackierEvent.couponCode = trackierEventMap.getString("productId");
+			trackierEvent.productId = trackierEventMap.getString("productId");
 		}
 		if (checkKey(trackierEventMap, "discount")) {
 			trackierEvent.discount = (float) trackierEventMap.getDouble("discount");

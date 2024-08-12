@@ -34,7 +34,7 @@ public class TrackierUtil {
 	    } catch (Exception e) {
 		    Log.e("trackiersdk", "Error converting ReadableMap to Map: " + e.getMessage(), e);
 
-		    return new HashMap<>();
+		    return result;
 	    }
         return result;
     }
