@@ -11,9 +11,26 @@ import React
 
 @objc(RNTrackierSDK)
 class RNTrackierSDK: RCTEventEmitter, DeepLinkListener {
+
+	var hasListeners = false
+	
+	override func startObserving() {
+		self.hasListeners = true
+	}
+	
+	override func stopObserving() {
+		self.hasListeners = false;
+	}
 	
 	func onDeepLinking(result: trackier_ios_sdk.DeepLink) {
-		sendEvent(withName: "trackier_deferredDeeplink", body: result.getUrlParams())
+		if (!self.hasListeners) {
+			return
+		}
+		if (result.getUrl() == nil) {
+			print("Deeplink URL is nil")
+		} else {
+			sendEvent(withName: "trackier_deferredDeeplink", body: result.getUrl())
+		}
 	}
 	
 	open override func supportedEvents() -> [String] {
@@ -27,7 +44,7 @@ class RNTrackierSDK: RCTEventEmitter, DeepLinkListener {
 		let config = TrackierSDKConfig(appToken: appToken , env: environment)
 		config.setSDKType(sdkType: "react_native_sdk")
 		config.setAppSecret(secretId: dict["secretId"] as! String, secretKey: dict["secretKey"] as! String)
-		config.setSDKVersion(sdkVersion: "1.6.57")
+		config.setSDKVersion(sdkVersion: "1.6.60")
 		if (deeplinking != nil) {
 			config.setDeeplinkListerner(listener: self)
 		}
@@ -103,69 +120,73 @@ class RNTrackierSDK: RCTEventEmitter, DeepLinkListener {
 		TrackierSDK.waitForATTUserAuthorization(timeoutInterval: timeoutInterval)
 	}
 	
-    @objc func getAd(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
-        resolve(TrackierSDK.getAd())
-    }
-    
-    @objc func getAdID(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
-        resolve(TrackierSDK.getAdID())
-    }
+	@objc func getAd(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
+		resolve(TrackierSDK.getAd())
+	}
+	
+	@objc func getAdID(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
+		resolve(TrackierSDK.getAdID())
+	}
 
-    @objc func getCampaign(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
-        resolve(TrackierSDK.getCampaign())
-    }
-    
-    @objc func getCampaignID(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
-        resolve(TrackierSDK.getCampaignID())
-    }
-    
-    @objc func getAdSet(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
-        resolve(TrackierSDK.getAdSet())
-    }
-    
-    @objc func getAdSetID(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
-        resolve(TrackierSDK.getAdSetID())
-    }
-    
-    @objc func getChannel(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
-        resolve(TrackierSDK.getChannel())
-    }
-    
-    @objc func getP1(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
-        resolve(TrackierSDK.getP1())
-    }
-    
-    @objc func getP2(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
-        resolve(TrackierSDK.getP2())
-    }
-    
-    @objc func getP3(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
-        resolve(TrackierSDK.getP3())
-    }
-    
-    @objc func getP4(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
-        resolve(TrackierSDK.getP4())
-    }
-    
-    @objc func getP5(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
-        resolve(TrackierSDK.getP5())
-    }
-    
-    @objc func getClickId(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
-        resolve(TrackierSDK.getClickId())
-    }
-    
-    @objc func getDlv(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
-        resolve(TrackierSDK.getDlv())
-    }
-    
-    @objc func getPid(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
-        resolve(TrackierSDK.getPid())
-    }
-    
-    @objc func getIsRetargeting(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
-        resolve(TrackierSDK.getIsRetargeting())
-    }
+	@objc func getCampaign(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
+		resolve(TrackierSDK.getCampaign())
+	}
+	
+	@objc func getCampaignID(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
+		resolve(TrackierSDK.getCampaignID())
+	}
+	
+	@objc func getAdSet(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
+		resolve(TrackierSDK.getAdSet())
+	}
+	
+	@objc func getAdSetID(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
+		resolve(TrackierSDK.getAdSetID())
+	}
+	
+	@objc func getChannel(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
+		resolve(TrackierSDK.getChannel())
+	}
+	
+	@objc func getP1(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
+		resolve(TrackierSDK.getP1())
+	}
+	
+	@objc func getP2(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
+		resolve(TrackierSDK.getP2())
+	}
+	
+	@objc func getP3(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
+		resolve(TrackierSDK.getP3())
+	}
+	
+	@objc func getP4(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
+		resolve(TrackierSDK.getP4())
+	}
+	
+	@objc func getP5(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
+		resolve(TrackierSDK.getP5())
+	}
+	
+	@objc func getClickId(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
+		resolve(TrackierSDK.getClickId())
+	}
+	
+	@objc func getDlv(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
+		resolve(TrackierSDK.getDlv())
+	}
+	
+	@objc func getPid(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
+		resolve(TrackierSDK.getPid())
+	}
+	
+	@objc func getIsRetargeting(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
+		resolve(TrackierSDK.getIsRetargeting())
+	}
+
+	@objc func getTrackierId(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
+		resolve(TrackierSDK.getTrackierId())
+	}
 	
 	@objc func trackAsOrganic(_ value: Bool) {
 		// Do nothing, android only method
@@ -178,5 +199,14 @@ class RNTrackierSDK: RCTEventEmitter, DeepLinkListener {
 	@objc func setUserAdditionalDetails(_ key: String, withValue value: String) {
 		// TODO
 	}
+
+	@objc func fireInstall() {
+		// Do nothing, android only method
+	}
+
+	@objc func parseDeepLink(_ url: String) {
+		TrackierSDK.parseDeepLink(uri: url)
+	}
+
 }
 

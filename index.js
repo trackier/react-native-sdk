@@ -92,6 +92,15 @@ TrackierSDK.parseDeepLink = function (value) {
 	module_trackier.parseDeepLink(value)
 }
 
+TrackierSDK.setIMEI = function (imei1, imei2) {
+	module_trackier.setIMEI(imei1, imei2)
+}
+
+TrackierSDK.setMacAddress = function (value) {
+	module_trackier.setMacAddress(value)
+
+}
+
 TrackierSDK.getAd = function () {
 	return module_trackier.getAd();
 }
@@ -188,6 +197,7 @@ var TrackierEvent = function(eventId) {
 	this.currency = null;
 	this.discount = 0;
 	this.couponCode = null;
+	this.productId = null;
 	this.param1 = null;
 	this.param2 = null;
 	this.param3 = null;

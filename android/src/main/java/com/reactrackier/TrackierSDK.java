@@ -36,7 +36,7 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 		getReactApplicationContext(), initializeMap.getString("appToken"),
 		initializeMap.getString("environment"));
 		sdkConfig.setSDKType("react_native_sdk");
-		sdkConfig.setSDKVersion("1.6.57");
+		sdkConfig.setSDKVersion("1.6.60");
 		sdkConfig.setAppSecret(initializeMap.getString("secretId"), initializeMap.getString("secretKey"));
 		sdkConfig.setManualMode(initializeMap.getBoolean("manualMode"));
 		sdkConfig.disableOrganicTracking(initializeMap.getBoolean("disableOrganicTrack"));
@@ -184,6 +184,17 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 	}
 
 	@ReactMethod
+	public void setIMEI(String imei1, String imei2) {
+		com.trackier.sdk.TrackierSDK.setIMEI(imei1, imei2);
+	}
+
+	@ReactMethod
+	public void setMacAddress(String macAddress) {
+		com.trackier.sdk.TrackierSDK.setMacAddress(macAddress);
+	}
+
+
+	@ReactMethod
 	public void setUserAdditionalDetails(ReadableMap userAdditionalDetailsMap) {
 		// if (checkKey(userAdditionalDetailsMap, "userAdditionalMap")) {
 		// Map<String, Object> userAdditionalDetail =
@@ -207,6 +218,7 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 		trackierEvent.currency = null;
 		trackierEvent.discount = null;
 		trackierEvent.couponCode = null;
+		trackierEvent.productId = null;
 		trackierEvent.param1 = null;
 		trackierEvent.param2 = null;
 		trackierEvent.param3 = null;
@@ -227,6 +239,9 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 		}
 		if (checkKey(trackierEventMap, "couponCode")) {
 			trackierEvent.couponCode = trackierEventMap.getString("couponCode");
+		}
+		if (checkKey(trackierEventMap, "productId")) {
+			trackierEvent.couponCode = trackierEventMap.getString("productId");
 		}
 		if (checkKey(trackierEventMap, "discount")) {
 			trackierEvent.discount = (float) trackierEventMap.getDouble("discount");
