@@ -10,7 +10,7 @@ const module_trackier = NativeModules.TrackierSDK;
 
 let module_trackier_emitter = null;
 if (Platform.OS === "android") {
-	module_trackier_emitter = new NativeEventEmitter(NativeModules.TrackierSDK);
+	module_trackier_emitter = new NativeEventEmitter();
 } else if (Platform.OS === "ios") {
 	module_trackier_emitter = new NativeEventEmitter(NativeModules.TrackierSDK);
 }
