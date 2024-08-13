@@ -270,7 +270,7 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 		if (checkKey(trackierEventMap, "param8")) {
 			trackierEvent.param8 = trackierEventMap.getString("param8");
 		}
-		if (checkKey(trackierEventMap, "appToken")) {
+		if (checkKey(trackierEventMap, "param9")) {
 			trackierEvent.param9 = trackierEventMap.getString("param9");
 		}
 		if (checkKey(trackierEventMap, "param10")) {
