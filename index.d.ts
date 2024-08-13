@@ -24,7 +24,7 @@ declare module 'react-native-trackier' {
         setUserAdditionalDetails: (key: string, value: string) => void
         waitForATTUserAuthorization: (timeoutInterval: int) => void
         parseDeepLink: (value: string) => void
-        setIMEI: (imei1: string, imei2) => void
+        setIMEI: (imei1: string, imei2: string) => void
         setMacAddress: (value: string) => void
         fireInstall: () => void 
     }
