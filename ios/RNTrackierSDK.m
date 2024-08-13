@@ -29,6 +29,10 @@ RCT_EXTERN_METHOD(setUserPhone:(NSString *)userPhone)
 
 RCT_EXTERN_METHOD(trackAsOrganic:(BOOL *)value)
 
+RCT_EXTERN_METHOD(fireInstall)
+
+RCT_EXTERN_METHOD(parseDeepLink: (NSString *)url)
+
 RCT_EXTERN_METHOD(setLocalRefTrack:(BOOL *)value withDelim: (NSString *)delimeter)
 
 RCT_EXTERN_METHOD(setUserAdditionalDetails:(NSString *)key withValue: (NSString *)value)
@@ -68,5 +72,7 @@ RCT_EXTERN_METHOD(getDlv:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRej
 RCT_EXTERN_METHOD(getPid:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 
 RCT_EXTERN_METHOD(getIsRetargeting:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
+
+RCT_EXTERN_METHOD(getTrackierId:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 @end
 

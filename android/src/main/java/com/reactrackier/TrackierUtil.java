@@ -7,6 +7,8 @@ import com.facebook.react.bridge.*;
 
 import static com.facebook.react.bridge.Arguments.toList;
 
+import android.util.Log;
+
 public class TrackierUtil {
 
     public static Map<String, Object> toMap(@Nullable ReadableMap readableMap) {
@@ -18,12 +20,22 @@ public class TrackierUtil {
             return null;
         }
         Map<String, Object> result = new HashMap<>();
-        while (iterator.hasNextKey()) {
-            String key = iterator.nextKey();
-            String value = toObject(readableMap, key).toString();
+	    try {
+		    while (iterator.hasNextKey()) {
+			    String key = iterator.nextKey();
+				Object valObj = toObject(readableMap, key);
+				if (valObj == null) {
+					continue;
+				}
+			    String value = valObj.toString();
+			    result.put(key, value);
+		    }
 
-            result.put(key, value);
-        }
+	    } catch (Exception e) {
+		    Log.e("trackiersdk", "Error converting ReadableMap to Map: " + e.getMessage(), e);
+
+		    return result;
+	    }
         return result;
     }
 
