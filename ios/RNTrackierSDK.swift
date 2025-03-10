@@ -44,7 +44,7 @@ class RNTrackierSDK: RCTEventEmitter, DeepLinkListener {
 		let config = TrackierSDKConfig(appToken: appToken , env: environment)
 		config.setSDKType(sdkType: "react_native_sdk")
 		config.setAppSecret(secretId: dict["secretId"] as! String, secretKey: dict["secretKey"] as! String)
-		config.setSDKVersion(sdkVersion: "1.6.61")
+		config.setSDKVersion(sdkVersion: "1.6.64")
 		if (deeplinking != nil) {
 			config.setDeeplinkListerner(listener: self)
 		}
@@ -118,6 +118,10 @@ class RNTrackierSDK: RCTEventEmitter, DeepLinkListener {
 	
 	@objc func waitForATTUserAuthorization(_ timeoutInterval: Int) {
 		TrackierSDK.waitForATTUserAuthorization(timeoutInterval: timeoutInterval)
+	}
+
+	@objc func updateAppleAdsToken(_ token: String) {
+		TrackierSDK.updateAppleAdsToken(token: token)
 	}
 	
 	@objc func getAd(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
@@ -201,6 +205,14 @@ class RNTrackierSDK: RCTEventEmitter, DeepLinkListener {
 	}
 
 	@objc func fireInstall() {
+		// Do nothing, android only method
+	}
+
+	@objc func setMacAddress(_ value: String) {
+		// Do nothing, android only method
+	}
+	
+	@objc func setIMEI(_ value: String) {
 		// Do nothing, android only method
 	}
 
