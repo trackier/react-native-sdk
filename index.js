@@ -84,6 +84,10 @@ TrackierSDK.waitForATTUserAuthorization = function (timeoutInterval) {
 	module_trackier.waitForATTUserAuthorization(timeoutInterval)
 }
 
+TrackierSDK.updateAppleAdsToken = function (value) {
+	module_trackier.updateAppleAdsToken(value)
+}
+
 TrackierSDK.fireInstall = function () {
 	module_trackier.fireInstall()
 }

@@ -36,7 +36,7 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 		getReactApplicationContext(), initializeMap.getString("appToken"),
 		initializeMap.getString("environment"));
 		sdkConfig.setSDKType("react_native_sdk");
-		sdkConfig.setSDKVersion("1.6.61");
+		sdkConfig.setSDKVersion("1.6.64");
 		sdkConfig.setAppSecret(initializeMap.getString("secretId"), initializeMap.getString("secretKey"));
 		sdkConfig.setManualMode(initializeMap.getBoolean("manualMode"));
 		sdkConfig.disableOrganicTracking(initializeMap.getBoolean("disableOrganicTrack"));
@@ -91,6 +91,11 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 	public void parseDeepLink(String uri) {
 		Uri data = Uri.parse(uri);
 		com.trackier.sdk.TrackierSDK.parseDeepLink(data);
+	}
+
+	@ReactMethod
+	public void updateAppleAdsToken(String token) {
+		//for ios only
 	}
 
 	@ReactMethod

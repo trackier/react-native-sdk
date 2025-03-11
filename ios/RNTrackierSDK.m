@@ -39,6 +39,12 @@ RCT_EXTERN_METHOD(setUserAdditionalDetails:(NSString *)key withValue: (NSString 
 
 RCT_EXTERN_METHOD(waitForATTUserAuthorization:(NSInteger *)timeoutInterval)
 
+RCT_EXTERN_METHOD(updateAppleAdsToken:(NSString *)token)
+
+RCT_EXTERN_METHOD(setMacAddress:(NSString *)value)
+
+RCT_EXTERN_METHOD(setIMEI:(NSString *)value withValue: (NSString *)value)
+
 RCT_EXTERN_METHOD(getAd:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 
 RCT_EXTERN_METHOD(getAdID:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
