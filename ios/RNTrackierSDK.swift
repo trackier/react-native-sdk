@@ -212,7 +212,7 @@ class RNTrackierSDK: RCTEventEmitter, DeepLinkListener {
 		// Do nothing, android only method
 	}
 	
-	@objc func setIMEI(_ value: String) {
+	 @objc func setIMEI(_ key: String, withValue Value: String) {
 		// Do nothing, android only method
 	}
 
