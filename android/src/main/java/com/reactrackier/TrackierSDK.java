@@ -94,6 +94,11 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 	}
 
 	@ReactMethod
+	public void updateAppleAdsToken(String token) {
+		//for ios only
+	}
+
+	@ReactMethod
 	public void getAd(Promise promise) {
 		promise.resolve(com.trackier.sdk.TrackierSDK.getAd());
 	}
