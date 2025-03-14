@@ -22,6 +22,7 @@ var TrackierConfig = function(appToken,environment) {
 	this.secretKey = '';
 	this.manualMode = false;
 	this.disableOrganicTrack = false;
+	this.attributionParams = {};
 }
 
 var TrackierSDK = {};
