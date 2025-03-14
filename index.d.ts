@@ -1,12 +1,20 @@
 declare module 'react-native-trackier' {
     type Environment = 'development' | 'production' | 'testing'
 
+    type AttributionParams = {
+        ad?: string;
+        partnerId?: string;
+        channel?: string;
+        adId?: string;
+        siteId?: string;
+    }
+
     export class TrackierConfig {
         constructor(appToken: string, environment: Environment)
         setAppSecret: (secretId: string, secretKey: string) => void
         setManualMode: (value: boolean) => void
         disableOrganicTracking: (value: boolean) => void
-        
+        setAttributionParams: (params: AttributionParams) => void
     }
  
     export class TrackierSDK {
