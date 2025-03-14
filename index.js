@@ -22,6 +22,7 @@ var TrackierConfig = function(appToken,environment) {
 	this.secretKey = '';
 	this.manualMode = false;
 	this.disableOrganicTrack = false;
+	this.attributionParams = {};
 }
 
 var TrackierSDK = {};
@@ -42,6 +43,14 @@ TrackierConfig.prototype.setManualMode = function(value) {
 TrackierConfig.prototype.disableOrganicTracking = function(value) {
 	this.disableOrganicTrack = value;
 }
+
+TrackierConfig.prototype.setAttributionParams = function (params) {
+	if (typeof params !== 'object' || params === null) {
+		console.error('Invalid parameters passed to setAttributionParams');
+		return;
+	}
+	this.attributionParams = params; 
+};
 
 TrackierSDK.setEnabled = function (value) {
 	module_trackier.setEnabled(value)

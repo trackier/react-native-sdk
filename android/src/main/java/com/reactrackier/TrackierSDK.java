@@ -36,10 +36,34 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 		getReactApplicationContext(), initializeMap.getString("appToken"),
 		initializeMap.getString("environment"));
 		sdkConfig.setSDKType("react_native_sdk");
-		sdkConfig.setSDKVersion("1.6.64");
+		sdkConfig.setSDKVersion("1.6.65");
 		sdkConfig.setAppSecret(initializeMap.getString("secretId"), initializeMap.getString("secretKey"));
 		sdkConfig.setManualMode(initializeMap.getBoolean("manualMode"));
 		sdkConfig.disableOrganicTracking(initializeMap.getBoolean("disableOrganicTrack"));
+		if (initializeMap.hasKey("attributionParams") && initializeMap.getMap("attributionParams") != null) {
+			ReadableMap attributionMap = initializeMap.getMap("attributionParams");
+			AttributionParams attributionParams = new AttributionParams();
+
+			if (attributionMap.hasKey("ad")) {
+				attributionParams.setAd(attributionMap.getString("ad"));
+			}
+			if (attributionMap.hasKey("partnerId")) {
+				attributionParams.setParterId(attributionMap.getString("partnerId"));
+			}
+			if (attributionMap.hasKey("channel")) {
+				attributionParams.setChannel(attributionMap.getString("channel"));
+			}
+			if (attributionMap.hasKey("adId")) {
+				attributionParams.setAdId(attributionMap.getString("adId"));
+			}
+			if (attributionMap.hasKey("siteId")) {
+				attributionParams.setSiteId(attributionMap.getString("siteId"));
+			}
+
+			sdkConfig.setAttributionParams(attributionParams);
+		} else {
+			Log.e("TrackierSDK", "attributionParams map is missing or null");
+		}
 		if (initializeMap.hasKey("hasDeferredDeeplinkCallback")) {
 			sdkConfig.setDeepLinkListener(new DeepLinkListener() {
 				@Override
