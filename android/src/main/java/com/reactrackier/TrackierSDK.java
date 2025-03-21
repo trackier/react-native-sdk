@@ -15,6 +15,7 @@ import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 import com.trackier.sdk.DeepLink;
 import com.trackier.sdk.DeepLinkListener;
+import com.trackier.sdk.AttributionParams;
 
 public class TrackierSDK extends ReactContextBaseJavaModule {
 
@@ -36,7 +37,7 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 		getReactApplicationContext(), initializeMap.getString("appToken"),
 		initializeMap.getString("environment"));
 		sdkConfig.setSDKType("react_native_sdk");
-		sdkConfig.setSDKVersion("1.6.65");
+		sdkConfig.setSDKVersion("1.6.66");
 		sdkConfig.setAppSecret(initializeMap.getString("secretId"), initializeMap.getString("secretKey"));
 		sdkConfig.setManualMode(initializeMap.getBoolean("manualMode"));
 		sdkConfig.disableOrganicTracking(initializeMap.getBoolean("disableOrganicTrack"));
