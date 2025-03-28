@@ -114,6 +114,10 @@ TrackierSDK.setMacAddress = function (value) {
 
 }
 
+TrackierSDK.storeRetargetting = function (value) {
+	module_trackier.storeRetargetting(value)
+}
+
 TrackierSDK.getAd = function () {
 	return module_trackier.getAd();
 }

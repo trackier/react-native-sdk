@@ -124,6 +124,11 @@ public class TrackierSDK extends ReactContextBaseJavaModule {
 	}
 
 	@ReactMethod
+	public void storeRetargetting(String url) {
+		com.trackier.sdk.TrackierSDK.storeRetargetting(getReactApplicationContext(), url);
+	}
+
+	@ReactMethod
 	public void getAd(Promise promise) {
 		promise.resolve(com.trackier.sdk.TrackierSDK.getAd());
 	}

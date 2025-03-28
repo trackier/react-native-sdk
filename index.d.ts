@@ -32,6 +32,7 @@ declare module 'react-native-trackier' {
         setUserAdditionalDetails: (key: string, value: string) => void
         waitForATTUserAuthorization: (timeoutInterval: int) => void
         updateAppleAdsToken: (value: string) => void
+        storeRetargetting: (value: string) => void
         parseDeepLink: (value: string) => void
         setIMEI: (imei1: string, imei2: string) => void
         setMacAddress: (value: string) => void
