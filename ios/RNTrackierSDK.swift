@@ -220,9 +220,9 @@ class RNTrackierSDK: RCTEventEmitter, DeepLinkListener {
 		TrackierSDK.parseDeepLink(uri: url)
 	}
 
-	@objc func storeRetargetting(String url) {
-		// Do nothing
-	}
+	@objc func storeRetargetting(_ url: String) {
+            // Do nothing
+    }
 
 }
 
