@@ -80,5 +80,7 @@ RCT_EXTERN_METHOD(getPid:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRej
 RCT_EXTERN_METHOD(getIsRetargeting:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 
 RCT_EXTERN_METHOD(getTrackierId:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
+
+RCT_EXTERN_METHOD(storeRetargetting:(NSString *)url)
 @end
 
